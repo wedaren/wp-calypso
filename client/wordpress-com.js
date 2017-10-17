@@ -73,6 +73,7 @@ const sections = [
 		module: 'my-sites/media',
 		group: 'sites',
 		secondary: true,
+		css: 'media',
 	},
 	{
 		name: 'people',
