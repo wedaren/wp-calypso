@@ -1,6 +1,4 @@
 /**
- * **** WARNING: No ES6 modules here. Not transpiled! ****
- *
  * @format
  */
 
@@ -42,6 +40,7 @@ const isDevelopment = bundleEnv === 'development';
  *
  * Providing webpack with these aliases instead of telling it to scan client/extensions for every
  * module resolution speeds up builds significantly.
+ * @returns {Object} a mapping of extension name to path
  */
 function getAliasesForExtensions() {
 	const extensionsDirectory = path.join( __dirname, 'client', 'extensions' );
@@ -264,5 +263,9 @@ if ( ! isDevelopment ) {
 		} )
 	);
 }
+
+webpackConfig.plugins.push(
+	new webpack.NormalModuleReplacementPlugin( /^json3$/, 'lib/shims/json3' )
+);
 
 module.exports = webpackConfig;
