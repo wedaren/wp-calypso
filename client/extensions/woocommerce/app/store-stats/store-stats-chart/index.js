@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 import page from 'page';
-import { findIndex } from 'lodash';
+import { findIndex, find } from 'lodash';
 import { moment } from 'i18n-calypso';
 
 /**
@@ -62,6 +62,40 @@ class StoreStatsChart extends Component {
 		} );
 	};
 
+	createTooltipDate = item => {
+		const { unit } = this.props;
+		const dateFormat = UNITS[ unit ].shortFormat;
+		const date = moment( item.period );
+		if ( unit === 'week' ) {
+			return `${ date.subtract( 6, 'days' ).format( dateFormat ) } - ${ moment(
+				item.period
+			).format( dateFormat ) }`;
+		}
+		return date.format( dateFormat );
+	};
+
+	buildToolTipData = ( item, selectedTab ) => {
+		const value =
+			selectedTab.type === 'currency'
+				? formatCurrency( item[ selectedTab.attr ], item.currency )
+				: Math.round( item[ selectedTab.attr ] * 100 ) / 100;
+		const data = [
+			{ className: 'is-date-label', value: null, label: this.createTooltipDate( item ) },
+			{
+				value,
+				label: selectedTab.label,
+			},
+		];
+		if ( selectedTab.attr === 'gross_sales' ) {
+			const netSalesTab = find( tabs, tab => tab.attr === 'net_sales' );
+			data.push( {
+				value: formatCurrency( item.net_sales, item.currency ),
+				label: netSalesTab.label,
+			} );
+		}
+		return data;
+	};
+
 	buildChartData = ( item, selectedTab, chartFormat ) => {
 		const { selectedDate } = this.props;
 		const className = classnames( item.classNames.join( ' ' ), {
@@ -70,9 +104,9 @@ class StoreStatsChart extends Component {
 		return {
 			label: item[ chartFormat ],
 			value: item[ selectedTab.attr ],
-			nestedValue: null,
+			nestedValue: selectedTab.attr === 'gross_sales' ? item.net_sales : null,
 			data: item,
-			tooltipData: [],
+			tooltipData: this.buildToolTipData( item, selectedTab ),
 			className,
 		};
 	};
@@ -116,7 +150,7 @@ class StoreStatsChart extends Component {
 										value={ `${ deltaValue }%` }
 										className={ `${ delta.favorable } ${ delta.direction }` }
 										suffix={ `since ${ moment( delta.reference_period, periodFormat ).format(
-											UNITS[ unit ].sinceFormat
+											UNITS[ unit ].shortFormat
 										) }` }
 									/>
 								</Tab>
