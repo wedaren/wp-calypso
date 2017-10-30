@@ -16,12 +16,7 @@ import {
 	SIMPLE_PAYMENTS_PRODUCTS_LIST_EDIT,
 	SIMPLE_PAYMENTS_PRODUCTS_LIST_DELETE,
 } from 'state/action-types';
-import {
-	receiveProduct,
-	receiveProductsList,
-	receiveUpdateProduct,
-	receiveDeleteProduct,
-} from 'state/simple-payments/product-list/actions';
+import crudActions from 'state/crud/actions';
 import { metaKeyToSchemaKeyMap, metadataSchema } from 'state/simple-payments/product-list/schema';
 import { http } from 'state/data-layer/wpcom-http/actions';
 import { dispatchRequest } from 'state/data-layer/wpcom-http/utils';
@@ -220,38 +215,35 @@ export function requestSimplePaymentsProductDelete( { dispatch }, action ) {
 	);
 }
 
-export const addProduct = ( { dispatch }, { siteId }, newProduct ) =>
-	dispatch( receiveUpdateProduct( siteId, customPostToProduct( newProduct ) ) );
+const actions = crudActions( 'simplePayments.productList' );
 
-export const deleteProduct = ( { dispatch }, { siteId }, deletedProduct ) =>
-	dispatch( receiveDeleteProduct( siteId, deletedProduct.ID ) );
-
-export const listProduct = ( { dispatch }, { siteId }, product ) => {
-	if ( ! isValidSimplePaymentsProduct( product ) ) {
-		return;
+export const createOrUpdateProduct = ( { dispatch }, { siteId }, product ) => {
+	if ( isValidSimplePaymentsProduct( product ) ) {
+		dispatch( actions.createOrUpdate( customPostToProduct( product ), { siteId } ) );
 	}
-
-	dispatch( receiveProduct( siteId, customPostToProduct( product ) ) );
 };
 
-export const listProducts = ( { dispatch }, { siteId }, { posts: products } ) => {
-	const validProducts = filter( products, isValidSimplePaymentsProduct );
+export const deleteProduct = ( { dispatch }, { siteId }, deletedProduct ) => {
+	dispatch( actions.delete( deletedProduct.ID, { siteId } ) );
+};
 
-	dispatch( receiveProductsList( siteId, validProducts.map( customPostToProduct ) ) );
+export const listProducts = ( { dispatch }, { siteId }, { posts } ) => {
+	const validProducts = filter( posts, isValidSimplePaymentsProduct ).map( customPostToProduct );
+	dispatch( actions.replace( validProducts, { siteId } ) );
 };
 
 export default {
 	[ SIMPLE_PAYMENTS_PRODUCT_GET ]: [
-		dispatchRequest( requestSimplePaymentsProduct, listProduct, noop ),
+		dispatchRequest( requestSimplePaymentsProduct, createOrUpdateProduct, noop ),
 	],
 	[ SIMPLE_PAYMENTS_PRODUCTS_LIST ]: [
 		dispatchRequest( requestSimplePaymentsProducts, listProducts, noop ),
 	],
 	[ SIMPLE_PAYMENTS_PRODUCTS_LIST_ADD ]: [
-		dispatchRequest( requestSimplePaymentsProductAdd, addProduct, noop ),
+		dispatchRequest( requestSimplePaymentsProductAdd, createOrUpdateProduct, noop ),
 	],
 	[ SIMPLE_PAYMENTS_PRODUCTS_LIST_EDIT ]: [
-		dispatchRequest( requestSimplePaymentsProductEdit, addProduct, noop ),
+		dispatchRequest( requestSimplePaymentsProductEdit, createOrUpdateProduct, noop ),
 	],
 	[ SIMPLE_PAYMENTS_PRODUCTS_LIST_DELETE ]: [
 		dispatchRequest( requestSimplePaymentsProductDelete, deleteProduct, noop ),
