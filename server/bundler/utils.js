@@ -42,10 +42,20 @@ function getHashedUrl( filename ) {
 	return getUrl( filename, hashFile( process.cwd() + SERVER_BASE_PATH + '/' + filename ) );
 }
 
+function getHashedUrls( cssSections, isRTL = false ) {
+	return cssSections.map( ( cssSection ) => {
+		const filename = isRTL ? `sections-rtl/${ cssSection }.rtl.css` : `sections/${ cssSection }.css`;
+
+		return getHashedUrl( filename );
+	} );
+}
+
 function getCssUrls( css ) {
+	const cssSections = Array.isArray( css ) ? css : [ css ];
+
 	return {
-		ltr: getHashedUrl( 'sections/' + css + '.css' ),
-		rtl: getHashedUrl( 'sections-rtl/' + css + '.rtl.css' ),
+		ltr: getHashedUrls( cssSections ),
+		rtl: getHashedUrls( cssSections, true ),
 	};
 }
 

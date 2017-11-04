@@ -53,8 +53,12 @@ export function loadSectionCSS( context, next ) {
 	const section = getSection( context.store.getState() );
 
 	if ( section.cssUrls && typeof document !== 'undefined' ) {
-		const cssUrl = isRTL( context.store.getState() ) ? section.cssUrls.rtl : section.cssUrls.ltr;
-		switchCSS( 'section-css', cssUrl, next );
+		const cssUrls = isRTL( context.store.getState() ) ? section.cssUrls.rtl : section.cssUrls.ltr;
+
+		cssUrls.forEach( cssUrl => {
+			switchCSS( 'section-css', cssUrl, next );
+		} );
+
 		return;
 	}
 
