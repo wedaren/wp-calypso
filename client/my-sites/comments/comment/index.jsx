@@ -32,6 +32,7 @@ export class Comment extends Component {
 		isPersistent: PropTypes.bool,
 		isPostView: PropTypes.bool,
 		isSelected: PropTypes.bool,
+		redirect: PropTypes.func,
 		refreshCommentData: PropTypes.bool,
 		toggleSelected: PropTypes.func,
 		updateLastUndo: PropTypes.func,
@@ -95,6 +96,7 @@ export class Comment extends Component {
 			isLoading,
 			isPostView,
 			isSelected,
+			redirect,
 			refreshCommentData,
 			updateLastUndo,
 		} = this.props;
@@ -128,7 +130,7 @@ export class Comment extends Component {
 
 						{ ! isBulkMode && (
 							<CommentActions
-								{ ...{ siteId, postId, commentId, updateLastUndo } }
+								{ ...{ siteId, postId, commentId, redirect, updateLastUndo } }
 								toggleEditMode={ this.toggleEditMode }
 								toggleReply={ this.toggleReply }
 							/>
