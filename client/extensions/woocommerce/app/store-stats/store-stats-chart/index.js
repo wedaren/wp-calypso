@@ -9,8 +9,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 import page from 'page';
-import { findIndex, find } from 'lodash';
-import { moment } from 'i18n-calypso';
+import { findIndex } from 'lodash';
+import { moment, translate } from 'i18n-calypso';
 
 /**
  * Internal dependencies
@@ -87,10 +87,9 @@ class StoreStatsChart extends Component {
 			},
 		];
 		if ( selectedTab.attr === 'gross_sales' ) {
-			const netSalesTab = find( tabs, tab => tab.attr === 'net_sales' );
 			data.push( {
 				value: formatCurrency( item.net_sales, item.currency ),
-				label: netSalesTab.label,
+				label: translate( 'Net Sales' ),
 			} );
 		}
 		return data;
@@ -121,7 +120,15 @@ class StoreStatsChart extends Component {
 		const selectedIndex = findIndex( data, d => d.period === selectedDate );
 		return (
 			<Card className="store-stats-chart stats-module">
-				<Legend activeTab={ selectedTab } />
+				{ selectedTab.attr === 'gross_sales' ? (
+					<Legend
+						activeTab={ selectedTab }
+						availableCharts={ [ 'net_sales' ] }
+						tabs={ [ { label: translate( 'Net Sales' ), attr: 'net_sales' } ] }
+					/>
+				) : (
+					<Legend activeTab={ selectedTab } />
+				) }
 				<ElementChart loading={ isLoading } data={ chartData } barClick={ this.barClick } />
 				<Tabs data={ chartData }>
 					{ tabs.map( ( tab, tabIndex ) => {
@@ -137,7 +144,7 @@ class StoreStatsChart extends Component {
 								<Tab
 									key={ tab.attr }
 									index={ tabIndex }
-									label={ tab.label }
+									label={ tab.tabLabel || tab.label }
 									selected={ tabIndex === selectedTabIndex }
 									tabClick={ this.tabClick }
 								>
