@@ -82,7 +82,7 @@ export function items( state = null, action ) {
 			}
 			// SITES_RECEIVE occurs when we receive the entire set of user
 			// sites (replace existing state). Otherwise merge into state.
-			const initialNextState = SITES_RECEIVE === action.type || state === null ? {} : state;
+			const initialNextState = SITES_RECEIVE === action.type ? {} : state;
 
 			return reduce(
 				sites,
@@ -110,12 +110,15 @@ export function items( state = null, action ) {
 					memo[ site.ID ] = transformedSite;
 					return memo;
 				},
-				initialNextState
+				initialNextState || {}
 			);
 
 		case SITE_DELETE_RECEIVE:
 		case JETPACK_DISCONNECT_RECEIVE:
-			return state !== null ? omit( state, action.siteId ) : state;
+			if ( state === null ) {
+				return state;
+			}
+			return omit( state, action.siteId );
 
 		case THEME_ACTIVATE_SUCCESS: {
 			if ( state === null ) {
