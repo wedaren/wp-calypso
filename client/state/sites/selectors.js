@@ -45,7 +45,7 @@ import { isSiteUpgradeable, getSiteOptions, getSitesItems } from 'state/selector
  * @return {?Object}        Site object
  */
 export const getRawSite = ( state, siteId ) => {
-	return get( state, [ 'sites', 'items', siteId ], null );
+	return getSitesItems( state )[ siteId ] || null;
 };
 
 /**
