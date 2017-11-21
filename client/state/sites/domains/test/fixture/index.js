@@ -36,7 +36,7 @@ export const DOMAIN_PRIMARY = {
 	googleAppsSubscription: {
 		status: 'no_subscription',
 	},
-	hasPrivacyProtection: false,
+	hasPrivacyProtectionProduct: false,
 	privacyAvailable: false,
 	hasRegistration: false,
 	hasZone: true,
@@ -76,7 +76,7 @@ export const DOMAIN_NOT_PRIMARY = {
 	googleAppsSubscription: {
 		status: 'no_subscription',
 	},
-	hasPrivacyProtection: false,
+	hasPrivacyProtectionProduct: false,
 	privacyAvailable: false,
 	hasRegistration: false,
 	hasZone: false,
@@ -118,7 +118,7 @@ export const REST_API_SITE_DOMAIN_FIRST = {
 	google_apps_subscription: {
 		status: 'no_subscription',
 	},
-	has_private_registration: false,
+	has_private_registration_product: false,
 	privacyAvailable: false,
 	has_registration: false,
 	has_zone: true,
@@ -132,7 +132,7 @@ export const REST_API_SITE_DOMAIN_FIRST = {
 	pending_registration_time: '',
 	pending_whois_update: false,
 	primary_domain: true,
-	private_domain: false,
+	is_whois_data_private: false,
 	registrar: '',
 	registration_date: '2016-03-09T00:00:00+00:00',
 	subscription_id: SUBSCRIPTION_ID_FIRST,
@@ -156,7 +156,7 @@ export const REST_API_SITE_DOMAIN_SECOND = {
 	google_apps_subscription: {
 		status: 'no_subscription',
 	},
-	has_private_registration: false,
+	has_private_registration_product: false,
 	privacyAvailable: false,
 	has_registration: false,
 	has_zone: false,
@@ -169,7 +169,7 @@ export const REST_API_SITE_DOMAIN_SECOND = {
 	pending_registration_time: '',
 	pending_whois_update: false,
 	primary_domain: false,
-	private_domain: false,
+	is_whois_data_private: false,
 	registrar: '',
 	registration_date: '',
 	subscription_id: SUBSCRIPTION_ID_SECOND,

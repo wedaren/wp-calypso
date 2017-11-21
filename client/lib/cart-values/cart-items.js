@@ -831,7 +831,7 @@ export function isTransfer( cartItem ) {
  * @returns {boolean} true if item supports privacy
  */
 export function privacyAvailable( cartItem ) {
-	return get( cartItem, 'extra.privacy_available', true );
+	return get( cartItem, 'extra.is_privacy_product_purchase_allowed', true );
 }
 
 /**

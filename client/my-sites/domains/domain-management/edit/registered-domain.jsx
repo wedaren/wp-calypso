@@ -69,11 +69,12 @@ const RegisteredDomain = createReactClass( {
 
 	getPrivacyProtection() {
 		const {
-				hasPrivacyProtection,
-				privateDomain,
-				privacyAvailable,
+				hasPrivacyProtectionProduct,
 				name,
 				pendingTransfer,
+				privacyEnabled,
+				privacyAvailable,
+				// privacyIncludedByDefault,
 			} = this.props.domain,
 			{ slug } = this.props.selectedSite,
 			{ translate } = this.props,
@@ -93,8 +94,8 @@ const RegisteredDomain = createReactClass( {
 					context: 'An icon label when domain is pending transfer.',
 				} ),
 			} );
-		} else if ( hasPrivacyProtection ) {
-			if ( privateDomain ) {
+		} else if ( hasPrivacyProtectionProduct ) {
+			if ( privacyEnabled ) {
 				label = this.getLabel( {
 					status: 'is-success',
 					icon: 'lock',
