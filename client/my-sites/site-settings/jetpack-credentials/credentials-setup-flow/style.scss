@@ -45,23 +45,3 @@
 .credentials-setup-flow__tos-buttons .is-borderless {
 	margin-right: 15px;
 }
-
-.credentials-setup-flow__footer-popover-link {
-	cursor: pointer;
-}
-
-.credentials-setup-flow__footer-popover-icon {
-	position: relative;
-	top: 3px;
-	left: -6px;
-}
-
-.credentials-setup-flow__footer-popover {
-	.popover__inner {
-		color: darken( $gray, 20% );
-		font-size: 13px;
-		max-width: 240px;
-		padding: 16px;
-		text-align: left;
-	}
-}
