@@ -133,6 +133,8 @@ export getSharingButtons from './get-sharing-buttons';
 export getSimplePayments from './get-simple-payments';
 export getSiteChecklist from './get-site-checklist';
 export getSiteComment from './get-site-comment';
+export getSiteCommentParentDepth from './get-site-comment-parent-depth';
+export getSiteCommentRepliesTree from './get-site-comment-replies-tree';
 export getSiteComments from './get-site-comments';
 export getSiteCommentsTree from './get-site-comments-tree';
 export getSiteConnectionStatus from './get-site-connection-status';
