@@ -474,6 +474,9 @@ class ActivityLog extends Component {
 			return null;
 		}
 
+		const lastLogTs = get( last( logs ), [ 'activityTs' ], -Infinity );
+		const monthStartTs = startOfMonth.clone().valueOf();
+
 		return (
 			<StatsPeriodNavigation
 				date={ startOfMonth }
@@ -482,6 +485,7 @@ class ActivityLog extends Component {
 				}
 				period="month"
 				url={ `/stats/activity/${ slug }` }
+				hidePreviousArrow={ lastLogTs <= monthStartTs }
 			>
 				<DatePicker isActivity={ true } period="month" date={ startOfMonth } query={ query } />
 			</StatsPeriodNavigation>
