@@ -1,4 +1,6 @@
 /**
+ * **** WARNING: No ES6 modules here. Not transpiled! ****
+ *
  * @format
  */
 
