@@ -14,8 +14,8 @@ import formatCurrency from 'lib/format-currency';
 import FormLabel from 'components/forms/form-label';
 import FormRadio from 'components/forms/form-radio';
 import FormCheckbox from 'components/forms/form-checkbox';
+import { areProductsLoading, getAllProducts } from 'woocommerce/state/sites/products/selectors';
 import { getProductCategories } from 'woocommerce/state/sites/product-categories/selectors';
-import { getPromotionableProducts } from 'woocommerce/state/selectors/promotions';
 import { getSelectedSiteWithFallback } from 'woocommerce/state/sites/selectors';
 import Search from 'components/search';
 
@@ -291,7 +291,8 @@ class AppliesToFilteredList extends React.Component {
 function mapStateToProps( state ) {
 	const site = getSelectedSiteWithFallback( state );
 	const siteId = ( site ? site.ID : null );
-	const products = getPromotionableProducts( state, siteId );
+	const productsLoading = areProductsLoading( state, siteId );
+	const products = ( productsLoading ? null : getAllProducts( state, siteId ) );
 	const productCategories = getProductCategories( state, siteId );
 
 	// TODO: This is temporary until we can support variable products.
