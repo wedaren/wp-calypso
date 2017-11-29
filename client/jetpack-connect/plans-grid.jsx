@@ -10,11 +10,11 @@ import { localize } from 'i18n-calypso';
 /**
  * Internal dependencies
  */
-import Banner from 'components/banner';
-import Main from 'components/main';
-import FormattedHeader from 'components/formatted-header';
-import PlansFeaturesMain from 'my-sites/plans-features-main';
-import { abtest } from 'lib/abtest';
+import Banner from 'client/components/banner';
+import Main from 'client/components/main';
+import FormattedHeader from 'client/components/formatted-header';
+import PlansFeaturesMain from 'client/my-sites/plans-features-main';
+import { abtest } from 'client/lib/abtest';
 /**
  * Constants
  */

@@ -12,14 +12,14 @@ import page from 'page';
  */
 import HelpButton from './help-button';
 import JetpackConnectHappychatButton from './happychat-button';
-import LoggedOutFormLinks from 'components/logged-out-form/links';
+import LoggedOutFormLinks from 'client/components/logged-out-form/links';
 import PlansGrid from './plans-grid';
 import PlansSkipButton from './plans-skip-button';
-import { recordTracksEvent } from 'state/analytics/actions';
-import { getJetpackSiteByUrl } from 'state/jetpack-connect/selectors';
-import { getSite, isRequestingSites } from 'state/sites/selectors';
-import QueryPlans from 'components/data/query-plans';
-import addQueryArgs from 'lib/route/add-query-args';
+import { recordTracksEvent } from 'client/state/analytics/actions';
+import { getJetpackSiteByUrl } from 'client/state/jetpack-connect/selectors';
+import { getSite, isRequestingSites } from 'client/state/sites/selectors';
+import QueryPlans from 'client/components/data/query-plans';
+import addQueryArgs from 'client/lib/route/add-query-args';
 import { storePlan } from './persistence-utils';
 
 const CALYPSO_JETPACK_CONNECT = '/jetpack/connect';

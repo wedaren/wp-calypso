@@ -16,11 +16,11 @@ import Gridicon from 'gridicons';
  * Internal dependencies
  */
 import { isEnabled } from 'config';
-import { ga } from 'lib/analytics';
-import { preload } from 'sections-preload';
-import { userCan } from 'lib/posts/utils';
-import { isPublicizeEnabled } from 'state/selectors';
-import { getSiteSlug, isSitePreviewable } from 'state/sites/selectors';
+import { ga } from 'client/lib/analytics';
+import { preload } from 'client/sections-preload';
+import { userCan } from 'client/lib/posts/utils';
+import { isPublicizeEnabled } from 'client/state/selectors';
+import { getSiteSlug, isSitePreviewable } from 'client/state/sites/selectors';
 
 function preloadEditor() {
 	preload( 'post-editor' );

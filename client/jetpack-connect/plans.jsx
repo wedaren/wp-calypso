@@ -15,7 +15,7 @@ import { localize } from 'i18n-calypso';
 import { clearPlan, retrievePlan } from './persistence-utils';
 import HelpButton from './help-button';
 import JetpackConnectHappychatButton from './happychat-button';
-import LoggedOutFormLinks from 'components/logged-out-form/links';
+import LoggedOutFormLinks from 'client/components/logged-out-form/links';
 import PlansGrid from './plans-grid';
 import PlansSkipButton from './plans-skip-button';
 import {
@@ -23,24 +23,24 @@ import {
 	PLAN_JETPACK_PREMIUM,
 	PLAN_JETPACK_PERSONAL,
 	PLAN_JETPACK_BUSINESS,
-} from 'lib/plans/constants';
-import { recordTracksEvent } from 'state/analytics/actions';
-import { getCurrentUser } from 'state/current-user/selectors';
-import { addItem } from 'lib/upgrades/actions';
-import { goBackToWpAdmin, completeFlow } from 'state/jetpack-connect/actions';
-import QueryPlans from 'components/data/query-plans';
-import QuerySitePlans from 'components/data/query-site-plans';
-import { getPlanBySlug } from 'state/plans/selectors';
-import { getSelectedSite } from 'state/ui/selectors';
+} from 'client/lib/plans/constants';
+import { recordTracksEvent } from 'client/state/analytics/actions';
+import { getCurrentUser } from 'client/state/current-user/selectors';
+import { addItem } from 'client/lib/upgrades/actions';
+import { goBackToWpAdmin, completeFlow } from 'client/state/jetpack-connect/actions';
+import QueryPlans from 'client/components/data/query-plans';
+import QuerySitePlans from 'client/components/data/query-site-plans';
+import { getPlanBySlug } from 'client/state/plans/selectors';
+import { getSelectedSite } from 'client/state/ui/selectors';
 import {
 	canCurrentUser,
 	getJetpackConnectRedirectAfterAuth,
 	isRtl,
 	isSiteAutomatedTransfer,
-} from 'state/selectors';
-import { getFlowType, isCalypsoStartedConnection } from 'state/jetpack-connect/selectors';
-import { mc } from 'lib/analytics';
-import { isCurrentPlanPaid, isJetpackSite } from 'state/sites/selectors';
+} from 'client/state/selectors';
+import { getFlowType, isCalypsoStartedConnection } from 'client/state/jetpack-connect/selectors';
+import { mc } from 'client/lib/analytics';
+import { isCurrentPlanPaid, isJetpackSite } from 'client/state/sites/selectors';
 
 const CALYPSO_REDIRECTION_PAGE = '/posts/';
 const CALYPSO_PLANS_PAGE = '/plans/my-plan/';
