@@ -13,10 +13,10 @@ import { localize } from 'i18n-calypso';
  * Internal dependencies
  */
 import {
-	clearPlan,
 	isCalypsoStartedConnection,
 	retrieveFlowType,
 	retrievePlan,
+	storePlan,
 } from './persistence-utils';
 import HelpButton from './help-button';
 import JetpackConnectHappychatButton from './happychat-button';
@@ -51,8 +51,6 @@ const CALYPSO_PLANS_PAGE = '/plans/my-plan/';
 const JETPACK_ADMIN_PATH = '/wp-admin/admin.php?page=jetpack';
 
 class Plans extends Component {
-	static defaultProps = { siteSlug: '*' };
-
 	static propTypes = {
 		// Connected props
 		isAutomatedTransfer: PropTypes.bool, // null indicates unknown
@@ -75,7 +73,6 @@ class Plans extends Component {
 			'isCalypsoStartedConnection',
 			'notJetpack',
 			'selectedPlan',
-			'selectedPlanSlug',
 		];
 
 		if ( ! isEqual( pick( this.props, propsToCompare ), pick( nextProps, propsToCompare ) ) ) {
@@ -88,8 +85,8 @@ class Plans extends Component {
 			this.props.goBackToWpAdmin( props.selectedSite.URL + JETPACK_ADMIN_PATH );
 			return true;
 		}
-		if ( props.selectedPlanSlug ) {
-			this.autoselectPlan( props );
+		if ( props.selectedPlan ) {
+			this.selectPlan( props.selectedPlan );
 			return true;
 		}
 		if ( props.hasPlan || props.notJetpack ) {
@@ -109,8 +106,7 @@ class Plans extends Component {
 
 	handleSkipButtonClick = () => {
 		this.props.recordTracksEvent( 'calypso_jpc_plans_skip_button_click' );
-
-		this.selectFreeJetpackPlan();
+		storePlan( PLAN_JETPACK_FREE );
 	};
 
 	handleHelpButtonClick = () => {
@@ -132,50 +128,25 @@ class Plans extends Component {
 		this.props.completeFlow();
 	}
 
-	autoselectPlan( props ) {
-		const { selectedPlan, selectedPlanSlug } = props;
-
-		if ( selectedPlanSlug === PLAN_JETPACK_FREE || selectedPlanSlug === 'free' ) {
-			this.selectFreeJetpackPlan();
-			return;
-		}
-		if ( selectedPlan ) {
-			this.selectPlan( selectedPlan );
-			return;
-		}
-	}
-
-	selectFreeJetpackPlan() {
-		clearPlan();
-		this.props.recordTracksEvent( 'calypso_jpc_plans_submit_free', {
-			user: this.props.userId,
-		} );
-		mc.bumpStat( 'calypso_jpc_plan_selection', 'jetpack_free' );
-
-		if ( this.props.calypsoStartedConnection ) {
-			this.redirect( CALYPSO_REDIRECTION_PAGE );
-		} else {
-			this.redirectToWpAdmin( this.props );
-		}
-	}
-
 	selectPlan = cartItem => {
 		const checkoutPath = `/checkout/${ this.props.selectedSite.slug }`;
-		clearPlan();
-
-		if ( ! cartItem || cartItem.product_slug === PLAN_JETPACK_FREE ) {
-			return this.selectFreeJetpackPlan();
-		}
 
 		if ( cartItem.product_slug === get( this.props, 'selectedSite.plan.product_slug', null ) ) {
 			return this.redirect( CALYPSO_PLANS_PAGE );
 		}
 
-		this.props.recordTracksEvent( 'calypso_jpc_plans_submit', {
-			user: this.props.userId,
-			product_slug: cartItem.product_slug,
-		} );
-		mc.bumpStat( 'calypso_jpc_plan_selection', cartItem.product_slug );
+		if ( ! cartItem || cartItem.product_slug === PLAN_JETPACK_FREE ) {
+			this.props.recordTracksEvent( 'calypso_jpc_plans_submit_free', {
+				user: this.props.userId,
+			} );
+			mc.bumpStat( 'calypso_jpc_plan_selection', 'jetpack_free' );
+		} else {
+			this.props.recordTracksEvent( 'calypso_jpc_plans_submit', {
+				user: this.props.userId,
+				product_slug: cartItem.product_slug,
+			} );
+			mc.bumpStat( 'calypso_jpc_plan_selection', cartItem.product_slug );
+		}
 
 		addItem( cartItem );
 		this.props.completeFlow();
