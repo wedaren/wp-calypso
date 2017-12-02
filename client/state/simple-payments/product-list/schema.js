@@ -46,3 +46,9 @@ export const metaKeyToSchemaKeyMap = Object.keys( metadataSchema ).reduce( ( pre
 }, {} );
 
 export default productListSchema;
+
+export const {
+    type,
+    patternProperties,
+    additionalProperties
+} = productListSchema;

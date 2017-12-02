@@ -1,7 +1,7 @@
 /** @format */
 /* eslint-disable */
 
-export default {
+const exported = {
 	id: 31,
 	name: 'Sticker',
 	slug: 'sticker',
@@ -14,10 +14,13 @@ export default {
 	status: 'publish',
 	featured: false,
 	catalog_visibility: 'visible',
+
 	description:
 		'<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n',
+
 	short_description:
 		'<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n',
+
 	sku: '',
 	price: '20',
 	regular_price: '20',
@@ -26,8 +29,10 @@ export default {
 	date_on_sale_from_gmt: null,
 	date_on_sale_to: null,
 	date_on_sale_to_gmt: null,
+
 	price_html:
 		'<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>20.40</span>',
+
 	on_sale: false,
 	purchasable: true,
 	total_sales: 0,
@@ -48,11 +53,13 @@ export default {
 	backordered: false,
 	sold_individually: false,
 	weight: '',
+
 	dimensions: {
 		length: '',
 		width: '',
 		height: '',
 	},
+
 	shipping_required: true,
 	shipping_taxable: true,
 	shipping_class: '',
@@ -75,3 +82,73 @@ export default {
 	menu_order: 0,
 	meta_data: [],
 };
+
+export default exported;
+
+export const {
+	id,
+	name,
+	slug,
+	permalink,
+	date_created,
+	date_created_gmt,
+	date_modified,
+	date_modified_gmt,
+	type,
+	status,
+	featured,
+	catalog_visibility,
+	description,
+	short_description,
+	sku,
+	price,
+	regular_price,
+	sale_price,
+	date_on_sale_from,
+	date_on_sale_from_gmt,
+	date_on_sale_to,
+	date_on_sale_to_gmt,
+	price_html,
+	on_sale,
+	purchasable,
+	total_sales,
+	virtual,
+	downloadable,
+	downloads,
+	download_limit,
+	download_expiry,
+	external_url,
+	button_text,
+	tax_status,
+	tax_class,
+	manage_stock,
+	stock_quantity,
+	in_stock,
+	backorders,
+	backorders_allowed,
+	backordered,
+	sold_individually,
+	weight,
+	dimensions,
+	shipping_required,
+	shipping_taxable,
+	shipping_class,
+	shipping_class_id,
+	reviews_allowed,
+	average_rating,
+	rating_count,
+	related_ids,
+	upsell_ids,
+	cross_sell_ids,
+	parent_id,
+	purchase_note,
+	categories,
+	tags,
+	images,
+	attributes,
+	default_attributes,
+	variations,
+	grouped_products,
+	menu_order,
+	meta_data,
+} = exported;

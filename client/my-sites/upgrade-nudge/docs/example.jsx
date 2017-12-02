@@ -34,3 +34,7 @@ const UpgradeNudgeExample = () => {
 UpgradeNudgeExample.displayName = 'UpgradeNudgeExample';
 
 export default UpgradeNudgeExample;
+
+export const {
+    displayName
+} = UpgradeNudgeExample;

@@ -53,3 +53,5 @@ CompactPost.propTypes = {
 };
 
 export default CompactPost;
+
+export const { propTypes } = CompactPost;

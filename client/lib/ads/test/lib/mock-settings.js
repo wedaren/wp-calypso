@@ -1,5 +1,5 @@
 /** @format */
-export default {
+const exported = {
 	settings: {
 		paypal: 'foo@bar.com',
 		who_owns: 'person',
@@ -16,3 +16,7 @@ export default {
 		optimized_ads: true,
 	},
 };
+
+export default exported;
+
+export const { settings } = exported;

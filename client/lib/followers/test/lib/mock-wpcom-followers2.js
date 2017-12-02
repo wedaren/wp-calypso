@@ -1,11 +1,12 @@
 /** @format */
-export default {
-	page: 1,
-	pages: 2,
-	total: 4,
-	total_wpcom: 4,
-	total_email: 1,
-	subscribers: [
+const exported = {
+    page: 1,
+    pages: 2,
+    total: 4,
+    total_wpcom: 4,
+    total_email: 1,
+
+    subscribers: [
 		{
 			ID: 501,
 			avatar: 'https://1.gravatar.com/avatar',
@@ -20,5 +21,16 @@ export default {
 			label: 'Test Person502',
 			display_name: 'test502',
 		},
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    page,
+    pages,
+    total,
+    total_wpcom,
+    total_email,
+    subscribers
+} = exported;

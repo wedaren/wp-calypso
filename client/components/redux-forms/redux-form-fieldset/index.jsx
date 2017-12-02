@@ -56,3 +56,5 @@ ReduxFormFieldset.propTypes = {
 };
 
 export default ReduxFormFieldset;
+
+export const { propTypes } = ReduxFormFieldset;

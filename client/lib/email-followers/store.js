@@ -196,3 +196,7 @@ EmailFollowersStore.dispatchToken = Dispatcher.register( function( payload ) {
 emitter( EmailFollowersStore );
 
 export default EmailFollowersStore;
+
+export const {
+    dispatchToken
+} = EmailFollowersStore;

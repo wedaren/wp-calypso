@@ -13,8 +13,8 @@ const debug = debugFactory( 'calypso:mailing-lists' );
  */
 import wpcom from 'lib/wp';
 
-export default {
-	deleteSubscriber( category, emailAddress, hmac, context ) {
+const exported = {
+    deleteSubscriber( category, emailAddress, hmac, context ) {
 		return new Promise( function( resolve, reject ) {
 			wpcom
 				.undocumented()
@@ -31,7 +31,7 @@ export default {
 		} );
 	},
 
-	addSubscriber( category, emailAddress, hmac, context ) {
+    addSubscriber( category, emailAddress, hmac, context ) {
 		return new Promise( function( resolve, reject ) {
 			wpcom
 				.undocumented()
@@ -46,5 +46,12 @@ export default {
 					resolve( result );
 				} );
 		} );
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    deleteSubscriber,
+    addSubscriber
+} = exported;

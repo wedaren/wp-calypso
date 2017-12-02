@@ -51,6 +51,9 @@ export const handleLikeFailure = ( { dispatch }, { siteId, postId, commentId } )
 	dispatch( errorNotice( translate( 'Could not like this comment' ) ) );
 };
 
-export default {
-	[ COMMENTS_LIKE ]: [ dispatchRequest( likeComment, updateCommentLikes, handleLikeFailure ) ],
+const exported = {
+    [ COMMENTS_LIKE ]: [ dispatchRequest( likeComment, updateCommentLikes, handleLikeFailure ) ]
 };
+
+export default exported;
+export const {} = exported;

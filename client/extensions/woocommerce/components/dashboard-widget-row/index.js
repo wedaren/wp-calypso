@@ -24,3 +24,5 @@ DashboardWidgetRow.propTypes = {
 };
 
 export default DashboardWidgetRow;
+
+export const { propTypes } = DashboardWidgetRow;

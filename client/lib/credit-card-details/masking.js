@@ -84,7 +84,10 @@ function unmaskField( fieldName, previousValue, nextValue ) {
 	return fieldMask.unmask( fieldMask.mask( previousValue, nextValue ) );
 }
 
-export default {
-	maskField: maskField,
-	unmaskField: unmaskField,
+const exported = {
+    maskField: maskField,
+    unmaskField: unmaskField
 };
+
+export default exported;
+export { maskField, unmaskField };

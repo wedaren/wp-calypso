@@ -38,12 +38,21 @@ import {
 	WOOCOMMERCE_PRODUCT_ACTION_LIST_CREATE,
 } from 'woocommerce/state/action-types';
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_PRODUCT_EDIT ]: [ actionAppendProductVariations ],
 	[ WOOCOMMERCE_PRODUCT_ATTRIBUTE_EDIT ]: [ actionAppendProductVariations ],
 	[ WOOCOMMERCE_PRODUCT_CATEGORY_EDIT ]: [ handleProductCategoryEdit ],
 	[ WOOCOMMERCE_PRODUCT_ACTION_LIST_CREATE ]: [ handleProductActionListCreate ],
 };
+
+export default exported;
+
+export const {
+	WOOCOMMERCE_PRODUCT_EDIT,
+	WOOCOMMERCE_PRODUCT_ATTRIBUTE_EDIT,
+	WOOCOMMERCE_PRODUCT_CATEGORY_EDIT,
+	WOOCOMMERCE_PRODUCT_ACTION_LIST_CREATE,
+} = exported;
 
 export function actionAppendProductVariations( { getState }, action ) {
 	const { siteId } = action;

@@ -20,12 +20,21 @@ import {
 	WOOCOMMERCE_PRODUCT_VARIATIONS_REQUEST,
 } from 'woocommerce/state/action-types';
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_PRODUCT_VARIATION_CREATE ]: [ handleProductVariationCreate ],
 	[ WOOCOMMERCE_PRODUCT_VARIATION_UPDATE ]: [ handleProductVariationUpdate ],
 	[ WOOCOMMERCE_PRODUCT_VARIATION_DELETE ]: [ handleProductVariationDelete ],
 	[ WOOCOMMERCE_PRODUCT_VARIATIONS_REQUEST ]: [ handleProductVariationsRequest ],
 };
+
+export default exported;
+
+export const {
+	WOOCOMMERCE_PRODUCT_VARIATION_CREATE,
+	WOOCOMMERCE_PRODUCT_VARIATION_UPDATE,
+	WOOCOMMERCE_PRODUCT_VARIATION_DELETE,
+	WOOCOMMERCE_PRODUCT_VARIATIONS_REQUEST,
+} = exported;
 
 export function handleProductVariationsRequest( store, action ) {
 	const { siteId, productId, successAction, failureAction } = action;

@@ -70,3 +70,8 @@ var ViewersActions = {
 };
 
 export default ViewersActions;
+
+export const {
+    fetch,
+    remove
+} = ViewersActions;

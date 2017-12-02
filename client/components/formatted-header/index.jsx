@@ -34,3 +34,5 @@ FormattedHeader.propTypes = {
 };
 
 export default FormattedHeader;
+
+export const { propTypes } = FormattedHeader;

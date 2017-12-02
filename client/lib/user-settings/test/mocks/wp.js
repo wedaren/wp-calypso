@@ -21,9 +21,17 @@ const me = function() {
 	};
 };
 
-export default {
-	me,
-	undocumented() {
+const exported = {
+    me,
+
+    undocumented() {
 		return { me };
-	},
+	}
 };
+
+export default exported;
+export { me };
+
+export const {
+    undocumented
+} = exported;

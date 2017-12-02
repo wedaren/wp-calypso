@@ -21,3 +21,7 @@ const Actions = {
 };
 
 export default Actions;
+
+export const {
+    removeNotices
+} = Actions;

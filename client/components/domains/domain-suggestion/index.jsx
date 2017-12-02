@@ -77,3 +77,5 @@ DomainSuggestion.Placeholder = function() {
 };
 
 export default DomainSuggestion;
+
+export const { Placeholder } = DomainSuggestion;

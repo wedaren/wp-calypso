@@ -164,13 +164,16 @@ function externalRedirect( url ) {
 	window.location = url;
 }
 
-export default {
-	getSiteFragment: getSiteFragment,
-	addSiteFragment: addSiteFragment,
-	getStatsDefaultSitePage: getStatsDefaultSitePage,
-	getStatsPathForTab: getStatsPathForTab,
-	sectionify: sectionify,
-	sectionifyWithRoutes: sectionifyWithRoutes,
-	mapPostStatus: mapPostStatus,
-	externalRedirect: externalRedirect,
+const exported = {
+    getSiteFragment: getSiteFragment,
+    addSiteFragment: addSiteFragment,
+    getStatsDefaultSitePage: getStatsDefaultSitePage,
+    getStatsPathForTab: getStatsPathForTab,
+    sectionify: sectionify,
+    sectionifyWithRoutes: sectionifyWithRoutes,
+    mapPostStatus: mapPostStatus,
+    externalRedirect: externalRedirect
 };
+
+export default exported;
+export { getSiteFragment, addSiteFragment, getStatsDefaultSitePage, getStatsPathForTab, sectionify, sectionifyWithRoutes, mapPostStatus, externalRedirect };

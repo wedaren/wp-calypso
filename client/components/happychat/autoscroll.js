@@ -11,7 +11,7 @@
  * @format
  */
 
-export default {
+const exported = {
 	componentWillMount() {
 		this._autoscroll_enabled = true;
 		window.addEventListener( 'resize', this.scrollToBottom );
@@ -71,3 +71,16 @@ export default {
 		}
 	},
 };
+
+export default exported;
+
+export const {
+	componentWillMount,
+	componentDidMount,
+	componentWillUnmount,
+	componentDidUpdate,
+	setupAutoscroll,
+	_autoscroll_stop_listening,
+	scrollToBottom,
+	_autoscroll_detectScroll,
+} = exported;

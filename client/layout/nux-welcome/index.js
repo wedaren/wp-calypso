@@ -64,3 +64,12 @@ Emitter( nuxWelcome );
  * Expose `nuxWelcome` singleton
  */
 export default nuxWelcome;
+
+export const {
+	tempWelcome,
+	showWelcome,
+	setWelcome,
+	getWelcome,
+	clearTempWelcome,
+	closeWelcome,
+} = nuxWelcome;

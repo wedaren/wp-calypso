@@ -109,3 +109,7 @@ PremiumPlanDetails.propTypes = {
 };
 
 export default PremiumPlanDetails;
+
+export const {
+    propTypes
+} = PremiumPlanDetails;

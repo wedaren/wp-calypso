@@ -33,3 +33,7 @@ GetDotBlogPlansStep.propTypes = {
 };
 
 export default GetDotBlogPlansStep;
+
+export const {
+    propTypes
+} = GetDotBlogPlansStep;

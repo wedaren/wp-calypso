@@ -58,6 +58,12 @@ export const fetchTimezones = ( { dispatch }, action ) =>
 export const addTimezones = ( { dispatch }, action, data ) =>
 	dispatch( timezonesReceive( fromApi( data ) ) );
 
-export default {
-	[ TIMEZONES_REQUEST ]: [ dispatchRequest( fetchTimezones, addTimezones ) ],
+const exported = {
+    [ TIMEZONES_REQUEST ]: [ dispatchRequest( fetchTimezones, addTimezones ) ]
 };
+
+export default exported;
+
+export const {
+    TIMEZONES_REQUEST
+} = exported;

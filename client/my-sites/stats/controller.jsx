@@ -106,12 +106,12 @@ function getSiteFilters( siteId ) {
 	return filters;
 }
 
-export default {
-	resetFirstView( context ) {
+const exported = {
+    resetFirstView( context ) {
 		context.store.dispatch( savePreference( 'firstViewHistory', [] ) );
 	},
 
-	redirectToDefaultSitePage: function( context, next ) {
+    redirectToDefaultSitePage: function( context, next ) {
 		const siteFragment = route.getSiteFragment( context.path );
 
 		if ( siteFragment ) {
@@ -124,7 +124,7 @@ export default {
 		}
 	},
 
-	insights: function( context ) {
+    insights: function( context ) {
 		const FollowList = require( 'lib/follow-list' );
 		let siteId = context.params.site_id;
 		const basePath = route.sectionify( context.path );
@@ -150,7 +150,7 @@ export default {
 		);
 	},
 
-	overview: function( context, next ) {
+    overview: function( context, next ) {
 		const filters = function() {
 			return [
 				{
@@ -210,7 +210,7 @@ export default {
 		}
 	},
 
-	site: function( context, next ) {
+    site: function( context, next ) {
 		let siteId = context.params.site_id;
 		const filters = getSiteFilters( siteId );
 		const queryOptions = context.query;
@@ -294,7 +294,7 @@ export default {
 		}
 	},
 
-	summary: function( context, next ) {
+    summary: function( context, next ) {
 		let siteId = context.params.site_id;
 		const siteFragment = route.getSiteFragment( context.path );
 		const queryOptions = context.query;
@@ -396,7 +396,7 @@ export default {
 		}
 	},
 
-	post: function( context ) {
+    post: function( context ) {
 		let siteId = context.params.site_id;
 		const postId = parseInt( context.params.post_id, 10 );
 		const pathParts = context.path.split( '/' );
@@ -430,7 +430,7 @@ export default {
 		}
 	},
 
-	follows: function( context ) {
+    follows: function( context ) {
 		let siteId = context.params.site_id;
 		const FollowList = require( 'lib/follow-list' );
 		let pageNum = context.params.page_num;
@@ -478,7 +478,7 @@ export default {
 		}
 	},
 
-	activityLog: function( context ) {
+    activityLog: function( context ) {
 		const state = context.store.getState();
 		const siteId = getSelectedSiteId( state );
 		const isJetpack = isJetpackSite( state, siteId );
@@ -507,5 +507,19 @@ export default {
 				context.store
 			);
 		}
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    resetFirstView,
+    redirectToDefaultSitePage,
+    insights,
+    overview,
+    site,
+    summary,
+    post,
+    follows,
+    activityLog
+} = exported;

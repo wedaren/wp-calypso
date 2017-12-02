@@ -372,26 +372,29 @@ function showFieldValidationLoading( formState, fieldName ) {
 	);
 }
 
-export default {
-	Controller: Controller,
-	getFieldValue: getFieldValue,
-	setFieldsValidating: setFieldsValidating,
-	setFieldErrors: setFieldErrors,
-	getErrorMessages: getErrorMessages,
-	getInvalidFields: getInvalidFields,
-	getFieldErrorMessages: getFieldErrorMessages,
-	hasErrors: hasErrors,
-	isFieldDisabled: isFieldDisabled,
-	isFieldInvalid: isFieldInvalid,
-	isFieldPendingValidation: isFieldPendingValidation,
-	isFieldValidating: isFieldValidating,
-	getAllFieldValues: getAllFieldValues,
-	isSubmitButtonDisabled: isSubmitButtonDisabled,
-	isFieldValid: isFieldValid,
-	isFieldPossiblyValid: isFieldPossiblyValid,
-	showFieldValidationLoading: showFieldValidationLoading,
-	createInitialFormState: createInitialFormState,
-	createNullFieldValues: createNullFieldValues,
-	initializeFields: initializeFields,
-	changeFieldValue: changeFieldValue,
+const exported = {
+    Controller: Controller,
+    getFieldValue: getFieldValue,
+    setFieldsValidating: setFieldsValidating,
+    setFieldErrors: setFieldErrors,
+    getErrorMessages: getErrorMessages,
+    getInvalidFields: getInvalidFields,
+    getFieldErrorMessages: getFieldErrorMessages,
+    hasErrors: hasErrors,
+    isFieldDisabled: isFieldDisabled,
+    isFieldInvalid: isFieldInvalid,
+    isFieldPendingValidation: isFieldPendingValidation,
+    isFieldValidating: isFieldValidating,
+    getAllFieldValues: getAllFieldValues,
+    isSubmitButtonDisabled: isSubmitButtonDisabled,
+    isFieldValid: isFieldValid,
+    isFieldPossiblyValid: isFieldPossiblyValid,
+    showFieldValidationLoading: showFieldValidationLoading,
+    createInitialFormState: createInitialFormState,
+    createNullFieldValues: createNullFieldValues,
+    initializeFields: initializeFields,
+    changeFieldValue: changeFieldValue
 };
+
+export default exported;
+export { Controller, getFieldValue, setFieldsValidating, setFieldErrors, getErrorMessages, getInvalidFields, getFieldErrorMessages, hasErrors, isFieldDisabled, isFieldInvalid, isFieldPendingValidation, isFieldValidating, getAllFieldValues, isSubmitButtonDisabled, isFieldValid, isFieldPossiblyValid, showFieldValidationLoading, createInitialFormState, createNullFieldValues, initializeFields, changeFieldValue };

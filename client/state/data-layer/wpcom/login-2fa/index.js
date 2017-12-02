@@ -101,12 +101,18 @@ const makePushNotificationRequest = dispatchRequest(
 	receivedTwoFactorPushNotificationError
 );
 
-export default {
-	[ TWO_FACTOR_AUTHENTICATION_PUSH_POLL_START ]: [
+const exported = {
+    [ TWO_FACTOR_AUTHENTICATION_PUSH_POLL_START ]: [
 		( store, action ) => {
 			// We need to store to update for `getTwoFactorPushPollInProgress` selector
 			store.dispatch( bypassDataLayer( action ) );
 			return makePushNotificationRequest( store, action );
 		},
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    TWO_FACTOR_AUTHENTICATION_PUSH_POLL_START
+} = exported;

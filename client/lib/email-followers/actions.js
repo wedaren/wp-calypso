@@ -72,3 +72,8 @@ var EmailFollowersActions = {
 };
 
 export default EmailFollowersActions;
+
+export const {
+    fetchFollowers,
+    removeFollower
+} = EmailFollowersActions;

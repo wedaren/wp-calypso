@@ -54,8 +54,14 @@ export const updateCountriesSms = ( { dispatch }, action, countries ) =>
 export const showCountriesSmsLoadingError = ( { dispatch } ) =>
 	dispatch( errorNotice( translate( "We couldn't load the countries list." ) ) );
 
-export default {
-	[ COUNTRIES_SMS_FETCH ]: [
+const exported = {
+    [ COUNTRIES_SMS_FETCH ]: [
 		dispatchRequest( fetchCountriesSms, updateCountriesSms, showCountriesSmsLoadingError ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    COUNTRIES_SMS_FETCH
+} = exported;

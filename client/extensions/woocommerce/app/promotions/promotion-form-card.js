@@ -81,3 +81,7 @@ PromotionFormCard.PropTypes = {
 
 export default PromotionFormCard;
 
+export const {
+    PropTypes
+} = PromotionFormCard;
+

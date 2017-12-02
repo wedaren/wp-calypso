@@ -8,18 +8,27 @@ function returnSelf() {
 	return this;
 }
 
-export default {
-	site: returnSelf,
-	post: returnSelf,
-	undocumented: returnSelf,
-	readFeedPost: returnSelf,
-	batch: function() {
+const exported = {
+    site: returnSelf,
+    post: returnSelf,
+    undocumented: returnSelf,
+    readFeedPost: returnSelf,
+
+    batch: function() {
 		return {
 			add: returnSelf,
 			run: returnSelf,
 		};
 	},
-	me: returnSelf,
-	dismissSite: returnSelf,
-	readConversations: returnSelf,
+
+    me: returnSelf,
+    dismissSite: returnSelf,
+    readConversations: returnSelf
 };
+
+export default exported;
+export { returnSelf as site, returnSelf as post, returnSelf as undocumented, returnSelf as readFeedPost, returnSelf as me, returnSelf as dismissSite, returnSelf as readConversations };
+
+export const {
+    batch
+} = exported;

@@ -1,11 +1,13 @@
 /** @format */
-export default {
+const exported = {
 	showModal: false,
 	packageData: null,
+
 	packages: {
 		custom: [ { name: '1' }, { name: '2' }, { name: 'zBox' } ],
 		predefined: { service: [ 'box', 'box1' ], otherService: [ 'envelope' ] },
 	},
+
 	predefinedSchema: {
 		service: {
 			priority: {
@@ -24,6 +26,11 @@ export default {
 			},
 		},
 	},
+
 	pristine: true,
 	isSaving: false,
 };
+
+export default exported;
+
+export const { showModal, packageData, packages, predefinedSchema, pristine, isSaving } = exported;

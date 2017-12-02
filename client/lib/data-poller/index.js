@@ -73,9 +73,12 @@ function handleVisibilityChange() {
 	}
 }
 
-export default {
-	add: add,
-	remove: remove,
-	pauseAll: pauseAll,
-	resumePaused: resumePaused,
+const exported = {
+    add: add,
+    remove: remove,
+    pauseAll: pauseAll,
+    resumePaused: resumePaused
 };
+
+export default exported;
+export { add, remove, pauseAll, resumePaused };

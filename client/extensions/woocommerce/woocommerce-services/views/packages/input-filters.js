@@ -63,9 +63,12 @@ const parseDimensions = value => {
 	return { length, width, height };
 };
 
-export default {
+const exported = {
 	string,
 	number,
 	dimensions,
 	parseDimensions,
 };
+
+export default exported;
+export { string, number, dimensions, parseDimensions };

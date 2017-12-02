@@ -16,3 +16,5 @@ const LoginExample = () => <LoginBlock title={ 'Sign in to connect to WordPress.
 LoginExample.displayName = 'Login';
 
 export default LoginExample;
+
+export const { displayName } = LoginExample;

@@ -11,3 +11,7 @@ I18n.translate = function( string ) {
 };
 
 export default I18n;
+
+export const {
+ translate
+} = I18n;

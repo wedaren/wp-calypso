@@ -45,13 +45,19 @@ export const receiveActivityLog = ( action, data ) =>
 export const receiveActivityLogError = () =>
 	errorNotice( translate( 'Error receiving activity for site.' ) );
 
-export default {
-	[ ACTIVITY_LOG_REQUEST ]: [
+const exported = {
+    [ ACTIVITY_LOG_REQUEST ]: [
 		dispatchRequestEx( {
 			fetch: handleActivityLogRequest,
 			onSuccess: receiveActivityLog,
 			onError: receiveActivityLogError,
 			fromApi,
 		} ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    ACTIVITY_LOG_REQUEST
+} = exported;

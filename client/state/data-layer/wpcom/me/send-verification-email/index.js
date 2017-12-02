@@ -36,8 +36,14 @@ export const handleSuccess = ( { dispatch } ) => {
 	dispatch( { type: EMAIL_VERIFY_REQUEST_SUCCESS } );
 };
 
-export default {
-	[ EMAIL_VERIFY_REQUEST ]: [
+const exported = {
+    [ EMAIL_VERIFY_REQUEST ]: [
 		dispatchRequest( requestEmailVerification, handleSuccess, handleError ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    EMAIL_VERIFY_REQUEST
+} = exported;

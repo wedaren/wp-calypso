@@ -53,6 +53,12 @@ export const receiveBackupError = ( { dispatch }, { siteId }, error ) => {
 	dispatch( rewindBackupUpdateError( siteId, pick( error, [ 'error', 'status', 'message' ] ) ) );
 };
 
-export default {
-	[ REWIND_BACKUP ]: [ dispatchRequest( createBackup, receiveBackupSuccess, receiveBackupError ) ],
+const exported = {
+    [ REWIND_BACKUP ]: [ dispatchRequest( createBackup, receiveBackupSuccess, receiveBackupError ) ]
 };
+
+export default exported;
+
+export const {
+    REWIND_BACKUP
+} = exported;

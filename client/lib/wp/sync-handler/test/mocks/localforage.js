@@ -9,42 +9,62 @@ import debugFactory from 'debug';
 const debug = debugFactory( 'calypso:sync-handler:localforage-mock' );
 let localData = {};
 
-export default {
-	defineDriver() {
+const exported = {
+    defineDriver() {
 		return Promise.resolve();
 	},
-	setItem( key, data ) {
+
+    setItem( key, data ) {
 		return new Promise( resolve => {
 			debug( 'setItem: %o, (%o)', key, data );
 			localData[ key ] = data;
 			resolve();
 		} );
 	},
-	getItem( key ) {
+
+    getItem( key ) {
 		return new Promise( resolve => {
 			debug( 'getItem: %o', key );
 			resolve( localData[ key ] );
 		} );
 	},
-	removeItem( key ) {
+
+    removeItem( key ) {
 		return new Promise( resolve => {
 			debug( 'removeItem: %o', key );
 			delete localData[ key ];
 			resolve();
 		} );
 	},
-	keys() {
+
+    keys() {
 		return new Promise( resolve => {
 			const keys = Object.keys( localData );
 			debug( 'keys: %o', keys );
 			resolve( keys );
 		} );
 	},
-	getLocalData() {
+
+    getLocalData() {
 		return localData;
 	},
-	setLocalData( newData ) {
+
+    setLocalData( newData ) {
 		localData = newData;
 	},
-	config() {},
+
+    config() {}
 };
+
+export default exported;
+
+export const {
+    defineDriver,
+    setItem,
+    getItem,
+    removeItem,
+    keys,
+    getLocalData,
+    setLocalData,
+    config
+} = exported;

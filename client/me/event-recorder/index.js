@@ -6,12 +6,12 @@
 
 import analytics from 'lib/analytics';
 
-export default {
-	recordEvent: function( eventAction ) {
+const exported = {
+    recordEvent: function( eventAction ) {
 		analytics.ga.recordEvent( 'Me', eventAction );
 	},
 
-	recordEventClosure: function( eventAction, callback ) {
+    recordEventClosure: function( eventAction, callback ) {
 		return function( event ) {
 			analytics.ga.recordEvent( 'Me', eventAction );
 
@@ -21,7 +21,7 @@ export default {
 		};
 	},
 
-	recordClickEvent: function( eventAction, callback ) {
+    recordClickEvent: function( eventAction, callback ) {
 		return function( event ) {
 			analytics.ga.recordEvent( 'Me', 'Clicked on ' + eventAction );
 
@@ -31,7 +31,7 @@ export default {
 		};
 	},
 
-	recordFocusEvent: function( eventAction, callback ) {
+    recordFocusEvent: function( eventAction, callback ) {
 		return function( event ) {
 			analytics.ga.recordEvent( 'Me', 'Focused on ' + eventAction );
 
@@ -41,7 +41,7 @@ export default {
 		};
 	},
 
-	recordCheckboxEvent: function( checkboxName, callback ) {
+    recordCheckboxEvent: function( checkboxName, callback ) {
 		return function( event ) {
 			var eventAction = 'Clicked ' + checkboxName + ' checkbox',
 				optionValue = event.target.checked ? 1 : 0;
@@ -54,7 +54,7 @@ export default {
 		};
 	},
 
-	recordRadioEvent: function( radioName, callback ) {
+    recordRadioEvent: function( radioName, callback ) {
 		return function( event ) {
 			var eventAction = 'Clicked ' + radioName + ' radio';
 
@@ -64,5 +64,16 @@ export default {
 				callback( event );
 			}
 		};
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    recordEvent,
+    recordEventClosure,
+    recordClickEvent,
+    recordFocusEvent,
+    recordCheckboxEvent,
+    recordRadioEvent
+} = exported;

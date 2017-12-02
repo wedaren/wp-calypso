@@ -50,3 +50,7 @@ InfiniteListPositionsStore.dispatchToken = Dispatcher.register( function( payloa
 } );
 
 export default InfiniteListPositionsStore;
+
+export const {
+    dispatchToken
+} = InfiniteListPositionsStore;

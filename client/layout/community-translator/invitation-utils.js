@@ -188,3 +188,12 @@ invitePromise.then( function() {
 } );
 
 export default invitationUtils;
+
+export const {
+	isPending,
+	isValidSection,
+	dismiss,
+	activate,
+	recordDocsEvent,
+	recordInvitationDisplayed,
+} = invitationUtils;

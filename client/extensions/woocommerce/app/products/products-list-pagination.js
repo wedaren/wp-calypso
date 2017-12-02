@@ -50,3 +50,5 @@ ProductsListPagination.propTypes = {
 };
 
 export default ProductsListPagination;
+
+export const { propTypes } = ProductsListPagination;

@@ -1,5 +1,5 @@
 /** @format */
-export default {
+const exported = {
 	ID: 91234567890,
 	URL: 'http://example.com/',
 	canUpdateFiles: true,
@@ -30,3 +30,37 @@ export default {
 	visible: true,
 	wpcom_url: 'example.wordpress.com',
 };
+
+export default exported;
+
+export const {
+	ID,
+	URL,
+	canUpdateFiles,
+	capabilities,
+	description,
+	domain,
+	hasJetpackProtect,
+	hasMinimumJetpackVersion,
+	icon,
+	is_following,
+	is_private,
+	jetpack,
+	lang,
+	logo,
+	meta,
+	name,
+	options,
+	plan,
+	plugins,
+	post_count,
+	single_user_site,
+	slug,
+	subscribers_count,
+	title,
+	update,
+	jp_version,
+	user_can_manage,
+	visible,
+	wpcom_url,
+} = exported;

@@ -57,8 +57,14 @@ export function receiveError( store, action, error ) {
 	}
 }
 
-export default {
-	[ READER_UNFOLLOW_TAG_REQUEST ]: [
+const exported = {
+    [ READER_UNFOLLOW_TAG_REQUEST ]: [
 		dispatchRequest( requestUnfollow, receiveUnfollowTag, receiveError ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    READER_UNFOLLOW_TAG_REQUEST
+} = exported;

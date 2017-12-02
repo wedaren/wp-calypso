@@ -66,3 +66,4 @@ const preview = function( state = {}, action ) {
 preview.schema = previewSchema;
 
 export default preview;
+export { previewSchema as schema };

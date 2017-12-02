@@ -23,3 +23,5 @@ const ReaderPostCard = () => (
 ReaderPostCard.displayName = 'ReaderPostCard';
 
 export default ReaderPostCard;
+
+export const { displayName } = ReaderPostCard;

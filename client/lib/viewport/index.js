@@ -68,9 +68,12 @@ function getWindowInnerWidth() {
 	return global.window ? global.window.innerWidth : 769;
 }
 
-export default {
-	isMobile: isMobile,
-	isDesktop: isDesktop,
-	isWithinBreakpoint: isWithinBreakpoint,
-	getWindowInnerWidth: getWindowInnerWidth,
+const exported = {
+    isMobile: isMobile,
+    isDesktop: isDesktop,
+    isWithinBreakpoint: isWithinBreakpoint,
+    getWindowInnerWidth: getWindowInnerWidth
 };
+
+export default exported;
+export { isMobile, isDesktop, isWithinBreakpoint, getWindowInnerWidth };

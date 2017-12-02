@@ -138,3 +138,12 @@ NetworkConnectionApp = {
 Emitter( NetworkConnectionApp );
 
 export default NetworkConnectionApp;
+
+export const {
+    isEnabled,
+    init,
+    checkNetworkStatus,
+    emitConnected,
+    emitDisconnected,
+    isConnected
+} = NetworkConnectionApp;

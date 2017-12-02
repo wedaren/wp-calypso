@@ -37,3 +37,5 @@ class PaginationExample extends Component {
 PaginationExample.displayName = 'PaginationExample';
 
 export default PaginationExample;
+
+export const { displayName } = PaginationExample;

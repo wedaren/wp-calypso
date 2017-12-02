@@ -80,8 +80,14 @@ export const announceFailure = ( { dispatch } ) =>
 		)
 	);
 
-export default {
-	[ REWIND_RESTORE_PROGRESS_REQUEST ]: [
+const exported = {
+    [ REWIND_RESTORE_PROGRESS_REQUEST ]: [
 		dispatchRequest( fetchProgress, updateProgress, announceFailure, { fromApi } ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    REWIND_RESTORE_PROGRESS_REQUEST
+} = exported;

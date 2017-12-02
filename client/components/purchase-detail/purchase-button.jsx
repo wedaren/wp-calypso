@@ -49,3 +49,5 @@ PurchaseButton.propTypes = {
 };
 
 export default PurchaseButton;
+
+export const { propTypes } = PurchaseButton;

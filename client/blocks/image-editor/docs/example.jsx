@@ -116,3 +116,5 @@ const ConnectedImageEditorExample = connect( state => {
 ConnectedImageEditorExample.displayName = 'ImageEditor';
 
 export default ConnectedImageEditorExample;
+
+export const { displayName } = ConnectedImageEditorExample;

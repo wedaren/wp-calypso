@@ -1,9 +1,10 @@
 /** @format */
-export default {
-	page: 2,
-	pages: 2,
-	total_email: 4,
-	subscribers: [
+const exported = {
+    page: 2,
+    pages: 2,
+    total_email: 4,
+
+    subscribers: [
 		{
 			ID: 91865389,
 			avatar: 'https://1.gravatar.com/avatar/',
@@ -14,5 +15,14 @@ export default {
 			avatar: 'https://1.gravatar.com/avatar/',
 			label: 'test702@testing.com',
 		},
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    page,
+    pages,
+    total_email,
+    subscribers
+} = exported;

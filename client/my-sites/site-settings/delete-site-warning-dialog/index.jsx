@@ -42,3 +42,7 @@ DeleteSiteWarningDialog.propTypes = {
 };
 
 export default DeleteSiteWarningDialog;
+
+export const {
+    propTypes
+} = DeleteSiteWarningDialog;

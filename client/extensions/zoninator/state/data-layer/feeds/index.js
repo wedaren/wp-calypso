@@ -103,7 +103,11 @@ const dispatchSaveZoneFeedRequest = dispatchRequest(
 	announceFailure
 );
 
-export default {
+const exported = {
 	[ ZONINATOR_REQUEST_FEED ]: [ dispatchZoneFeedRequest ],
 	[ ZONINATOR_SAVE_FEED ]: [ dispatchSaveZoneFeedRequest ],
 };
+
+export default exported;
+
+export const { ZONINATOR_REQUEST_FEED, ZONINATOR_SAVE_FEED } = exported;

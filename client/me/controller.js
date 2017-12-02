@@ -22,8 +22,8 @@ import { renderWithReduxStore } from 'lib/react-helpers';
 
 const ANALYTICS_PAGE_TITLE = 'Me';
 
-export default {
-	sidebar( context, next ) {
+const exported = {
+    sidebar( context, next ) {
 		const SidebarComponent = require( 'me/sidebar' );
 
 		renderWithReduxStore(
@@ -37,7 +37,7 @@ export default {
 		next();
 	},
 
-	profile( context ) {
+    profile( context ) {
 		const ProfileComponent = require( 'me/profile' ),
 			basePath = context.path;
 
@@ -55,7 +55,7 @@ export default {
 		);
 	},
 
-	apps( context ) {
+    apps( context ) {
 		const AppsComponent = require( 'me/get-apps' ).default;
 		const basePath = context.path;
 
@@ -73,7 +73,7 @@ export default {
 		);
 	},
 
-	nextSteps( context ) {
+    nextSteps( context ) {
 		const analyticsBasePath = route.sectionify( context.path ),
 			NextSteps = require( './next-steps' ),
 			isWelcome = 'welcome' === context.params.welcome;
@@ -98,7 +98,7 @@ export default {
 		);
 	},
 
-	// Users that are redirected to `/me/next?welcome` after signup should visit
+    // Users that are redirected to `/me/next?welcome` after signup should visit
 	// `/me/next/welcome` instead.
 	nextStepsWelcomeRedirect( context, next ) {
 		if ( includes( context.path, '?welcome' ) ) {
@@ -108,15 +108,28 @@ export default {
 		next();
 	},
 
-	profileRedirect() {
+    profileRedirect() {
 		page.redirect( '/me' );
 	},
 
-	trophiesRedirect() {
+    trophiesRedirect() {
 		page.redirect( '/me' );
 	},
 
-	findFriendsRedirect() {
+    findFriendsRedirect() {
 		page.redirect( '/me' );
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    sidebar,
+    profile,
+    apps,
+    nextSteps,
+    nextStepsWelcomeRedirect,
+    profileRedirect,
+    trophiesRedirect,
+    findFriendsRedirect
+} = exported;

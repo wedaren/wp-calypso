@@ -77,12 +77,18 @@ export function receiveConversationFollowError(
 	);
 }
 
-export default {
-	[ READER_CONVERSATION_FOLLOW ]: [
+const exported = {
+    [ READER_CONVERSATION_FOLLOW ]: [
 		dispatchRequest(
 			requestConversationFollow,
 			receiveConversationFollow,
 			receiveConversationFollowError
 		),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    READER_CONVERSATION_FOLLOW
+} = exported;

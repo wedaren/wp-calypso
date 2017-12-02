@@ -35,8 +35,8 @@ const basePageTitle = 'Signup'; // used for analytics, doesn't require translati
  */
 let initialContext;
 
-export default {
-	redirectWithoutLocaleIfLoggedIn( context, next ) {
+const exported = {
+    redirectWithoutLocaleIfLoggedIn( context, next ) {
 		if ( user.get() && utils.getLocale( context.params ) ) {
 			const flowName = utils.getFlowName( context.params ),
 				stepName = utils.getStepName( context.params ),
@@ -62,7 +62,7 @@ export default {
 		next();
 	},
 
-	saveInitialContext( context, next ) {
+    saveInitialContext( context, next ) {
 		if ( ! initialContext ) {
 			initialContext = Object.assign( {}, context );
 		}
@@ -70,7 +70,7 @@ export default {
 		next();
 	},
 
-	redirectToFlow( context, next ) {
+    redirectToFlow( context, next ) {
 		const flowName = utils.getFlowName( context.params );
 		const localeFromParams = utils.getLocale( context.params );
 		const localeFromStore = store.get( 'signup-locale' );
@@ -106,7 +106,7 @@ export default {
 		next();
 	},
 
-	start( context ) {
+    start( context ) {
 		const basePath = route.sectionify( context.path ),
 			flowName = utils.getFlowName( context.params ),
 			stepName = utils.getStepName( context.params ),
@@ -132,5 +132,14 @@ export default {
 			'primary',
 			context.store
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    redirectWithoutLocaleIfLoggedIn,
+    saveInitialContext,
+    redirectToFlow,
+    start
+} = exported;

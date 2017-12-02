@@ -91,3 +91,20 @@ const olarkActions = {
 };
 
 export default olarkActions;
+
+export const {
+    setUserEligibility,
+    setLocale,
+    setReady,
+    setOperatorsAvailable,
+    setOperatorsAway,
+    setClosed,
+    setExpanded,
+    updateDetails,
+    sendNotificationToVisitor,
+    sendNotificationToOperator,
+    expandBox,
+    shrinkBox,
+    hideBox,
+    focusBox
+} = olarkActions;

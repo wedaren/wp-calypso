@@ -116,24 +116,27 @@ function getSectionName( pathname ) {
 	return matches ? matches[ 1 ] : null;
 }
 
-export default {
-	domainManagementAddGoogleApps,
-	domainManagementContactsPrivacy,
-	domainManagementDns,
-	domainManagementEdit,
-	domainManagementEditContactInfo,
-	domainManagementEmail,
-	domainManagementEmailForwarding,
-	domainManagementList,
-	domainManagementNameServers,
-	domainManagementPrimaryDomain,
-	domainManagementPrivacyProtection,
-	domainManagementRedirectSettings,
-	domainManagementRoot,
-	domainManagementTransfer,
-	domainManagementTransferIn,
-	domainManagementTransferOut,
-	domainManagementTransferToAnotherUser,
-	domainManagementTransferToOtherSite,
-	getSectionName,
+const exported = {
+    domainManagementAddGoogleApps,
+    domainManagementContactsPrivacy,
+    domainManagementDns,
+    domainManagementEdit,
+    domainManagementEditContactInfo,
+    domainManagementEmail,
+    domainManagementEmailForwarding,
+    domainManagementList,
+    domainManagementNameServers,
+    domainManagementPrimaryDomain,
+    domainManagementPrivacyProtection,
+    domainManagementRedirectSettings,
+    domainManagementRoot,
+    domainManagementTransfer,
+    domainManagementTransferIn,
+    domainManagementTransferOut,
+    domainManagementTransferToAnotherUser,
+    domainManagementTransferToOtherSite,
+    getSectionName
 };
+
+export default exported;
+export { domainManagementAddGoogleApps, domainManagementContactsPrivacy, domainManagementDns, domainManagementEdit, domainManagementEditContactInfo, domainManagementEmail, domainManagementEmailForwarding, domainManagementList, domainManagementNameServers, domainManagementPrimaryDomain, domainManagementPrivacyProtection, domainManagementRedirectSettings, domainManagementRoot, domainManagementTransfer, domainManagementTransferIn, domainManagementTransferOut, domainManagementTransferToAnotherUser, domainManagementTransferToOtherSite, getSectionName };

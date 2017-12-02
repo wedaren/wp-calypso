@@ -50,3 +50,5 @@ const ConnectedPostTimeExample = connect( state => {
 ConnectedPostTimeExample.displayName = 'PostTime';
 
 export default ConnectedPostTimeExample;
+
+export const { displayName } = ConnectedPostTimeExample;

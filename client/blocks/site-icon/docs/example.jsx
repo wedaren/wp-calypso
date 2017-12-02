@@ -31,3 +31,5 @@ const ConnectedSiteIconExample = connect( state => ( {
 ConnectedSiteIconExample.displayName = 'SiteIcon';
 
 export default ConnectedSiteIconExample;
+
+export const { displayName } = ConnectedSiteIconExample;

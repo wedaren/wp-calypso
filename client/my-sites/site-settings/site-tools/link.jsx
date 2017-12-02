@@ -43,3 +43,8 @@ SiteToolsLink.defaultProps = {
 };
 
 export default SiteToolsLink;
+
+export const {
+    propTypes,
+    defaultProps
+} = SiteToolsLink;

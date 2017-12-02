@@ -42,3 +42,7 @@ SharingPreviewModal.propTypes = {
 };
 
 export default SharingPreviewModal;
+
+export const {
+    propTypes
+} = SharingPreviewModal;

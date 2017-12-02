@@ -41,12 +41,18 @@ export function receiveCommentEmailSubscriptionError( { dispatch }, action ) {
 	dispatch( bypassDataLayer( unsubscribeToNewCommentEmail( action.payload.blogId ) ) );
 }
 
-export default {
-	[ READER_SUBSCRIBE_TO_NEW_COMMENT_EMAIL ]: [
+const exported = {
+    [ READER_SUBSCRIBE_TO_NEW_COMMENT_EMAIL ]: [
 		dispatchRequest(
 			requestCommentEmailSubscription,
 			receiveCommentEmailSubscription,
 			receiveCommentEmailSubscriptionError
 		),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    READER_SUBSCRIBE_TO_NEW_COMMENT_EMAIL
+} = exported;

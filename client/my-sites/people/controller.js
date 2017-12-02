@@ -24,10 +24,10 @@ import { getCurrentLayoutFocus } from 'state/ui/layout-focus/selectors';
 import { setNextLayoutFocus } from 'state/ui/layout-focus/actions';
 import { getSelectedSite } from 'state/ui/selectors';
 
-export default {
-	redirectToTeam,
+const exported = {
+    redirectToTeam,
 
-	enforceSiteEnding( context, next ) {
+    enforceSiteEnding( context, next ) {
 		const siteId = route.getSiteFragment( context.path );
 
 		if ( ! siteId ) {
@@ -37,18 +37,28 @@ export default {
 		next();
 	},
 
-	people( context ) {
+    people( context ) {
 		renderPeopleList( context );
 	},
 
-	invitePeople( context ) {
+    invitePeople( context ) {
 		renderInvitePeople( context );
 	},
 
-	person( context ) {
+    person( context ) {
 		renderSingleTeamMember( context );
-	},
+	}
 };
+
+export default exported;
+export { redirectToTeam };
+
+export const {
+    enforceSiteEnding,
+    people,
+    invitePeople,
+    person
+} = exported;
 
 function redirectToTeam( context ) {
 	if ( context ) {

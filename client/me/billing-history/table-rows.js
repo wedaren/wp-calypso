@@ -66,7 +66,10 @@ function filter( transactions, params ) {
 	return transactions;
 }
 
-export default {
-	formatDate: formatDate,
-	filter: filter,
+const exported = {
+    formatDate: formatDate,
+    filter: filter
 };
+
+export default exported;
+export { formatDate, filter };

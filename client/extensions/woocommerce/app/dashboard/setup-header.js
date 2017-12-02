@@ -33,3 +33,5 @@ SetupHeader.propTypes = {
 };
 
 export default SetupHeader;
+
+export const { propTypes } = SetupHeader;

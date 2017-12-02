@@ -62,3 +62,8 @@ AccountDialogAccount.defaultProps = {
 };
 
 export default AccountDialogAccount;
+
+export const {
+    propTypes,
+    defaultProps
+} = AccountDialogAccount;

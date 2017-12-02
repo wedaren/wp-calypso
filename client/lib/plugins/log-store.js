@@ -185,3 +185,12 @@ LogStore.dispatchToken = Dispatcher.register( function( payload ) {
 emitter( LogStore );
 
 export default LogStore;
+
+export const {
+    getErrors,
+    getInProgress,
+    getCompleted,
+    isInProgressAction,
+    emitChange,
+    dispatchToken
+} = LogStore;

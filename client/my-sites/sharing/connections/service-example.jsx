@@ -31,3 +31,8 @@ SharingServiceExample.defaultProps = {
 };
 
 export default SharingServiceExample;
+
+export const {
+    propTypes,
+    defaultProps
+} = SharingServiceExample;

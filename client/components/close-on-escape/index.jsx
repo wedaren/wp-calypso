@@ -68,3 +68,5 @@ CloseOnEscape.defaultProps = {
 };
 
 export default CloseOnEscape;
+
+export const { propTypes, defaultProps } = CloseOnEscape;

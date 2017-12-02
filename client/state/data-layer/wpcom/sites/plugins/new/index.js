@@ -111,10 +111,16 @@ export const updateUploadProgress = ( { dispatch }, { siteId }, { loaded, total 
 	dispatch( updatePluginUploadProgress( siteId, progress ) );
 };
 
-export default {
-	[ PLUGIN_UPLOAD ]: [
+const exported = {
+    [ PLUGIN_UPLOAD ]: [
 		dispatchRequest( uploadPlugin, uploadComplete, receiveError, {
 			onProgress: updateUploadProgress,
 		} ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    PLUGIN_UPLOAD
+} = exported;

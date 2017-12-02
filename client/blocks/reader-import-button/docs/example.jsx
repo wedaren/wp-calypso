@@ -22,3 +22,5 @@ const ReaderImportButton = () => (
 ReaderImportButton.displayName = 'ReaderImportButton';
 
 export default ReaderImportButton;
+
+export const { displayName } = ReaderImportButton;

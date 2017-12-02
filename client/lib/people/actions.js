@@ -16,3 +16,7 @@ var PeopleActions = {
 };
 
 export default PeopleActions;
+
+export const {
+    removePeopleNotices
+} = PeopleActions;

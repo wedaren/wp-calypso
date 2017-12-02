@@ -82,3 +82,5 @@ const ConnectedUploadImageExample = connect( state => {
 ConnectedUploadImageExample.displayName = 'UploadImage';
 
 export default ConnectedUploadImageExample;
+
+export const { displayName } = ConnectedUploadImageExample;

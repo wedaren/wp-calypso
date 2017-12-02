@@ -84,9 +84,17 @@ export function receiveMediaItemError( { dispatch }, { mediaId, siteId } ) {
 	dispatch( failMediaItemRequest( siteId, mediaId ) );
 }
 
-export default {
-	[ MEDIA_REQUEST ]: [ dispatchRequest( requestMedia, requestMediaSuccess, requestMediaError ) ],
-	[ MEDIA_ITEM_REQUEST ]: [
+const exported = {
+    [ MEDIA_REQUEST ]: [ dispatchRequest( requestMedia, requestMediaSuccess, requestMediaError ) ],
+
+    [ MEDIA_ITEM_REQUEST ]: [
 		dispatchRequest( handleMediaItemRequest, receiveMediaItem, receiveMediaItemError ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    MEDIA_REQUEST,
+    MEDIA_ITEM_REQUEST
+} = exported;

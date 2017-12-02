@@ -126,10 +126,13 @@ function getSyncProgressPercentage( state, siteId ) {
 	return Math.ceil( percentQueued + percentSent );
 }
 
-export default {
-	getSyncStatus,
-	getFullSyncRequest,
-	isPendingSyncStart,
-	isFullSyncing,
-	getSyncProgressPercentage,
+const exported = {
+    getSyncStatus,
+    getFullSyncRequest,
+    isPendingSyncStart,
+    isFullSyncing,
+    getSyncProgressPercentage
 };
+
+export default exported;
+export { getSyncStatus, getFullSyncRequest, isPendingSyncStart, isFullSyncing, getSyncProgressPercentage };

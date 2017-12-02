@@ -49,8 +49,14 @@ const fromApi = response => {
 	throw new Error( 'Could not obtain credentials' );
 };
 
-export default {
-	[ JETPACK_CREDENTIALS_REQUEST ]: [
+const exported = {
+    [ JETPACK_CREDENTIALS_REQUEST ]: [
 		dispatchRequest( fetch, store, announceFailure, { fromApi } ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    JETPACK_CREDENTIALS_REQUEST
+} = exported;

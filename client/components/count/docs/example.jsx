@@ -20,3 +20,5 @@ const count = () => (
 count.displayName = 'Count';
 
 export default count;
+
+export const { displayName } = count;

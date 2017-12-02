@@ -98,3 +98,5 @@ class DisconnectJetpackDialogExample extends Component {
 DisconnectJetpackDialogExample.displayName = 'DisconnectJetpackDialog';
 
 export default DisconnectJetpackDialogExample;
+
+export const { displayName } = DisconnectJetpackDialogExample;

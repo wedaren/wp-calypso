@@ -35,8 +35,8 @@ function setTitle( context, ...title ) {
 	context.store.dispatch( setDocumentHeadTitle( concatTitle( titles.purchases, ...title ) ) );
 }
 
-export default {
-	addCardDetails( context ) {
+const exported = {
+    addCardDetails( context ) {
 		setTitle( context, titles.addCardDetails );
 
 		recordPurchasesPageView( paths.addCardDetails(), 'Add Card Details' );
@@ -48,13 +48,13 @@ export default {
 		);
 	},
 
-	addCreditCard( context ) {
+    addCreditCard( context ) {
 		recordPurchasesPageView( paths.addCreditCard(), 'Add Credit Card' );
 
 		renderWithReduxStore( <AddCreditCard />, document.getElementById( 'primary' ), context.store );
 	},
 
-	cancelPrivacyProtection( context ) {
+    cancelPrivacyProtection( context ) {
 		setTitle( context, titles.cancelPrivacyProtection );
 
 		recordPurchasesPageView( paths.cancelPrivacyProtection(), 'Cancel Privacy Protection' );
@@ -66,7 +66,7 @@ export default {
 		);
 	},
 
-	cancelPurchase( context ) {
+    cancelPurchase( context ) {
 		setTitle( context, titles.cancelPurchase );
 
 		recordPurchasesPageView( paths.cancelPurchase(), 'Cancel Purchase' );
@@ -78,7 +78,7 @@ export default {
 		);
 	},
 
-	confirmCancelDomain( context ) {
+    confirmCancelDomain( context ) {
 		setTitle( context, titles.confirmCancelDomain );
 
 		recordPurchasesPageView( paths.confirmCancelDomain(), 'Confirm Cancel Domain' );
@@ -90,7 +90,7 @@ export default {
 		);
 	},
 
-	editCardDetails( context ) {
+    editCardDetails( context ) {
 		setTitle( context, titles.editCardDetails );
 
 		recordPurchasesPageView( paths.editCardDetails(), 'Edit Card Details' );
@@ -105,7 +105,7 @@ export default {
 		);
 	},
 
-	list( context ) {
+    list( context ) {
 		setTitle( context );
 
 		recordPurchasesPageView( paths.purchasesRoot() );
@@ -117,7 +117,7 @@ export default {
 		);
 	},
 
-	managePurchase( context ) {
+    managePurchase( context ) {
 		setTitle( context, titles.managePurchase );
 
 		recordPurchasesPageView( paths.managePurchase(), 'Manage Purchase' );
@@ -132,7 +132,7 @@ export default {
 		);
 	},
 
-	noSitesMessage( context, next ) {
+    noSitesMessage( context, next ) {
 		if ( user.get().site_count > 0 ) {
 			return next();
 		}
@@ -149,5 +149,19 @@ export default {
 			document.getElementById( 'primary' ),
 			context.store
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    addCardDetails,
+    addCreditCard,
+    cancelPrivacyProtection,
+    cancelPurchase,
+    confirmCancelDomain,
+    editCardDetails,
+    list,
+    managePurchase,
+    noSitesMessage
+} = exported;

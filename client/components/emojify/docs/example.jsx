@@ -24,3 +24,5 @@ const EmojifyExample = () => {
 EmojifyExample.displayName = 'Emojify';
 
 export default EmojifyExample;
+
+export const { displayName } = EmojifyExample;

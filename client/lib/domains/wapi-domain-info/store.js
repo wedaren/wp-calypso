@@ -17,3 +17,7 @@ WapiDomainInfoStore.getByDomainName = function( domainName ) {
 };
 
 export default WapiDomainInfoStore;
+
+export const {
+ getByDomainName
+} = WapiDomainInfoStore;

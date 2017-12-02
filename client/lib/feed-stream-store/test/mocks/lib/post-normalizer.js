@@ -25,3 +25,8 @@ fakeNormalize.content = {};
 } );
 
 export default fakeNormalize;
+export { noopFactory as prop };
+
+export const {
+    content
+} = fakeNormalize;

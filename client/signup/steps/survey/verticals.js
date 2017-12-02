@@ -29,11 +29,17 @@ const verticals = [
 
 let shuffledVerticals = null;
 
-export default {
-	get() {
+const exported = {
+    get() {
 		if ( shuffledVerticals ) {
 			return shuffledVerticals;
 		}
 		return ( shuffledVerticals = shuffle( verticals ) );
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    get
+} = exported;

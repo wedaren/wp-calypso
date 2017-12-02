@@ -104,8 +104,8 @@ function siblingInserter( srcNode, dstId, position ) {
 	};
 }
 
-export default {
-	/**
+const exported = {
+    /**
 	 * Traverses a tree of menu items and calls a set of filters on each item
 	 * node it enters. Warning: no data is ever cloned internally.
 	 *
@@ -117,7 +117,7 @@ export default {
 		return traverse( root, filters, root );
 	},
 
-	/**
+    /**
 	 * Given a node within a tree, return the node's parent or the tree
 	 * itself if the node is not found within the tree.
 	 *
@@ -127,7 +127,7 @@ export default {
 	 */
 	parent: parent,
 
-	/**
+    /**
 	 * Returns the first item that satisfies a given predicate.
 	 *
 	 * @param {object} root of a tree of menu items
@@ -136,7 +136,7 @@ export default {
 	 */
 	find: find,
 
-	/**
+    /**
 	 * Find the first item that satisfies a given predicate, and
 	 * replace it with a new item.
 	 *
@@ -147,7 +147,7 @@ export default {
 	 */
 	replaceItem: replaceItem,
 
-	/**
+    /**
 	 * Returns a filter function that aims to remove from the tree any item whose
 	 * 'id' property has the value 'id'.
 	 *
@@ -164,7 +164,7 @@ export default {
 		};
 	},
 
-	/**
+    /**
 	 * Returns a filter function that aims to insert item 'srcItem' next to any
 	 * item whose 'id' property has the value 'dstId', according to 'position'.
 	 *
@@ -176,5 +176,14 @@ export default {
 	inserter: function( srcItem, dstId, position ) {
 		var func = 'child' === position ? childInserter : siblingInserter;
 		return func( srcItem, dstId, position );
-	},
+	}
 };
+
+export default exported;
+export { parent, find, replaceItem };
+
+export const {
+    traverse,
+    remover,
+    inserter
+} = exported;

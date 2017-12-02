@@ -19,3 +19,8 @@ makeSafe.undoReturns = function() {
 };
 
 export default makeSafe;
+
+export const {
+    setReturns,
+    undoReturns
+} = makeSafe;

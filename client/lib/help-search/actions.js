@@ -36,3 +36,7 @@ var HelpSearchActions = {
 };
 
 export default HelpSearchActions;
+
+export const {
+    fetch
+} = HelpSearchActions;

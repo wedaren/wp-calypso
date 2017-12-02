@@ -112,3 +112,10 @@ PreferencesActions.remove = function( key ) {
 };
 
 export default PreferencesActions;
+
+export const {
+    mergePreferencesToLocalStorage,
+    fetch,
+    set,
+    remove
+} = PreferencesActions;

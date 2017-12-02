@@ -92,7 +92,11 @@ const dispatchSaveSettingsRequest = dispatchRequest(
 	announceFailure
 );
 
-export default {
+const exported = {
 	[ WP_JOB_MANAGER_FETCH_SETTINGS ]: [ dispatchFetchSettingsRequest ],
 	[ WP_JOB_MANAGER_SAVE_SETTINGS ]: [ dispatchSaveSettingsRequest ],
 };
+
+export default exported;
+
+export const { WP_JOB_MANAGER_FETCH_SETTINGS, WP_JOB_MANAGER_SAVE_SETTINGS } = exported;

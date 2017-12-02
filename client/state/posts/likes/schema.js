@@ -1,8 +1,9 @@
 /** @format */
-export default {
-	type: 'object',
-	additionalProperties: false,
-	patternProperties: {
+const exported = {
+    type: 'object',
+    additionalProperties: false,
+
+    patternProperties: {
 		// Site ID
 		'^\\d+$': {
 			type: 'object',
@@ -30,5 +31,13 @@ export default {
 				},
 			},
 		},
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    type,
+    additionalProperties,
+    patternProperties
+} = exported;

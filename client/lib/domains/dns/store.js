@@ -16,3 +16,7 @@ DnsStore.getByDomainName = function( domainName ) {
 };
 
 export default DnsStore;
+
+export const {
+ getByDomainName
+} = DnsStore;

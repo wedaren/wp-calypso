@@ -72,3 +72,5 @@ ProductsListRow.propTypes = {
 };
 
 export default ProductsListRow;
+
+export const { propTypes } = ProductsListRow;

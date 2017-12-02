@@ -23,8 +23,8 @@ var dummyPluginList = [
 	},
 ];
 
-export default {
-	// Fetch Data
+const exported = {
+    // Fetch Data
 	fetchedNewPluginsList: {
 		error: null,
 		page: 1,
@@ -33,7 +33,7 @@ export default {
 		data: dummyPluginList,
 	},
 
-	fetchedNewPluginsListSecondPage: {
+    fetchedNewPluginsListSecondPage: {
 		error: null,
 		page: 2,
 		category: 'new',
@@ -41,7 +41,7 @@ export default {
 		data: dummyPluginList,
 	},
 
-	fetchedSearchPluginsList: {
+    fetchedSearchPluginsList: {
 		error: null,
 		page: 1,
 		category: 'search',
@@ -50,7 +50,7 @@ export default {
 		data: dummyPluginList,
 	},
 
-	fetchedSearchPluginsListSecondPage: {
+    fetchedSearchPluginsListSecondPage: {
 		error: null,
 		page: 2,
 		category: 'search',
@@ -59,26 +59,38 @@ export default {
 		data: dummyPluginList,
 	},
 
-	fetchedPopularPluginsList: {
+    fetchedPopularPluginsList: {
 		error: null,
 		category: 'popular',
 		type: 'RECEIVE_WPORG_PLUGINS_LIST',
 		data: dummyPluginList,
 	},
 
-	fetchingPopularPluginsList: {
+    fetchingPopularPluginsList: {
 		error: null,
 		category: 'popular',
 		type: 'FETCH_WPORG_PLUGINS_LIST',
 		action: 'FETCH_WPORG_PLUGINS_LIST',
 	},
 
-	fetchingSearchPluginsList: {
+    fetchingSearchPluginsList: {
 		error: null,
 		page: 1,
 		category: 'search',
 		searchTerm: 'test',
 		type: 'FETCH_WPORG_PLUGINS_LIST',
 		action: 'FETCH_WPORG_PLUGINS_LIST',
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    fetchedNewPluginsList,
+    fetchedNewPluginsListSecondPage,
+    fetchedSearchPluginsList,
+    fetchedSearchPluginsListSecondPage,
+    fetchedPopularPluginsList,
+    fetchingPopularPluginsList,
+    fetchingSearchPluginsList
+} = exported;

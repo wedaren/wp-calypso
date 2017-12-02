@@ -15,3 +15,5 @@ const countriesList = {
 emitter( countriesList );
 
 export default countriesList;
+
+export const { get } = countriesList;

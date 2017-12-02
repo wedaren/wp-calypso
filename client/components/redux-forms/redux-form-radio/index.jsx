@@ -24,3 +24,5 @@ ReduxFormRadio.propTypes = {
 };
 
 export default ReduxFormRadio;
+
+export const { propTypes } = ReduxFormRadio;

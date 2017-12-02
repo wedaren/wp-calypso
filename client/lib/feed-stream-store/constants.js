@@ -1,6 +1,6 @@
 /** @format */
-export default {
-	action: {
+const exported = {
+    action: {
 		FETCH_NEXT_PAGE: 'FETCH_NEXT_FEED_STREAM_PAGE',
 		RECEIVE_PAGE: 'RECEIVE_FEED_STREAM_PAGE',
 		SHOW_UPDATES: 'SHOW_FEED_STREAM_UPDATES',
@@ -13,5 +13,11 @@ export default {
 		SELECT_FIRST_ITEM: 'SELECT_FIRST_ITEM',
 		DISMISS_POST: 'DISMISS_FEED_STREAM_POST',
 		SHUFFLE_POSTS: 'SHUFFLE_FEED_STREAM_POSTS',
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    action
+} = exported;

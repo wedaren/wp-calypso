@@ -1,10 +1,10 @@
 /** @format */
-export default {
-	wpcom( state, source, stream, setting ) {
+const exported = {
+    wpcom( state, source, stream, setting ) {
 		return state.updateIn( [ 'settings', 'dirty', 'wpcom', setting ], value => ! value );
 	},
 
-	other( state, source, stream, setting ) {
+    other( state, source, stream, setting ) {
 		if ( isNaN( stream ) ) {
 			return state.updateIn( [ 'settings', 'dirty', 'other', stream, setting ], value => ! value );
 		}
@@ -18,7 +18,7 @@ export default {
 		} );
 	},
 
-	blog( state, source, stream, setting ) {
+    blog( state, source, stream, setting ) {
 		const blogIndex = state
 			.getIn( [ 'settings', 'dirty', 'blogs' ] )
 			.findIndex( blog => blog.get( 'blog_id' ) === parseInt( source, 10 ) );
@@ -40,5 +40,13 @@ export default {
 				);
 			} )
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    wpcom,
+    other,
+    blog
+} = exported;

@@ -335,14 +335,17 @@ function unescapeAndFormatSpaces( str ) {
 	return decodeEntities( str ).replace( / /g, nbsp );
 }
 
-export default {
-	decodeEntities: decodeEntities,
-	interpose: interpose,
-	stripHTML: stripHTML,
-	preventWidows: preventWidows,
-	wpautop: wpautop,
-	removep: removep,
-	capitalPDangit: capitalPDangit,
-	parseHtml: parseHtml,
-	unescapeAndFormatSpaces: unescapeAndFormatSpaces,
+const exported = {
+    decodeEntities: decodeEntities,
+    interpose: interpose,
+    stripHTML: stripHTML,
+    preventWidows: preventWidows,
+    wpautop: wpautop,
+    removep: removep,
+    capitalPDangit: capitalPDangit,
+    parseHtml: parseHtml,
+    unescapeAndFormatSpaces: unescapeAndFormatSpaces
 };
+
+export default exported;
+export { decodeEntities, interpose, stripHTML, preventWidows, wpautop, removep, capitalPDangit, parseHtml, unescapeAndFormatSpaces };

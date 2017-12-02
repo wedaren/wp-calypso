@@ -99,10 +99,16 @@ export const updateUploadProgress = ( { dispatch }, { siteId }, { loaded, total 
 	dispatch( updatePluginUploadProgress( siteId, progress ) );
 };
 
-export default {
-	[ AUTOMATED_TRANSFER_INITIATE_WITH_PLUGIN_ZIP ]: [
+const exported = {
+    [ AUTOMATED_TRANSFER_INITIATE_WITH_PLUGIN_ZIP ]: [
 		dispatchRequest( initiateTransferWithPluginZip, receiveResponse, receiveError, {
 			onProgress: updateUploadProgress,
 		} ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    AUTOMATED_TRANSFER_INITIATE_WITH_PLUGIN_ZIP
+} = exported;

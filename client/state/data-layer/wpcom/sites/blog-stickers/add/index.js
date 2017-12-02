@@ -62,8 +62,14 @@ export function receiveBlogStickerAddError( { dispatch }, action ) {
 	);
 }
 
-export default {
-	[ SITES_BLOG_STICKER_ADD ]: [
+const exported = {
+    [ SITES_BLOG_STICKER_ADD ]: [
 		dispatchRequest( requestBlogStickerAdd, receiveBlogStickerAdd, receiveBlogStickerAddError ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    SITES_BLOG_STICKER_ADD
+} = exported;

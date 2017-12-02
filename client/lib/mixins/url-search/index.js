@@ -14,14 +14,14 @@ import page from 'page';
  */
 import buildUrl from 'lib/build-url';
 
-export default {
-	getInitialState: function() {
+const exported = {
+    getInitialState: function() {
 		return {
 			searchOpen: false,
 		};
 	},
 
-	componentWillReceiveProps: function( nextProps ) {
+    componentWillReceiveProps: function( nextProps ) {
 		if ( ! nextProps.search ) {
 			this.setState( {
 				searchOpen: false,
@@ -29,7 +29,7 @@ export default {
 		}
 	},
 
-	doSearch: function( keywords ) {
+    doSearch: function( keywords ) {
 		var searchURL;
 
 		this.setState( {
@@ -53,7 +53,16 @@ export default {
 		}
 	},
 
-	getSearchOpen: function() {
+    getSearchOpen: function() {
 		return this.state.searchOpen !== false || this.props.search;
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    getInitialState,
+    componentWillReceiveProps,
+    doSearch,
+    getSearchOpen
+} = exported;

@@ -38,3 +38,5 @@ Shipping.propTypes = {
 };
 
 export default Shipping;
+
+export const { propTypes } = Shipping;

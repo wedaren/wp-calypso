@@ -21,15 +21,14 @@ function buildCustomizeButtonURL( site ) {
 	return '/customize/';
 }
 
-export default {
-	// You can define which steps, and in which order, they should appear.
+const exported = {
+    // You can define which steps, and in which order, they should appear.
 	defaultSequence: [ 'customize', 'theme', 'plans', 'post', 'page' ],
 
-	hasPlanSequence: [ 'customize', 'theme', 'post', 'page', 'follow' ],
+    hasPlanSequence: [ 'customize', 'theme', 'post', 'page', 'follow' ],
+    userOnly: [ 'site', 'profile', 'follow' ],
 
-	userOnly: [ 'site', 'profile', 'follow' ],
-
-	// Here you can add new steps
+    // Here you can add new steps
 	definitions: function( site ) {
 		return {
 			post: {
@@ -157,5 +156,14 @@ export default {
 				buttonURL: '/recommendations/',
 			},
 		};
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    defaultSequence,
+    hasPlanSequence,
+    userOnly,
+    definitions
+} = exported;

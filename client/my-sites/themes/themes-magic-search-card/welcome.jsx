@@ -134,3 +134,8 @@ MagicSearchWelcome.defaultProps = {
 };
 
 export default MagicSearchWelcome;
+
+export const {
+    propTypes,
+    defaultProps
+} = MagicSearchWelcome;

@@ -182,3 +182,7 @@ SignupProgressStore.dispatchToken = Dispatcher.register( function( payload ) {
 } );
 
 export default SignupProgressStore;
+
+export const {
+    dispatchToken
+} = SignupProgressStore;

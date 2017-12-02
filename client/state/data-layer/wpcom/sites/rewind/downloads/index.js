@@ -166,13 +166,21 @@ const fromBackupDismiss = data => ( {
 	dismissed: data.is_dismissed,
 } );
 
-export default {
-	[ REWIND_BACKUP_PROGRESS_REQUEST ]: [
+const exported = {
+    [ REWIND_BACKUP_PROGRESS_REQUEST ]: [
 		dispatchRequest( fetchProgress, updateProgress, announceError ),
 	],
-	[ REWIND_BACKUP_DISMISS_PROGRESS ]: [
+
+    [ REWIND_BACKUP_DISMISS_PROGRESS ]: [
 		dispatchRequest( dismissBackup, backupSilentlyDismissed, backupDismissFailed, {
 			fromApi: fromBackupDismiss,
 		} ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    REWIND_BACKUP_PROGRESS_REQUEST,
+    REWIND_BACKUP_DISMISS_PROGRESS
+} = exported;

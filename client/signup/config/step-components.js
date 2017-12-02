@@ -26,36 +26,43 @@ import UserSignupComponent from 'signup/steps/user';
 import PlansStepWithoutFreePlan from 'signup/steps/plans-without-free';
 import PlansAtomicStoreComponent from 'signup/steps/plans-atomic-store';
 
-export default {
-	about: AboutStepComponent,
-	'creds-confirm': CredsConfirmComponent,
-	'creds-complete': CredsCompleteComponent,
-	'creds-permission': CredsPermissionComponent,
-	'design-type': DesignTypeComponent,
-	'design-type-with-store': DesignTypeWithStoreComponent,
-	'design-type-with-store-nux': DesignTypeWithAtomicStoreComponent,
-	domains: DomainsStepComponent,
-	'domain-only': DomainsStepComponent,
-	'domains-theme-preselected': DomainsStepComponent,
-	'jetpack-user': UserSignupComponent,
-	'get-dot-blog-plans': GetDotBlogPlansStepComponent,
-	'get-dot-blog-themes': ThemeSelectionComponent,
-	plans: PlansStepComponent,
-	'plans-store-nux': PlansAtomicStoreComponent,
-	'plans-site-selected': PlansStepWithoutFreePlan,
-	site: SiteComponent,
-	'rebrand-cities-welcome': RebrandCitiesWelcomeComponent,
-	'site-or-domain': SiteOrDomainComponent,
-	'site-picker': SitePicker,
-	'site-title': SiteTitleComponent,
-	survey: SurveyStepComponent,
-	'survey-user': UserSignupComponent,
-	test: config( 'env' ) === 'development' ? require( 'signup/steps/test-step' ) : undefined,
-	themes: ThemeSelectionComponent,
-	'website-themes': ThemeSelectionComponent,
-	'blog-themes': ThemeSelectionComponent,
-	'portfolio-themes': ThemeSelectionComponent,
-	'themes-site-selected': ThemeSelectionComponent,
-	user: UserSignupComponent,
-	'oauth2-user': UserSignupComponent,
+const exported = {
+ about: AboutStepComponent,
+ 'creds-confirm': CredsConfirmComponent,
+ 'creds-complete': CredsCompleteComponent,
+ 'creds-permission': CredsPermissionComponent,
+ 'design-type': DesignTypeComponent,
+ 'design-type-with-store': DesignTypeWithStoreComponent,
+ 'design-type-with-store-nux': DesignTypeWithAtomicStoreComponent,
+ domains: DomainsStepComponent,
+ 'domain-only': DomainsStepComponent,
+ 'domains-theme-preselected': DomainsStepComponent,
+ 'jetpack-user': UserSignupComponent,
+ 'get-dot-blog-plans': GetDotBlogPlansStepComponent,
+ 'get-dot-blog-themes': ThemeSelectionComponent,
+ plans: PlansStepComponent,
+ 'plans-store-nux': PlansAtomicStoreComponent,
+ 'plans-site-selected': PlansStepWithoutFreePlan,
+ site: SiteComponent,
+ 'rebrand-cities-welcome': RebrandCitiesWelcomeComponent,
+ 'site-or-domain': SiteOrDomainComponent,
+ 'site-picker': SitePicker,
+ 'site-title': SiteTitleComponent,
+ survey: SurveyStepComponent,
+ 'survey-user': UserSignupComponent,
+ test: config( 'env' ) === 'development' ? require( 'signup/steps/test-step' ) : undefined,
+ themes: ThemeSelectionComponent,
+ 'website-themes': ThemeSelectionComponent,
+ 'blog-themes': ThemeSelectionComponent,
+ 'portfolio-themes': ThemeSelectionComponent,
+ 'themes-site-selected': ThemeSelectionComponent,
+ user: UserSignupComponent,
+ 'oauth2-user': UserSignupComponent
 };
+
+export default exported;
+export { AboutStepComponent as about, DomainsStepComponent as domains, PlansStepComponent as plans, SiteComponent as site, SurveyStepComponent as survey, ThemeSelectionComponent as themes, UserSignupComponent as user };
+
+export const {
+ test
+} = exported;

@@ -1238,7 +1238,7 @@ function recordSignupCompletion() {
 	recordSignupCompletionInFloodlight();
 }
 
-export default {
+const exported = {
 	retarget: function( context, next ) {
 		const nextFunction = typeof next === 'function' ? next : noop;
 
@@ -1248,10 +1248,8 @@ export default {
 	},
 
 	retargetViewPlans,
-
 	recordAliasInFloodlight,
 	recordPageViewInFloodlight,
-
 	recordAddToCart,
 	recordViewCheckout,
 	recordOrder,
@@ -1260,3 +1258,19 @@ export default {
 	trackCustomFacebookConversionEvent,
 	trackCustomAdWordsRemarketingEvent,
 };
+
+export default exported;
+export {
+	retargetViewPlans,
+	recordAliasInFloodlight,
+	recordPageViewInFloodlight,
+	recordAddToCart,
+	recordViewCheckout,
+	recordOrder,
+	recordSignupStart,
+	recordSignupCompletion,
+	trackCustomFacebookConversionEvent,
+	trackCustomAdWordsRemarketingEvent,
+};
+
+export const { retarget } = exported;

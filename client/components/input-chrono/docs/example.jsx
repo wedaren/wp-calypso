@@ -53,3 +53,5 @@ const InputChronoExample = localize(
 InputChronoExample.displayName = 'InputChrono';
 
 export default InputChronoExample;
+
+export const { displayName } = InputChronoExample;

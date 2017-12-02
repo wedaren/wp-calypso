@@ -92,3 +92,5 @@ const ConnectedPostShareExample = connect( state => {
 ConnectedPostShareExample.displayName = 'PostShare';
 
 export default ConnectedPostShareExample;
+
+export const { displayName } = ConnectedPostShareExample;

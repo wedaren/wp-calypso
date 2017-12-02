@@ -98,3 +98,5 @@ ThankYouCard.propTypes = {
 };
 
 export default ThankYouCard;
+
+export const { propTypes } = ThankYouCard;

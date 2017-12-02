@@ -22,8 +22,8 @@ import ContactComponent from './help-contact';
 import support from 'lib/url/support';
 import userUtils from 'lib/user/utils';
 
-export default {
-	loggedOut( context, next ) {
+const exported = {
+    loggedOut( context, next ) {
 		if ( userUtils.isLoggedIn() ) {
 			return next();
 		}
@@ -44,7 +44,7 @@ export default {
 		window.location.href = url;
 	},
 
-	help( context ) {
+    help( context ) {
 		const basePath = route.sectionify( context.path );
 
 		// FIXME: Auto-converted from the Flux setTitle action. Please use <DocumentHead> instead.
@@ -59,7 +59,7 @@ export default {
 		);
 	},
 
-	courses( context ) {
+    courses( context ) {
 		const basePath = route.sectionify( context.path );
 
 		analytics.pageView.record( basePath, 'Help > Courses' );
@@ -67,7 +67,7 @@ export default {
 		renderWithReduxStore( <CoursesComponent />, 'primary', context.store );
 	},
 
-	contact( context ) {
+    contact( context ) {
 		const basePath = route.sectionify( context.path );
 
 		analytics.pageView.record( basePath, 'Help > Contact' );
@@ -82,5 +82,14 @@ export default {
 			'primary',
 			context.store
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    loggedOut,
+    help,
+    courses,
+    contact
+} = exported;

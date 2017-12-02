@@ -237,16 +237,25 @@ function executeCallback( promise, callback ) {
 	}
 }
 
-export default {
-	_driver: 'localForageBypass',
-	_initStorage: _initStorage,
-	// _supports: function() { return true; }
+const exported = {
+    _driver: 'localForageBypass',
+    _initStorage: _initStorage,
+
+    // _supports: function() { return true; }
 	iterate: iterate,
-	getItem: getItem,
-	setItem: setItem,
-	removeItem: removeItem,
-	clear: clear,
-	length: length,
-	key: _key,
-	keys: _keys,
+
+    getItem: getItem,
+    setItem: setItem,
+    removeItem: removeItem,
+    clear: clear,
+    length: length,
+    key: _key,
+    keys: _keys
 };
+
+export default exported;
+export { _initStorage, iterate, getItem, setItem, removeItem, clear, length, _key as key, _keys as keys };
+
+export const {
+    _driver
+} = exported;

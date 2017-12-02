@@ -138,3 +138,19 @@ normalizePost.content = {
 };
 
 export default normalizePost;
+
+export const {
+    decodeEntities,
+    stripHTML,
+    preventWidows,
+    pickCanonicalImage,
+    makeSiteIDSafeForAPI,
+    pickPrimaryTag,
+    safeImageProperties,
+    makeLinksSafe,
+    waitForImagesToLoad,
+    keepValidImages,
+    createBetterExcerpt,
+    withContentDOM,
+    content
+} = normalizePost;

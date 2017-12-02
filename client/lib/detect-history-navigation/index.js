@@ -1,14 +1,22 @@
 /** @format */
 let _loadedViaHistory = false;
 
-export default {
-	start: function() {
+const exported = {
+    start: function() {
 		// add a popstate listener that sets the flag
 		window.addEventListener( 'popstate', function( event ) {
 			_loadedViaHistory = !! event.state;
 		} );
 	},
-	loadedViaHistory: function() {
+
+    loadedViaHistory: function() {
 		return _loadedViaHistory;
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    start,
+    loadedViaHistory
+} = exported;

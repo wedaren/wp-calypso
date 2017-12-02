@@ -29,8 +29,8 @@ import WhoisData from 'components/data/domain-management/whois';
 
 const productsList = new ProductsList();
 
-export default {
-	domainManagementList( pageContext ) {
+const exported = {
+    domainManagementList( pageContext ) {
 		analytics.pageView.record( paths.domainManagementList( ':site' ), 'Domain Management' );
 
 		renderWithReduxStore(
@@ -44,7 +44,7 @@ export default {
 		);
 	},
 
-	domainManagementEdit( pageContext ) {
+    domainManagementEdit( pageContext ) {
 		analytics.pageView.record(
 			paths.domainManagementEdit( ':site', ':domain' ),
 			'Domain Management › Edit'
@@ -65,7 +65,7 @@ export default {
 		);
 	},
 
-	domainManagementPrimaryDomain: function( pageContext ) {
+    domainManagementPrimaryDomain: function( pageContext ) {
 		analytics.pageView.record(
 			paths.domainManagementPrimaryDomain( ':site', ':domain' ),
 			'Domain Management › Set Primary Domain'
@@ -78,7 +78,7 @@ export default {
 		);
 	},
 
-	domainManagementContactsPrivacy( pageContext ) {
+    domainManagementContactsPrivacy( pageContext ) {
 		analytics.pageView.record(
 			paths.domainManagementContactsPrivacy( ':site', ':domain' ),
 			'Domain Management › Contacts and Privacy'
@@ -95,7 +95,7 @@ export default {
 		);
 	},
 
-	domainManagementEditContactInfo( pageContext ) {
+    domainManagementEditContactInfo( pageContext ) {
 		analytics.pageView.record(
 			paths.domainManagementEditContactInfo( ':site', ':domain' ),
 			'Domain Management › Contacts and Privacy › Edit Contact Info'
@@ -112,7 +112,7 @@ export default {
 		);
 	},
 
-	domainManagementEmail( pageContext ) {
+    domainManagementEmail( pageContext ) {
 		analytics.pageView.record(
 			paths.domainManagementEmail( ':site', pageContext.params.domain ? ':domain' : undefined ),
 			'Domain Management › Email'
@@ -130,7 +130,7 @@ export default {
 		);
 	},
 
-	domainManagementEmailForwarding( pageContext ) {
+    domainManagementEmailForwarding( pageContext ) {
 		analytics.pageView.record(
 			paths.domainManagementEmailForwarding( ':site', ':domain' ),
 			'Domain Management › Email › Email Forwarding'
@@ -146,7 +146,7 @@ export default {
 		);
 	},
 
-	domainManagementDns( pageContext ) {
+    domainManagementDns( pageContext ) {
 		analytics.pageView.record(
 			paths.domainManagementDns( ':site', ':domain' ),
 			'Domain Management › Name Servers and DNS › DNS Records'
@@ -161,7 +161,8 @@ export default {
 			pageContext.store
 		);
 	},
-	domainManagementNameServers( pageContext ) {
+
+    domainManagementNameServers( pageContext ) {
 		analytics.pageView.record(
 			paths.domainManagementNameServers( ':site', ':domain' ),
 			'Domain Management › Name Servers and DNS'
@@ -177,7 +178,7 @@ export default {
 		);
 	},
 
-	domainManagementPrivacyProtection( pageContext ) {
+    domainManagementPrivacyProtection( pageContext ) {
 		analytics.pageView.record(
 			paths.domainManagementPrivacyProtection( ':site', ':domain' ),
 			'Domain Management › Contacts and Privacy › Privacy Protection'
@@ -194,7 +195,7 @@ export default {
 		);
 	},
 
-	domainManagementAddGoogleApps( pageContext ) {
+    domainManagementAddGoogleApps( pageContext ) {
 		analytics.pageView.record(
 			paths.domainManagementAddGoogleApps(
 				':site',
@@ -215,7 +216,7 @@ export default {
 		);
 	},
 
-	domainManagementRedirectSettings( pageContext ) {
+    domainManagementRedirectSettings( pageContext ) {
 		analytics.pageView.record(
 			paths.domainManagementRedirectSettings( ':site', ':domain' ),
 			'Domain Management › Redirect Settings'
@@ -231,14 +232,14 @@ export default {
 		);
 	},
 
-	domainManagementIndex( pageContext ) {
+    domainManagementIndex( pageContext ) {
 		const state = pageContext.store.getState();
 		const siteSlug = getSelectedSiteSlug( state );
 
 		page.redirect( '/domains/manage' + ( siteSlug ? `/${ siteSlug }` : '' ) );
 	},
 
-	domainManagementTransfer( pageContext ) {
+    domainManagementTransfer( pageContext ) {
 		renderWithReduxStore(
 			<TransferData
 				component={ DomainManagement.Transfer }
@@ -249,7 +250,7 @@ export default {
 		);
 	},
 
-	domainManagementTransferToOtherSite( pageContext ) {
+    domainManagementTransferToOtherSite( pageContext ) {
 		const state = pageContext.store.getState();
 		const siteId = getSelectedSiteId( state );
 		const isAutomatedTransfer = isSiteAutomatedTransfer( state, siteId );
@@ -269,7 +270,7 @@ export default {
 		);
 	},
 
-	domainManagementTransferToOtherUser( pageContext ) {
+    domainManagementTransferToOtherUser( pageContext ) {
 		const state = pageContext.store.getState();
 		const siteId = getSelectedSiteId( state );
 		const isAutomatedTransfer = isSiteAutomatedTransfer( state, siteId );
@@ -289,7 +290,7 @@ export default {
 		);
 	},
 
-	domainManagementTransferOut( pageContext ) {
+    domainManagementTransferOut( pageContext ) {
 		renderWithReduxStore(
 			<TransferData
 				component={ DomainManagement.TransferOut }
@@ -298,5 +299,27 @@ export default {
 			document.getElementById( 'primary' ),
 			pageContext.store
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    domainManagementList,
+    domainManagementEdit,
+    domainManagementPrimaryDomain,
+    domainManagementContactsPrivacy,
+    domainManagementEditContactInfo,
+    domainManagementEmail,
+    domainManagementEmailForwarding,
+    domainManagementDns,
+    domainManagementNameServers,
+    domainManagementPrivacyProtection,
+    domainManagementAddGoogleApps,
+    domainManagementRedirectSettings,
+    domainManagementIndex,
+    domainManagementTransfer,
+    domainManagementTransferToOtherSite,
+    domainManagementTransferToOtherUser,
+    domainManagementTransferOut
+} = exported;

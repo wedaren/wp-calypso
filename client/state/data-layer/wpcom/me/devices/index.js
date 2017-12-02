@@ -64,6 +64,12 @@ export const handleSuccess = ( { dispatch }, action, devices ) =>
 export const handleError = ( { dispatch } ) =>
 	dispatch( errorNotice( translate( "We couldn't load your devices, please try again." ) ) );
 
-export default {
-	[ USER_DEVICES_REQUEST ]: [ dispatchRequest( requestUserDevices, handleSuccess, handleError ) ],
+const exported = {
+    [ USER_DEVICES_REQUEST ]: [ dispatchRequest( requestUserDevices, handleSuccess, handleError ) ]
 };
+
+export default exported;
+
+export const {
+    USER_DEVICES_REQUEST
+} = exported;

@@ -29,3 +29,7 @@ function PlanPriceExample() {
 PlanPriceExample.displayName = 'PlanPrice';
 
 export default PlanPriceExample;
+
+export const {
+    displayName
+} = PlanPriceExample;

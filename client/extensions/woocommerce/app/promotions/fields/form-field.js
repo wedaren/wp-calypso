@@ -88,3 +88,7 @@ FormField.PropTypes = {
 };
 
 export default FormField;
+
+export const {
+    PropTypes
+} = FormField;

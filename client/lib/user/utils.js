@@ -71,3 +71,11 @@ const userUtils = {
 };
 
 export default userUtils;
+
+export const {
+    getLogoutUrl,
+    logout,
+    getLocaleSlug,
+    isLoggedIn,
+    needsVerificationForSite
+} = userUtils;

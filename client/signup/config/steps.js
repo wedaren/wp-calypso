@@ -13,8 +13,8 @@ import i18n from 'i18n-calypso';
 import config from 'config';
 import stepActions from 'lib/signup/step-actions';
 
-export default {
-	survey: {
+const exported = {
+    survey: {
 		stepName: 'survey',
 		props: {
 			surveySiteType:
@@ -23,13 +23,13 @@ export default {
 		providesDependencies: [ 'surveySiteType', 'surveyQuestion' ],
 	},
 
-	themes: {
+    themes: {
 		stepName: 'themes',
 		dependencies: [ 'siteSlug' ],
 		providesDependencies: [ 'themeSlugWithRepo' ],
 	},
 
-	'blog-themes': {
+    'blog-themes': {
 		stepName: 'blog-themes',
 		props: {
 			designType: 'blog',
@@ -38,7 +38,7 @@ export default {
 		providesDependencies: [ 'themeSlugWithRepo' ],
 	},
 
-	'website-themes': {
+    'website-themes': {
 		stepName: 'website-themes',
 		props: {
 			designType: 'page',
@@ -47,7 +47,7 @@ export default {
 		providesDependencies: [ 'themeSlugWithRepo' ],
 	},
 
-	'portfolio-themes': {
+    'portfolio-themes': {
 		stepName: 'portfolio-themes',
 		props: {
 			designType: 'grid',
@@ -56,7 +56,7 @@ export default {
 		providesDependencies: [ 'themeSlugWithRepo' ],
 	},
 
-	// `themes` does not update the theme for an existing site as we normally
+    // `themes` does not update the theme for an existing site as we normally
 	// do this when the site is created. In flows where a site is merely being
 	// updated, we need to use a different API request function.
 	'themes-site-selected': {
@@ -69,35 +69,35 @@ export default {
 		},
 	},
 
-	'plans-site-selected': {
+    'plans-site-selected': {
 		stepName: 'plans-site-selected',
 		apiRequestFunction: stepActions.addPlanToCart,
 		dependencies: [ 'siteSlug', 'siteId' ],
 		providesDependencies: [ 'cartItem', 'privacyItem' ],
 	},
 
-	'design-type': {
+    'design-type': {
 		stepName: 'design-type',
 		providesDependencies: [ 'designType', 'themeSlugWithRepo' ],
 	},
 
-	'design-type-with-store': {
+    'design-type-with-store': {
 		stepName: 'design-type-with-store',
 		providesDependencies: [ 'designType', 'themeSlugWithRepo' ],
 	},
 
-	'design-type-with-store-nux': {
+    'design-type-with-store-nux': {
 		stepName: 'design-type-with-store-nux',
 		providesDependencies: [ 'designType', 'themeSlugWithRepo' ],
 	},
 
-	site: {
+    site: {
 		stepName: 'site',
 		apiRequestFunction: stepActions.createSite,
 		providesDependencies: [ 'siteSlug' ],
 	},
 
-	'rebrand-cities-welcome': {
+    'rebrand-cities-welcome': {
 		stepName: 'rebrand-cities-welcome',
 		apiRequestFunction: stepActions.createSiteWithCart,
 		providesDependencies: [ 'siteId', 'siteSlug', 'domainItem', 'themeItem' ],
@@ -107,12 +107,12 @@ export default {
 		delayApiRequestUntilComplete: true,
 	},
 
-	about: {
+    about: {
 		stepName: 'about',
 		providesDependencies: [ 'themeSlugWithRepo', 'siteTitle' ],
 	},
 
-	user: {
+    user: {
 		stepName: 'user',
 		apiRequestFunction: stepActions.createAccount,
 		providesToken: true,
@@ -123,30 +123,30 @@ export default {
 		},
 	},
 
-	'site-title': {
+    'site-title': {
 		stepName: 'site-title',
 		providesDependencies: [ 'siteTitle' ],
 	},
 
-	test: {
+    test: {
 		stepName: 'test',
 	},
 
-	plans: {
+    plans: {
 		stepName: 'plans',
 		apiRequestFunction: stepActions.addPlanToCart,
 		dependencies: [ 'siteSlug', 'siteId', 'domainItem' ],
 		providesDependencies: [ 'cartItem', 'privacyItem' ],
 	},
 
-	'plans-store-nux': {
+    'plans-store-nux': {
 		stepName: 'plans-store-nux',
 		apiRequestFunction: stepActions.addPlanToCart,
 		dependencies: [ 'siteSlug', 'siteId', 'domainItem' ],
 		providesDependencies: [ 'cartItem', 'privacyItem' ],
 	},
 
-	domains: {
+    domains: {
 		stepName: 'domains',
 		apiRequestFunction: stepActions.createSiteWithCart,
 		providesDependencies: [ 'siteId', 'siteSlug', 'domainItem', 'themeItem' ],
@@ -157,7 +157,7 @@ export default {
 		delayApiRequestUntilComplete: true,
 	},
 
-	'domains-theme-preselected': {
+    'domains-theme-preselected': {
 		stepName: 'domains-theme-preselected',
 		apiRequestFunction: stepActions.createSiteWithCart,
 		providesDependencies: [ 'siteId', 'siteSlug', 'domainItem', 'themeItem' ],
@@ -167,7 +167,7 @@ export default {
 		delayApiRequestUntilComplete: true,
 	},
 
-	'jetpack-user': {
+    'jetpack-user': {
 		stepName: 'jetpack-user',
 		apiRequestFunction: stepActions.createAccount,
 		providesToken: true,
@@ -178,7 +178,7 @@ export default {
 		providesDependencies: [ 'bearer_token', 'username' ],
 	},
 
-	'oauth2-user': {
+    'oauth2-user': {
 		stepName: 'oauth2-user',
 		apiRequestFunction: stepActions.createAccount,
 		props: {
@@ -188,7 +188,7 @@ export default {
 		providesDependencies: [ 'bearer_token', 'username', 'oauth2_client_id', 'oauth2_redirect' ],
 	},
 
-	'get-dot-blog-plans': {
+    'get-dot-blog-plans': {
 		apiRequestFunction: stepActions.createSiteWithCart,
 		stepName: 'get-dot-blog-plans',
 		dependencies: [ 'cartItem' ],
@@ -202,7 +202,7 @@ export default {
 		],
 	},
 
-	'get-dot-blog-themes': {
+    'get-dot-blog-themes': {
 		stepName: 'get-dot-blog-themes',
 		props: {
 			designType: 'blog',
@@ -211,7 +211,7 @@ export default {
 		providesDependencies: [ 'themeSlugWithRepo' ],
 	},
 
-	// Currently, these two steps explicitly submit other steps to skip them, and
+    // Currently, these two steps explicitly submit other steps to skip them, and
 	// should not be used outside of the `domain-first` flow.
 	'site-or-domain': {
 		stepName: 'site-or-domain',
@@ -230,7 +230,8 @@ export default {
 			'themeSlugWithRepo',
 		],
 	},
-	'site-picker': {
+
+    'site-picker': {
 		stepName: 'site-picker',
 		apiRequestFunction: stepActions.createSiteOrDomain,
 		props: {
@@ -248,18 +249,31 @@ export default {
 		delayApiRequestUntilComplete: true,
 	},
 
-	'creds-complete': {
+    'creds-complete': {
 		stepName: 'creds-complete',
 		providesDependencies: [],
 	},
 
-	'creds-confirm': {
+    'creds-confirm': {
 		stepName: 'creds-confirm',
 		providesDependencies: [],
 	},
 
-	'creds-permission': {
+    'creds-permission': {
 		stepName: 'creds-permission',
 		providesDependencies: [],
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    survey,
+    themes,
+    site,
+    about,
+    user,
+    test,
+    plans,
+    domains
+} = exported;

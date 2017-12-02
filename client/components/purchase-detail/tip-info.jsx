@@ -26,3 +26,5 @@ TipInfo.propTypes = {
 };
 
 export default TipInfo;
+
+export const { propTypes } = TipInfo;

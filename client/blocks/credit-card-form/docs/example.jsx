@@ -34,3 +34,5 @@ const CreditCardFormExample = () => {
 CreditCardFormExample.displayName = 'CreditCardForm';
 
 export default CreditCardFormExample;
+
+export const { displayName } = CreditCardFormExample;

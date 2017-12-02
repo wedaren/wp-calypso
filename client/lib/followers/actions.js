@@ -71,3 +71,8 @@ var FollowersActions = {
 };
 
 export default FollowersActions;
+
+export const {
+    fetchFollowers,
+    removeFollower
+} = FollowersActions;

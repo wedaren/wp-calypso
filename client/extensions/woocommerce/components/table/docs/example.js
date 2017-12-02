@@ -133,3 +133,5 @@ class Example extends Component {
 Example.displayName = 'WooTable';
 
 export default Example;
+
+export const { displayName } = Example;

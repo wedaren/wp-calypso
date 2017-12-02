@@ -30,10 +30,17 @@ const flows = {
 	},
 };
 
-export default {
-	defaultFlowName: 'simple_flow',
+const exported = {
+    defaultFlowName: 'simple_flow',
 
-	getFlow: function( flowName ) {
+    getFlow: function( flowName ) {
 		return flows[ flowName ];
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    defaultFlowName,
+    getFlow
+} = exported;

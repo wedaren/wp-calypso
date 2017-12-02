@@ -29,3 +29,7 @@ StepConfirmationButton.propTypes = {
 };
 
 export default StepConfirmationButton;
+
+export const {
+    propTypes
+} = StepConfirmationButton;

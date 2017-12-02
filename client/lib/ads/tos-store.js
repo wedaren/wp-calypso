@@ -99,3 +99,14 @@ WordadsTosStore.dispatchToken = Dispatcher.register( function( payload ) {
 emitter( WordadsTosStore );
 
 export default WordadsTosStore;
+
+export const {
+	get,
+	getById,
+	isLoading,
+	getLoadingError,
+	getNotice,
+	clearNotices,
+	emitChange,
+	dispatchToken,
+} = WordadsTosStore;

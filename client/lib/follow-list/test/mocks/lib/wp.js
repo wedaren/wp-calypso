@@ -11,8 +11,8 @@ const successRequestStub = function() {
 	args[ 0 ].apply( undefined, [ null, { some: 'data' } ] );
 };
 
-export default {
-	site: function() {
+const exported = {
+    site: function() {
 		return {
 			follow: function() {
 				const siteEndpoints = {};
@@ -22,5 +22,11 @@ export default {
 				return siteEndpoints;
 			},
 		};
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    site
+} = exported;

@@ -57,3 +57,9 @@ var CustomizeActions = {
 };
 
 export default CustomizeActions;
+
+export const {
+    purchase,
+    activated,
+    close
+} = CustomizeActions;

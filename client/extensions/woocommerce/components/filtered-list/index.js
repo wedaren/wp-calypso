@@ -61,3 +61,5 @@ FilteredList.propTypes = {
 };
 
 export default FilteredList;
+
+export const { propTypes } = FilteredList;

@@ -93,3 +93,5 @@ const ConnectedPlanStorageExample = connect( state => {
 ConnectedPlanStorageExample.displayName = 'PlanStorage';
 
 export default ConnectedPlanStorageExample;
+
+export const { displayName } = ConnectedPlanStorageExample;

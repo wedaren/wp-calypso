@@ -27,8 +27,8 @@ function addProductsToCart( cart, newCartItems ) {
 	return cart;
 }
 
-export default {
-	createCart: function( cartKey, newCartItems, callback ) {
+const exported = {
+    createCart: function( cartKey, newCartItems, callback ) {
 		let newCart = {
 			cart_key: cartKey,
 			products: [],
@@ -41,7 +41,8 @@ export default {
 			callback( postError );
 		} );
 	},
-	addToCart: function( cartKey, newCartItems, callback ) {
+
+    addToCart: function( cartKey, newCartItems, callback ) {
 		wpcom.undocumented().cart( cartKey, function( error, data ) {
 			if ( error ) {
 				return callback( error );
@@ -55,5 +56,12 @@ export default {
 
 			wpcom.undocumented().cart( cartKey, 'POST', newCart, callback );
 		} );
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    createCart,
+    addToCart
+} = exported;

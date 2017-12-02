@@ -45,3 +45,7 @@ CurrencyField.PropTypes = {
 };
 
 export default CurrencyField;
+
+export const {
+    PropTypes
+} = CurrencyField;

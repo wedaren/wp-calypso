@@ -73,3 +73,5 @@ PostGallery.propTypes = {
 };
 
 export default PostGallery;
+
+export const { propTypes } = PostGallery;

@@ -69,11 +69,14 @@ const domainProductSlugs = {
 	TRANSFER_IN_PRIVACY: 'domain_transfer_privacy',
 };
 
-export default {
-	dnsTemplates,
-	domainAvailability,
-	domainProductSlugs,
-	registrar,
-	transferStatus,
-	type,
+const exported = {
+    dnsTemplates,
+    domainAvailability,
+    domainProductSlugs,
+    registrar,
+    transferStatus,
+    type
 };
+
+export default exported;
+export { dnsTemplates, domainAvailability, domainProductSlugs, registrar, transferStatus, type };

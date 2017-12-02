@@ -8,8 +8,8 @@ import site from './site';
 import viewerData from './viewers-1';
 import moreViewerData from './viewers-2';
 
-export default {
-	fetchedViewersEmpty: {
+const exported = {
+    fetchedViewersEmpty: {
 		type: 'RECEIVE_VIEWERS',
 		siteId: site.ID,
 		data: { found: 20, viewers: [] },
@@ -17,7 +17,7 @@ export default {
 		error: null,
 	},
 
-	fetchedViewers: {
+    fetchedViewers: {
 		type: 'RECEIVE_VIEWERS',
 		siteId: site.ID,
 		data: viewerData,
@@ -25,7 +25,7 @@ export default {
 		error: null,
 	},
 
-	fetchedMoreViewers: {
+    fetchedMoreViewers: {
 		type: 'RECEIVE_VIEWERS',
 		siteId: site.ID,
 		data: moreViewerData,
@@ -33,15 +33,25 @@ export default {
 		error: null,
 	},
 
-	removeViewer: {
+    removeViewer: {
 		type: 'REMOVE_VIEWER',
 		siteId: site.ID,
 		viewer: viewerData.viewers[ 0 ],
 	},
 
-	removeViewerError: {
+    removeViewerError: {
 		type: 'RECEIVE_REMOVE_VIEWER_ERROR',
 		siteId: site.ID,
 		viewer: viewerData.viewers[ 0 ],
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    fetchedViewersEmpty,
+    fetchedViewers,
+    fetchedMoreViewers,
+    removeViewer,
+    removeViewerError
+} = exported;

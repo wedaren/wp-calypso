@@ -1,22 +1,31 @@
 /** @format */
-export default {
-	main: {
+const exported = {
+    main: {
 		steps: [ 'user', 'site' ],
 		destination: '/',
 	},
 
-	account: {
+    account: {
 		steps: [ 'user', 'site' ],
 		destination: '/',
 	},
 
-	other: {
+    other: {
 		steps: [ 'user', 'site' ],
 		destination: '/',
 	},
 
-	filtered: {
+    filtered: {
 		steps: [ 'user', 'site' ],
 		destination: '/',
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    main,
+    account,
+    other,
+    filtered
+} = exported;

@@ -25,8 +25,8 @@ if ( ! window._sift ) {
 /**
  * Expose `SiftScience`
  */
-export default {
-	recordUser: function() {
+const exported = {
+    recordUser: function() {
 		if ( ! hasLoaded ) {
 			window._sift.push( [ '_setAccount', config( 'siftscience_key' ) ] );
 			window._sift.push( [ '_setUserId', user().get().ID ] );
@@ -41,5 +41,11 @@ export default {
 				}
 			} );
 		}
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    recordUser
+} = exported;

@@ -23,3 +23,7 @@ var LocaleSuggestionActions = {
 };
 
 export default LocaleSuggestionActions;
+
+export const {
+    fetch
+} = LocaleSuggestionActions;

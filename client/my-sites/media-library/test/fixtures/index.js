@@ -41,8 +41,8 @@
  * @format
  */
 
-export default {
-	media: [
+const exported = {
+    media: [
 		{
 			ID: 1009,
 			guid: 'http://example.files.wordpress.com/2015/05/g1009.gif',
@@ -101,5 +101,11 @@ export default {
 			guid: 'http://example.files.wordpress.com/2015/05/g1000.gif',
 			date: '2017-09-02',
 		},
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    media
+} = exported;

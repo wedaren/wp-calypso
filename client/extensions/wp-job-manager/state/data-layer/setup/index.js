@@ -144,8 +144,16 @@ const dispatchFetchSetupStatusRequest = dispatchRequest(
 );
 const dispatchSaveSetupStatusRequest = dispatchRequest( saveSetupStatus, noop, noop );
 
-export default {
+const exported = {
 	[ WP_JOB_MANAGER_CREATE_PAGES ]: [ dispatchCreatePagesRequest ],
 	[ WP_JOB_MANAGER_FETCH_SETUP_STATUS ]: [ dispatchFetchSetupStatusRequest ],
 	[ WP_JOB_MANAGER_SAVE_SETUP_STATUS ]: [ dispatchSaveSetupStatusRequest ],
 };
+
+export default exported;
+
+export const {
+	WP_JOB_MANAGER_CREATE_PAGES,
+	WP_JOB_MANAGER_FETCH_SETUP_STATUS,
+	WP_JOB_MANAGER_SAVE_SETUP_STATUS,
+} = exported;

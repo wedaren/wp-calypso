@@ -52,3 +52,7 @@ SiteRedirectDetails.propTypes = {
 };
 
 export default SiteRedirectDetails;
+
+export const {
+    propTypes
+} = SiteRedirectDetails;

@@ -21,8 +21,8 @@ import NotificationSubscriptions from 'me/notification-settings/reader-subscript
 
 const ANALYTICS_PAGE_TITLE = 'Me';
 
-export default {
-	notifications( context ) {
+const exported = {
+    notifications( context ) {
 		const basePath = context.path;
 
 		// FIXME: Auto-converted from the Flux setTitle action. Please use <DocumentHead> instead.
@@ -40,7 +40,7 @@ export default {
 		);
 	},
 
-	comments( context ) {
+    comments( context ) {
 		const basePath = context.path;
 
 		// FIXME: Auto-converted from the Flux setTitle action. Please use <DocumentHead> instead.
@@ -62,7 +62,7 @@ export default {
 		);
 	},
 
-	updates( context ) {
+    updates( context ) {
 		const basePath = context.path;
 
 		// FIXME: Auto-converted from the Flux setTitle action. Please use <DocumentHead> instead.
@@ -84,7 +84,7 @@ export default {
 		);
 	},
 
-	notificationSubscriptions( context ) {
+    notificationSubscriptions( context ) {
 		const basePath = context.path;
 
 		// FIXME: Auto-converted from the Flux setTitle action. Please use <DocumentHead> instead.
@@ -103,5 +103,14 @@ export default {
 			document.getElementById( 'primary' ),
 			context.store
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    notifications,
+    comments,
+    updates,
+    notificationSubscriptions
+} = exported;

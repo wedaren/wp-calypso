@@ -19,6 +19,9 @@ const concierge = context => {
 	);
 };
 
-export default {
-	concierge,
+const exported = {
+    concierge
 };
+
+export default exported;
+export { concierge };

@@ -30,14 +30,24 @@ import {
 
 const debug = debugFactory( 'woocommerce:products' );
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_PRODUCT_CREATE ]: [ handleProductCreate ],
 	[ WOOCOMMERCE_PRODUCT_UPDATE ]: [ handleProductUpdate ],
 	[ WOOCOMMERCE_PRODUCT_REQUEST ]: [ handleProductRequest ],
+
 	[ WOOCOMMERCE_PRODUCTS_REQUEST ]: [
 		dispatchRequest( productsRequest, receivedProducts, apiError ),
 	],
 };
+
+export default exported;
+
+export const {
+	WOOCOMMERCE_PRODUCT_CREATE,
+	WOOCOMMERCE_PRODUCT_UPDATE,
+	WOOCOMMERCE_PRODUCT_REQUEST,
+	WOOCOMMERCE_PRODUCTS_REQUEST,
+} = exported;
 
 export function apiError( { dispatch }, action, error ) {
 	warn( 'Products API Error: ', error );

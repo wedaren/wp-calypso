@@ -150,13 +150,19 @@ export function handleError() {
 	return errorNotice( translate( 'Could not fetch the next page of posts' ) );
 }
 
-export default {
-	[ READER_STREAMS_PAGE_REQUEST ]: [
+const exported = {
+    [ READER_STREAMS_PAGE_REQUEST ]: [
 		dispatchRequestEx( {
 			fetch: requestPage,
 			onSuccess: handlePage,
 			onError: handleError,
 			fromApi,
 		} ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    READER_STREAMS_PAGE_REQUEST
+} = exported;

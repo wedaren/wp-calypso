@@ -51,8 +51,11 @@ export const handleUnlikeFailure = ( { dispatch }, { siteId, postId, commentId }
 	dispatch( errorNotice( translate( 'Could not unlike this comment' ) ) );
 };
 
-export default {
-	[ COMMENTS_UNLIKE ]: [
+const exported = {
+    [ COMMENTS_UNLIKE ]: [
 		dispatchRequest( unlikeComment, updateCommentLikes, handleUnlikeFailure ),
-	],
+	]
 };
+
+export default exported;
+export const {} = exported;

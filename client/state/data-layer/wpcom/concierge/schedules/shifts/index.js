@@ -39,13 +39,19 @@ export const conciergeShiftsFetchError = () =>
 export const showConciergeShiftsFetchError = ( { dispatch } ) =>
 	dispatch( conciergeShiftsFetchError() );
 
-export default {
-	[ CONCIERGE_SHIFTS_REQUEST ]: [
+const exported = {
+    [ CONCIERGE_SHIFTS_REQUEST ]: [
 		dispatchRequest(
 			fetchConciergeShifts,
 			storeFetchedConciergeShifts,
 			showConciergeShiftsFetchError,
 			{ fromApi }
 		),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    CONCIERGE_SHIFTS_REQUEST
+} = exported;

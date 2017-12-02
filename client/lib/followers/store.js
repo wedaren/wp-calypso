@@ -196,3 +196,7 @@ FollowersStore.dispatchToken = Dispatcher.register( function( payload ) {
 emitter( FollowersStore );
 
 export default FollowersStore;
+
+export const {
+    dispatchToken
+} = FollowersStore;

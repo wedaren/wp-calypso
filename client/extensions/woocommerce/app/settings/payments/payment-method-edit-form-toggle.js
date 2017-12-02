@@ -42,3 +42,5 @@ PaymentMethodEditFormToggle.propTypes = {
 };
 
 export default PaymentMethodEditFormToggle;
+
+export const { propTypes } = PaymentMethodEditFormToggle;

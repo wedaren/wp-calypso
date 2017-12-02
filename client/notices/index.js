@@ -199,3 +199,16 @@ const notices = {
 };
 
 export default notices;
+export { list };
+
+export const {
+    new,
+    success,
+    error,
+    info,
+    warning,
+    removeNotice,
+    clearNoticesOnNavigation,
+    clearNotices,
+    getStatusHelper
+} = notices;

@@ -61,3 +61,5 @@ FacebookPreview.propTypes = {
 };
 
 export default FacebookPreview;
+
+export const { propTypes } = FacebookPreview;

@@ -219,10 +219,20 @@ export const handleProductListDelete = dispatchRequestEx( {
 	onError: noop,
 } );
 
-export default {
-	[ SIMPLE_PAYMENTS_PRODUCT_GET ]: [ handleProductGet ],
-	[ SIMPLE_PAYMENTS_PRODUCTS_LIST ]: [ handleProductList ],
-	[ SIMPLE_PAYMENTS_PRODUCTS_LIST_ADD ]: [ handleProductListAdd ],
-	[ SIMPLE_PAYMENTS_PRODUCTS_LIST_EDIT ]: [ handleProductListEdit ],
-	[ SIMPLE_PAYMENTS_PRODUCTS_LIST_DELETE ]: [ handleProductListDelete ],
+const exported = {
+    [ SIMPLE_PAYMENTS_PRODUCT_GET ]: [ handleProductGet ],
+    [ SIMPLE_PAYMENTS_PRODUCTS_LIST ]: [ handleProductList ],
+    [ SIMPLE_PAYMENTS_PRODUCTS_LIST_ADD ]: [ handleProductListAdd ],
+    [ SIMPLE_PAYMENTS_PRODUCTS_LIST_EDIT ]: [ handleProductListEdit ],
+    [ SIMPLE_PAYMENTS_PRODUCTS_LIST_DELETE ]: [ handleProductListDelete ]
 };
+
+export default exported;
+
+export const {
+    SIMPLE_PAYMENTS_PRODUCT_GET,
+    SIMPLE_PAYMENTS_PRODUCTS_LIST,
+    SIMPLE_PAYMENTS_PRODUCTS_LIST_ADD,
+    SIMPLE_PAYMENTS_PRODUCTS_LIST_EDIT,
+    SIMPLE_PAYMENTS_PRODUCTS_LIST_DELETE
+} = exported;

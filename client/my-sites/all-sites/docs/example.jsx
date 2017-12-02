@@ -21,3 +21,7 @@ const AllSitesExample = () => (
 AllSitesExample.displayName = 'AllSites';
 
 export default AllSitesExample;
+
+export const {
+ displayName
+} = AllSitesExample;

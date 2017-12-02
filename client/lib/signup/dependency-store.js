@@ -72,3 +72,7 @@ SignupDependencyStore.dispatchToken = Dispatcher.register( function( payload ) {
 } );
 
 export default SignupDependencyStore;
+
+export const {
+    dispatchToken
+} = SignupDependencyStore;

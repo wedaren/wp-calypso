@@ -64,12 +64,18 @@ export function receiveBlogStickerRemoveError( { dispatch }, action ) {
 	);
 }
 
-export default {
-	[ SITES_BLOG_STICKER_REMOVE ]: [
+const exported = {
+    [ SITES_BLOG_STICKER_REMOVE ]: [
 		dispatchRequest(
 			requestBlogStickerRemove,
 			receiveBlogStickerRemove,
 			receiveBlogStickerRemoveError
 		),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    SITES_BLOG_STICKER_REMOVE
+} = exported;

@@ -8,7 +8,7 @@ import { put } from 'woocommerce/state/data-layer/request/actions';
 import { savePaymentMethodSuccess } from 'woocommerce/state/sites/payment-methods/actions';
 import { WOOCOMMERCE_PAYMENT_METHOD_UPDATE } from 'woocommerce/state/action-types';
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_PAYMENT_METHOD_UPDATE ]: [
 		/**
 		 * Issues a PUT request to payment_gateways/${ method.id }
@@ -48,3 +48,7 @@ export default {
 		},
 	],
 };
+
+export default exported;
+
+export const { WOOCOMMERCE_PAYMENT_METHOD_UPDATE } = exported;

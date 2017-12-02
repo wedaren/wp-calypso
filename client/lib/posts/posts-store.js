@@ -78,3 +78,8 @@ PostsStore.dispatchToken = Dispatcher.register( function( payload ) {
 } );
 
 export default PostsStore;
+
+export const {
+    get,
+    dispatchToken
+} = PostsStore;

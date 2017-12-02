@@ -312,12 +312,11 @@ function getUsernameSuggestion( username, reduxState ) {
 	} );
 }
 
-export default {
-	createSiteOrDomain,
+const exported = {
+    createSiteOrDomain,
+    createSiteWithCart,
 
-	createSiteWithCart,
-
-	addPlanToCart( callback, { siteId }, { cartItem, privacyItem } ) {
+    addPlanToCart( callback, { siteId }, { cartItem, privacyItem } ) {
 		if ( isEmpty( cartItem ) ) {
 			// the user selected the free plan
 			defer( callback );
@@ -332,7 +331,7 @@ export default {
 		);
 	},
 
-	createAccount(
+    createAccount(
 		callback,
 		dependencies,
 		{ userData, flowName, queryArgs, service, access_token, id_token, oauth2Signup },
@@ -408,7 +407,7 @@ export default {
 		}
 	},
 
-	createSite( callback, { themeSlugWithRepo }, { site } ) {
+    createSite( callback, { themeSlugWithRepo }, { site } ) {
 		var data = {
 			blog_name: site,
 			blog_title: '',
@@ -436,9 +435,16 @@ export default {
 		} );
 	},
 
-	fetchSitesAndUser: fetchSitesAndUser,
-
-	setThemeOnSite: setThemeOnSite,
-
-	getUsernameSuggestion: getUsernameSuggestion,
+    fetchSitesAndUser: fetchSitesAndUser,
+    setThemeOnSite: setThemeOnSite,
+    getUsernameSuggestion: getUsernameSuggestion
 };
+
+export default exported;
+export { createSiteOrDomain, createSiteWithCart, fetchSitesAndUser, setThemeOnSite, getUsernameSuggestion };
+
+export const {
+    addPlanToCart,
+    createAccount,
+    createSite
+} = exported;

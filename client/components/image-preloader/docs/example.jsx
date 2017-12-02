@@ -21,3 +21,5 @@ const ImagePreloaderExample = () => (
 ImagePreloaderExample.displayName = 'ImagePreloaderExample';
 
 export default ImagePreloaderExample;
+
+export const { displayName } = ImagePreloaderExample;

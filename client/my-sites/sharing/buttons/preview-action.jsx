@@ -50,3 +50,8 @@ SharingButtonsPreviewAction.defaultProps = {
 };
 
 export default SharingButtonsPreviewAction;
+
+export const {
+    propTypes,
+    defaultProps
+} = SharingButtonsPreviewAction;

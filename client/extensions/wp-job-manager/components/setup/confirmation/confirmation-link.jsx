@@ -25,3 +25,5 @@ ConfirmationLink.propTypes = {
 };
 
 export default ConfirmationLink;
+
+export const { propTypes } = ConfirmationLink;

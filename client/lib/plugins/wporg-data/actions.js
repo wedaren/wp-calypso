@@ -138,3 +138,11 @@ const PluginsDataActions = {
 };
 
 export default PluginsDataActions;
+
+export const {
+    fetchPluginsList,
+    fetchCuratedList,
+    fetchNextCategoryPage,
+    canFetchList,
+    reset
+} = PluginsDataActions;

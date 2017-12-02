@@ -588,3 +588,26 @@ const MediaUtils = {
 };
 
 export default MediaUtils;
+
+export const {
+    url,
+    getFileExtension,
+    getMimePrefix,
+    getMimeType,
+    filterItemsByMimePrefix,
+    sortItemsByDate,
+    isSiteAllowedFileTypesToBeTrusted,
+    getAllowedFileTypesForSite,
+    isSupportedFileTypeInPremium,
+    isSupportedFileTypeForSite,
+    isExceedingSiteMaxUploadSize,
+    isVideoPressItem,
+    playtime,
+    getThumbnailSizeDimensions,
+    generateGalleryShortcode,
+    canUserDeleteItem,
+    canvasToBlob,
+    isItemBeingUploaded,
+    isTransientPreviewable,
+    createTransientMedia
+} = MediaUtils;

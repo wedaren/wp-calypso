@@ -74,6 +74,12 @@ export function unfollowError( { dispatch, getState }, action ) {
 	dispatch( bypassDataLayer( follow( action.payload.feedUrl ) ) );
 }
 
-export default {
-	[ READER_UNFOLLOW ]: [ dispatchRequest( requestUnfollow, receiveUnfollow, unfollowError ) ],
+const exported = {
+    [ READER_UNFOLLOW ]: [ dispatchRequest( requestUnfollow, receiveUnfollow, unfollowError ) ]
 };
+
+export default exported;
+
+export const {
+    READER_UNFOLLOW
+} = exported;

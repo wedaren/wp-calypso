@@ -79,3 +79,7 @@ NotificationSettingsStore.getStateFor = function( source ) {
 
 export default NotificationSettingsStore;
 /*eslint-enable new-cap */
+
+export const {
+    getStateFor
+} = NotificationSettingsStore;

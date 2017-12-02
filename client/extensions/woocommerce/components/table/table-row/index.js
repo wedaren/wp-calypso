@@ -52,3 +52,5 @@ TableRow.propTypes = {
 };
 
 export default TableRow;
+
+export const { propTypes } = TableRow;

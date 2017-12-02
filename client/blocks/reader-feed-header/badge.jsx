@@ -25,3 +25,5 @@ ReaderFeedHeaderSiteBadge.propTypes = {
 };
 
 export default ReaderFeedHeaderSiteBadge;
+
+export const { propTypes } = ReaderFeedHeaderSiteBadge;

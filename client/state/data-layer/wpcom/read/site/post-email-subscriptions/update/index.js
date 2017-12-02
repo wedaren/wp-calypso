@@ -58,12 +58,18 @@ export function receiveUpdatePostEmailSubscriptionError(
 	dispatch( bypassDataLayer( updateNewPostEmailSubscription( blogId, previousState ) ) );
 }
 
-export default {
-	[ READER_UPDATE_NEW_POST_EMAIL_SUBSCRIPTION ]: [
+const exported = {
+    [ READER_UPDATE_NEW_POST_EMAIL_SUBSCRIPTION ]: [
 		dispatchRequest(
 			requestUpdatePostEmailSubscription,
 			receiveUpdatePostEmailSubscription,
 			receiveUpdatePostEmailSubscriptionError
 		),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    READER_UPDATE_NEW_POST_EMAIL_SUBSCRIPTION
+} = exported;

@@ -550,3 +550,19 @@ const PluginsActions = {
 	},
 };
 export default PluginsActions;
+
+export const {
+    removePluginsNotices,
+    fetchSitePlugins,
+    updatePlugin,
+    installPlugin,
+    removePlugin,
+    activatePlugin,
+    deactivatePlugin,
+    togglePluginActivation,
+    enableAutoUpdatesPlugin,
+    disableAutoUpdatesPlugin,
+    togglePluginAutoUpdate,
+    removePluginUpdateInfo,
+    resetQueue
+} = PluginsActions;

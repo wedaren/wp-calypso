@@ -19,8 +19,14 @@ export const writePostComment = ( { dispatch }, action ) =>
 		`/sites/${ action.siteId }/posts/${ action.postId }/replies/new`
 	);
 
-export default {
-	[ COMMENTS_WRITE ]: [
+const exported = {
+    [ COMMENTS_WRITE ]: [
 		dispatchRequest( writePostComment, updatePlaceholderComment, handleWriteCommentFailure ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    COMMENTS_WRITE
+} = exported;

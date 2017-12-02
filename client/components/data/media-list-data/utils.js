@@ -1,5 +1,5 @@
 /** @format */
-export default {
+const exported = {
 	/**
 	 * Given a media filter, returns a partial mime type that can be used to
 	 * find only media of a certain type. Returns a blank mime if no filter,
@@ -35,3 +35,7 @@ export default {
 		return mime;
 	},
 };
+
+export default exported;
+
+export const { getMimeBaseTypeFromFilter } = exported;

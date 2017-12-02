@@ -41,3 +41,5 @@ ReaderPreview.propTypes = {
 };
 
 export default ReaderPreview;
+
+export const { propTypes } = ReaderPreview;

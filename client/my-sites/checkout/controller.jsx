@@ -36,8 +36,8 @@ const checkoutRoutes = [
 	new Route( '/checkout/:product/renew/:receipt' ),
 ];
 
-export default {
-	checkout: function( context ) {
+const exported = {
+    checkout: function( context ) {
 		const Checkout = require( './checkout' ),
 			CheckoutData = require( 'components/data/checkout' ),
 			CartData = require( 'components/data/cart' ),
@@ -81,7 +81,7 @@ export default {
 		);
 	},
 
-	sitelessCheckout: function( context ) {
+    sitelessCheckout: function( context ) {
 		const Checkout = require( './checkout' ),
 			CheckoutData = require( 'components/data/checkout' ),
 			CartData = require( 'components/data/cart' ),
@@ -109,7 +109,7 @@ export default {
 		);
 	},
 
-	checkoutThankYou: function( context ) {
+    checkoutThankYou: function( context ) {
 		const CheckoutThankYouComponent = require( './checkout-thank-you' ),
 			{ routePath, routeParams } = route.sectionifyWithRoutes( context.path, checkoutRoutes ),
 			receiptId = Number( context.params.receiptId ),
@@ -141,7 +141,7 @@ export default {
 		ReactDom.unmountComponentAtNode( document.getElementById( 'secondary' ) );
 	},
 
-	gsuiteNudge( context ) {
+    gsuiteNudge( context ) {
 		const { domain, site, receiptId } = context.params;
 		context.store.dispatch( setSection( { name: 'gsuite-nudge' }, { hasSidebar: false } ) );
 
@@ -181,5 +181,14 @@ export default {
 		);
 
 		ReactDom.unmountComponentAtNode( document.getElementById( 'secondary' ) );
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    checkout,
+    sitelessCheckout,
+    checkoutThankYou,
+    gsuiteNudge
+} = exported;

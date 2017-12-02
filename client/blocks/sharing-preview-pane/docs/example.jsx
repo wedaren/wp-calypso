@@ -61,3 +61,5 @@ const ConnectedSharingPreviewPaneExample = connect( state => {
 ConnectedSharingPreviewPaneExample.displayName = 'SharingPreviewPane';
 
 export default ConnectedSharingPreviewPaneExample;
+
+export const { displayName } = ConnectedSharingPreviewPaneExample;

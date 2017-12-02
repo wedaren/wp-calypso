@@ -69,3 +69,5 @@ GlobalNotices.propTypes = {
 const ConnectedGlobalNotices = connect( null, { createNotice } )( GlobalNotices );
 ConnectedGlobalNotices.displayName = 'GlobalNotices';
 export default ConnectedGlobalNotices;
+
+export const { displayName } = ConnectedGlobalNotices;

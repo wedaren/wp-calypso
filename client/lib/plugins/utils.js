@@ -225,3 +225,15 @@ const PluginUtils = {
 };
 
 export default PluginUtils;
+export { sanitizeSectionContent };
+
+export const {
+    whiteListPluginData,
+    extractAuthorName,
+    extractAuthorUrl,
+    extractScreenshots,
+    normalizeCompatibilityList,
+    normalizePluginData,
+    normalizePluginsList,
+    filterNotices
+} = PluginUtils;

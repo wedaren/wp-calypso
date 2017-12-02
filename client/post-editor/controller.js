@@ -203,8 +203,8 @@ function startEditingPostCopy( siteId, postToCopyId, context ) {
 		} );
 }
 
-export default {
-	post: function( context ) {
+const exported = {
+    post: function( context ) {
 		const postType = determinePostType( context );
 		const postID = getPostID( context );
 		const postToCopyId = context.query.copy;
@@ -289,7 +289,7 @@ export default {
 		renderEditor( context );
 	},
 
-	exitPost: function( context, next ) {
+    exitPost: function( context, next ) {
 		const postId = getPostID( context );
 		const siteId = getSelectedSiteId( context.store.getState() );
 		if ( siteId ) {
@@ -298,7 +298,7 @@ export default {
 		next();
 	},
 
-	pressThis: function( context, next ) {
+    pressThis: function( context, next ) {
 		context.getSiteSelectionHeaderText = function() {
 			return i18n.translate( 'Select a site to start writing' );
 		};
@@ -320,5 +320,13 @@ export default {
 
 		page.redirect( redirectWithParams );
 		return false;
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    post,
+    exitPost,
+    pressThis
+} = exported;

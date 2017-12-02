@@ -59,6 +59,12 @@ export const dispatchPosterRequest = dispatchRequest(
 	{ onProgress: receiveUploadProgress }
 );
 
-export default {
-	[ VIDEO_EDITOR_UPDATE_POSTER ]: [ dispatchPosterRequest ],
+const exported = {
+    [ VIDEO_EDITOR_UPDATE_POSTER ]: [ dispatchPosterRequest ]
 };
+
+export default exported;
+
+export const {
+    VIDEO_EDITOR_UPDATE_POSTER
+} = exported;

@@ -45,12 +45,18 @@ export function receivePostEmailUnsubscriptionError( { dispatch }, action ) {
 	dispatch( bypassDataLayer( subscribeToNewPostEmail( action.payload.blogId ) ) );
 }
 
-export default {
-	[ READER_UNSUBSCRIBE_TO_NEW_POST_EMAIL ]: [
+const exported = {
+    [ READER_UNSUBSCRIBE_TO_NEW_POST_EMAIL ]: [
 		dispatchRequest(
 			requestPostEmailUnsubscription,
 			receivePostEmailUnsubscription,
 			receivePostEmailUnsubscriptionError
 		),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    READER_UNSUBSCRIBE_TO_NEW_POST_EMAIL
+} = exported;

@@ -137,3 +137,12 @@ var LikeActions = {
 };
 
 export default LikeActions;
+
+export const {
+    fetchLikes,
+    likePost,
+    unlikePost,
+    receivePostLikes,
+    receiveLikeResponse,
+    receiveUnlikeResponse
+} = LikeActions;

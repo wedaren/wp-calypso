@@ -127,3 +127,5 @@ SimplePaymentsView.edit = ( editor, content ) => {
 };
 
 export default SimplePaymentsView;
+
+export const { match, serialize, edit } = SimplePaymentsView;

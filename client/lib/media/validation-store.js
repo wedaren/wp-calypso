@@ -217,3 +217,13 @@ MediaValidationStore.dispatchToken = Dispatcher.register( function( payload ) {
 } );
 
 export default MediaValidationStore;
+
+export const {
+    validateItem,
+    clearValidationErrors,
+    clearValidationErrorsByType,
+    getAllErrors,
+    getErrors,
+    hasErrors,
+    dispatchToken
+} = MediaValidationStore;

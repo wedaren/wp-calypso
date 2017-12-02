@@ -99,3 +99,9 @@ OlarkEventEmitter.on( 'newListener', function( event, callback ) {
 } );
 
 export default OlarkEventEmitter;
+
+export const {
+    initialize,
+    addOlarkEventListener,
+    olarkEventListener
+} = OlarkEventEmitter;

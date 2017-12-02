@@ -11,8 +11,8 @@ import React from 'react';
  */
 import { renderWithReduxStore } from 'lib/react-helpers';
 
-export default {
-	billingHistory( context ) {
+const exported = {
+    billingHistory( context ) {
 		const BillingHistoryComponent = require( './main' );
 
 		renderWithReduxStore(
@@ -22,7 +22,7 @@ export default {
 		);
 	},
 
-	transaction( context ) {
+    transaction( context ) {
 		const Receipt = require( './receipt' );
 		const receiptId = context.params.receiptId;
 
@@ -33,5 +33,12 @@ export default {
 				context.store
 			);
 		}
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    billingHistory,
+    transaction
+} = exported;

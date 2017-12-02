@@ -5,7 +5,15 @@
  */
 
 import sinon from 'sinon';
-export default {
-	fetchPluginData: sinon.spy(),
-	fetchPluginsList: sinon.spy(),
+
+const exported = {
+ fetchPluginData: sinon.spy(),
+ fetchPluginsList: sinon.spy()
 };
+
+export default exported;
+
+export const {
+ fetchPluginData,
+ fetchPluginsList
+} = exported;

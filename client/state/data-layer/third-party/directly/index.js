@@ -40,7 +40,14 @@ export function initialize( { dispatch } ) {
 		);
 }
 
-export default {
-	[ DIRECTLY_ASK_QUESTION ]: [ askQuestion ],
-	[ DIRECTLY_INITIALIZATION_START ]: [ initialize ],
+const exported = {
+    [ DIRECTLY_ASK_QUESTION ]: [ askQuestion ],
+    [ DIRECTLY_INITIALIZATION_START ]: [ initialize ]
 };
+
+export default exported;
+
+export const {
+    DIRECTLY_ASK_QUESTION,
+    DIRECTLY_INITIALIZATION_START
+} = exported;

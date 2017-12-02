@@ -36,3 +36,5 @@ const ConversationCommentListExample = () => {
 ConversationCommentListExample.displayName = 'ConversationCommentList';
 
 export default ConversationCommentListExample;
+
+export const { displayName } = ConversationCommentListExample;

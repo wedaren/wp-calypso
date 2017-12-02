@@ -50,3 +50,5 @@ const ConnectedPostItemExample = connect( state => {
 ConnectedPostItemExample.displayName = 'PostItem';
 
 export default ConnectedPostItemExample;
+
+export const { displayName } = ConnectedPostItemExample;

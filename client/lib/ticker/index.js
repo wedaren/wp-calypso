@@ -81,3 +81,14 @@ ticker.handleVisibilityChange = function() {
 ticker.setMaxListeners( 100 );
 
 export default ticker;
+
+export const {
+    on,
+    _listening,
+    _start,
+    interval,
+    _stop,
+    tick,
+    off,
+    handleVisibilityChange
+} = ticker;

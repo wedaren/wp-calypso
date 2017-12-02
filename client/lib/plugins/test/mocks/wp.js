@@ -4,6 +4,12 @@
  * @format
  */
 
-export default {
-	undocumented: function() {},
+const exported = {
+ undocumented: function() {}
 };
+
+export default exported;
+
+export const {
+ undocumented
+} = exported;

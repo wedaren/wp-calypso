@@ -563,3 +563,28 @@ PostActions = {
 };
 
 export default PostActions;
+
+export const {
+    startEditingNew,
+    startEditingExisting,
+    stopEditing,
+    autosave,
+    blockSave,
+    unblockSave,
+    edit,
+    editRawContent,
+    resetRawContent,
+    updateMetadata,
+    deleteMetadata,
+    saveEdited,
+    update,
+    trash,
+    restore,
+    queryPosts,
+    fetchNextPage,
+    receivePage,
+    fetchUpdated,
+    receiveUpdated,
+    receiveUpdate,
+    fetchCounts
+} = PostActions;

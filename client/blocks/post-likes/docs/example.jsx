@@ -22,3 +22,5 @@ function PostLikesExample() {
 PostLikesExample.displayName = 'PostLikes';
 
 export default PostLikesExample;
+
+export const { displayName } = PostLikesExample;

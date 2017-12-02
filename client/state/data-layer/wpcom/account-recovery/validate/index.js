@@ -41,12 +41,18 @@ export const handleValidateRequestFailure = ( { dispatch }, action, response ) =
 	dispatch( validateRequestError( response ) );
 };
 
-export default {
-	[ ACCOUNT_RECOVERY_RESET_VALIDATE_REQUEST ]: [
+const exported = {
+    [ ACCOUNT_RECOVERY_RESET_VALIDATE_REQUEST ]: [
 		dispatchRequest(
 			handleValidateRequest,
 			handleValidateRequestSuccess,
 			handleValidateRequestFailure
 		),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    ACCOUNT_RECOVERY_RESET_VALIDATE_REQUEST
+} = exported;

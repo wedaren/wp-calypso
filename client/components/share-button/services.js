@@ -42,7 +42,7 @@ const telegram = {
 	url: 'https://telegram.me/share/url?url=<URL>&text=<TITLE>',
 };
 
-export default {
+const exported = {
 	wordpress,
 	facebook,
 	twitter,
@@ -52,3 +52,6 @@ export default {
 	telegram,
 	'google-plus': googlePlus,
 };
+
+export default exported;
+export { wordpress, facebook, twitter, linkedin, tumblr, pinterest, telegram };

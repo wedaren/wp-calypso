@@ -32,3 +32,5 @@ const ConversationCaterpillarExample = () => {
 ConversationCaterpillarExample.displayName = 'ConversationCaterpillar';
 
 export default ConversationCaterpillarExample;
+
+export const { displayName } = ConversationCaterpillarExample;

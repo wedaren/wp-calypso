@@ -53,3 +53,5 @@ const BannerExample = () => (
 BannerExample.displayName = 'Banner';
 
 export default BannerExample;
+
+export const { displayName } = BannerExample;

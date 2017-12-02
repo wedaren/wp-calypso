@@ -23,3 +23,5 @@ const HeaderButtonExample = () => {
 HeaderButtonExample.displayName = 'HeaderButton';
 
 export default HeaderButtonExample;
+
+export const { displayName } = HeaderButtonExample;

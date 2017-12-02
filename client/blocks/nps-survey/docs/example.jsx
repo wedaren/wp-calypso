@@ -76,3 +76,5 @@ const ConnectedNpsSurveyExample = connect( mapStateToProps )( NpsSurveyExample )
 ConnectedNpsSurveyExample.displayName = NpsSurveyExample.displayName;
 
 export default ConnectedNpsSurveyExample;
+
+export const { displayName } = ConnectedNpsSurveyExample;

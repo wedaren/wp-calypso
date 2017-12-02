@@ -32,3 +32,5 @@ const ConnectedGravatarExample = connect( state => {
 ConnectedGravatarExample.displayName = 'Gravatar';
 
 export default ConnectedGravatarExample;
+
+export const { displayName } = ConnectedGravatarExample;

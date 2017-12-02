@@ -7,4 +7,9 @@ function createDomainObject( status ) {
 	};
 }
 
-export default { createDomainObject };
+const exported = {
+    createDomainObject
+};
+
+export default exported;
+export { createDomainObject };

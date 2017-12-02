@@ -41,3 +41,7 @@ TextField.PropTypes = {
 };
 
 export default TextField;
+
+export const {
+    PropTypes
+} = TextField;

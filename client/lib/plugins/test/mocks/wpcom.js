@@ -99,3 +99,10 @@ var pluginsInstallCalls = 0,
 	};
 
 export default mock;
+
+export const {
+    site,
+    reset,
+    getActivity,
+    undocumented
+} = mock;

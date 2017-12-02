@@ -1,5 +1,5 @@
 /** @format */
-export default {
+const exported = {
 	earnings: {
 		total_amount_owed: '100.00',
 		total_earnings: '300.00',
@@ -29,3 +29,7 @@ export default {
 		},
 	},
 };
+
+export default exported;
+
+export const { earnings } = exported;

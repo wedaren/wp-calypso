@@ -23,3 +23,5 @@ ReduxFormTextInput.propTypes = {
 };
 
 export default ReduxFormTextInput;
+
+export const { propTypes } = ReduxFormTextInput;

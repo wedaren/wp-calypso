@@ -195,21 +195,24 @@ function canResumeFlow( flowName, progress ) {
 	return flowStepsInProgressStore.length > 0 && ! flow.disallowResume;
 }
 
-export default {
-	canResumeFlow: canResumeFlow,
-	getFlowName: getFlowName,
-	getFlowSteps: getFlowSteps,
-	getStepName: getStepName,
-	getLocale: getLocale,
-	getStepSectionName: getStepSectionName,
-	getStepUrl: getStepUrl,
-	getValidPath: getValidPath,
-	getPreviousStepName: getPreviousStepName,
-	getNextStepName: getNextStepName,
-	getValueFromProgressStore: getValueFromProgressStore,
-	getDestination: getDestination,
-	mergeFormWithValue: mergeFormWithValue,
-	getThemeForDesignType: getThemeForDesignType,
-	getThemeForSiteGoals: getThemeForSiteGoals,
-	getSiteTypeForSiteGoals: getSiteTypeForSiteGoals,
+const exported = {
+    canResumeFlow: canResumeFlow,
+    getFlowName: getFlowName,
+    getFlowSteps: getFlowSteps,
+    getStepName: getStepName,
+    getLocale: getLocale,
+    getStepSectionName: getStepSectionName,
+    getStepUrl: getStepUrl,
+    getValidPath: getValidPath,
+    getPreviousStepName: getPreviousStepName,
+    getNextStepName: getNextStepName,
+    getValueFromProgressStore: getValueFromProgressStore,
+    getDestination: getDestination,
+    mergeFormWithValue: mergeFormWithValue,
+    getThemeForDesignType: getThemeForDesignType,
+    getThemeForSiteGoals: getThemeForSiteGoals,
+    getSiteTypeForSiteGoals: getSiteTypeForSiteGoals
 };
+
+export default exported;
+export { canResumeFlow, getFlowName, getFlowSteps, getStepName, getLocale, getStepSectionName, getStepUrl, getValidPath, getPreviousStepName, getNextStepName, getValueFromProgressStore, getDestination, mergeFormWithValue, getThemeForDesignType, getThemeForSiteGoals, getSiteTypeForSiteGoals };

@@ -44,3 +44,5 @@ ReviewGravatar.propTypes = {
 };
 
 export default ReviewGravatar;
+
+export const { propTypes } = ReviewGravatar;

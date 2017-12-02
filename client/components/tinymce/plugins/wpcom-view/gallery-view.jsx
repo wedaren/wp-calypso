@@ -98,3 +98,5 @@ GalleryView.defaultProps = {
 };
 
 export default GalleryView;
+
+export const { propTypes, defaultProps } = GalleryView;

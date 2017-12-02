@@ -28,3 +28,5 @@ const ConnectedSiteExample = connect( state => ( {
 ConnectedSiteExample.displayName = 'Site';
 
 export default ConnectedSiteExample;
+
+export const { displayName } = ConnectedSiteExample;

@@ -64,3 +64,5 @@ ReaderAuthorLink.defaultProps = {
 };
 
 export default ReaderAuthorLink;
+
+export const { propTypes, defaultProps } = ReaderAuthorLink;

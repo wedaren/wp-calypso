@@ -123,7 +123,7 @@ const getSaveSettingsActionListSteps = state => {
 	];
 };
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_PAYMENT_ACTION_LIST_CREATE ]: [
 		/**
 		 * Creates and executes a payments settings action list
@@ -157,3 +157,7 @@ export default {
 		},
 	],
 };
+
+export default exported;
+
+export const { WOOCOMMERCE_PAYMENT_ACTION_LIST_CREATE } = exported;

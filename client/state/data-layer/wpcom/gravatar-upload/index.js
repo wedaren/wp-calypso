@@ -63,8 +63,14 @@ export function announceFailure( { dispatch } ) {
 	);
 }
 
-export default {
-	[ GRAVATAR_UPLOAD_REQUEST ]: [
+const exported = {
+    [ GRAVATAR_UPLOAD_REQUEST ]: [
 		dispatchRequest( uploadGravatar, announceSuccess, announceFailure ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    GRAVATAR_UPLOAD_REQUEST
+} = exported;

@@ -117,3 +117,7 @@ TransactionStore.dispatchToken = Dispatcher.register( function( payload ) {
 } );
 
 export default TransactionStore;
+
+export const {
+    dispatchToken
+} = TransactionStore;

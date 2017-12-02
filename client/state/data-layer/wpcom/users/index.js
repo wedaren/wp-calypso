@@ -85,6 +85,12 @@ export const receiveSuccess = ( { dispatch }, action, users ) => {
 
 const dispatchUsersRequest = dispatchRequest( fetchUsers, receiveSuccess, noop );
 
-export default {
-	[ USERS_REQUEST ]: [ dispatchUsersRequest ],
+const exported = {
+    [ USERS_REQUEST ]: [ dispatchUsersRequest ]
 };
+
+export default exported;
+
+export const {
+    USERS_REQUEST
+} = exported;

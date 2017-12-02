@@ -140,3 +140,5 @@ ThemeMoreButton.propTypes = {
 };
 
 export default ThemeMoreButton;
+
+export const { propTypes } = ThemeMoreButton;

@@ -56,8 +56,14 @@ export const receiveRecommendedSitesResponse = ( store, action, response ) => {
 	);
 };
 
-export default {
-	[ READER_RECOMMENDED_SITES_REQUEST ]: [
+const exported = {
+    [ READER_RECOMMENDED_SITES_REQUEST ]: [
 		dispatchRequest( requestRecommendedSites, receiveRecommendedSitesResponse, noop ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    READER_RECOMMENDED_SITES_REQUEST
+} = exported;

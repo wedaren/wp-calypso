@@ -56,8 +56,14 @@ export const announceFailure = ( { dispatch }, { noticeId } ) => {
 	);
 };
 
-export default {
-	[ JETPACK_CREDENTIALS_AUTOCONFIGURE ]: [
+const exported = {
+    [ JETPACK_CREDENTIALS_AUTOCONFIGURE ]: [
 		dispatchRequest( fetch, storeAndAnnounce, announceFailure ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    JETPACK_CREDENTIALS_AUTOCONFIGURE
+} = exported;

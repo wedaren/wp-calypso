@@ -37,6 +37,12 @@ const dispatchChecklistRequest = dispatchRequestEx( {
 	onError: noop,
 } );
 
-export default {
-	[ SITE_CHECKLIST_REQUEST ]: [ dispatchChecklistRequest ],
+const exported = {
+    [ SITE_CHECKLIST_REQUEST ]: [ dispatchChecklistRequest ]
 };
+
+export default exported;
+
+export const {
+    SITE_CHECKLIST_REQUEST
+} = exported;

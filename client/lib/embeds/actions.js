@@ -7,8 +7,8 @@
 import Dispatcher from 'dispatcher';
 import wpcom from 'lib/wp';
 
-export default {
-	fetch( siteId, url ) {
+const exported = {
+    fetch( siteId, url ) {
 		const siteHandle = wpcom.undocumented().site( siteId );
 		let args;
 
@@ -48,5 +48,11 @@ export default {
 				} );
 			}
 		} );
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    fetch
+} = exported;

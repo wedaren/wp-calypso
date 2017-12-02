@@ -47,3 +47,7 @@ TextField.propTypes = {
 };
 
 export default TextField;
+
+export const {
+    propTypes
+} = TextField;

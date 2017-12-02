@@ -39,3 +39,5 @@ const ConnectedAuthorSelectorExample = connect( state => {
 ConnectedAuthorSelectorExample.displayName = 'AuthorSelector';
 
 export default ConnectedAuthorSelectorExample;
+
+export const { displayName } = ConnectedAuthorSelectorExample;

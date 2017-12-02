@@ -58,4 +58,6 @@ const exported = {
 
 export default exported;
 
+export const {} = exported;
+
 export const { formatUrlForDisplay, getFeedTitle, getFeedStreamUrl, getSiteUrl } = exported;

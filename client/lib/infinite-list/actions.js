@@ -24,8 +24,8 @@ const THROTTLE_OPTIONS = {
 	leading: false,
 };
 
-export default {
-	storePositions: throttle(
+const exported = {
+    storePositions: throttle(
 		function( url, positions ) {
 			if ( ! _lastCalledPositions ) {
 				setTimeout( () => {
@@ -45,7 +45,8 @@ export default {
 		THROTTLE_INTERVAL_MS,
 		THROTTLE_OPTIONS
 	),
-	storeScroll: throttle(
+
+    storeScroll: throttle(
 		function( url, scrollPosition ) {
 			if ( ! _lastCalledScroll ) {
 				setTimeout( () => {
@@ -64,5 +65,12 @@ export default {
 		},
 		THROTTLE_INTERVAL_MS,
 		THROTTLE_OPTIONS
-	),
+	)
 };
+
+export default exported;
+
+export const {
+    storePositions,
+    storeScroll
+} = exported;

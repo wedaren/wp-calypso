@@ -9,7 +9,7 @@
  * @format
  */
 
-export default {
+const exported = {
 	componentWillUnmount() {
 		this.scrollbleedUnlock();
 	},
@@ -73,3 +73,13 @@ export default {
 		window.onmousewheel = document.onmousewheel = null;
 	},
 };
+
+export default exported;
+
+export const {
+	componentWillUnmount,
+	setScrollbleedTarget,
+	_scrollbleed_handleScroll,
+	scrollbleedLock,
+	scrollbleedUnlock,
+} = exported;

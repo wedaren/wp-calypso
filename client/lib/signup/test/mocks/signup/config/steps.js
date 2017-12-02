@@ -6,21 +6,21 @@
 
 import { defer } from 'lodash';
 
-export default {
-	stepA: {
+const exported = {
+    stepA: {
 		stepName: 'stepA',
 	},
 
-	stepB: {
+    stepB: {
 		stepName: 'stepB',
 	},
 
-	stepRequiringSiteSlug: {
+    stepRequiringSiteSlug: {
 		stepName: 'stepRequiringSiteSlug',
 		dependencies: [ 'siteSlug' ],
 	},
 
-	asyncStep: {
+    asyncStep: {
 		stepName: 'asyncStep',
 		apiRequestFunction: function( callback, dependencies, stepData ) {
 			defer( callback );
@@ -28,7 +28,7 @@ export default {
 		},
 	},
 
-	siteCreation: {
+    siteCreation: {
 		stepName: 'siteCreation',
 		dependencies: [ 'bearer_token' ],
 		providesDependencies: [ 'siteSlug' ],
@@ -40,7 +40,7 @@ export default {
 		},
 	},
 
-	userCreation: {
+    userCreation: {
 		stepName: 'userCreation',
 		providesToken: true,
 		providesDependencies: [ 'bearer_token' ],
@@ -51,7 +51,7 @@ export default {
 		},
 	},
 
-	userCreationWithoutToken: {
+    userCreationWithoutToken: {
 		stepName: 'userCreation',
 		providesToken: true,
 		providesDependencies: [ 'bearer_token' ],
@@ -60,7 +60,7 @@ export default {
 		},
 	},
 
-	delayedStep: {
+    delayedStep: {
 		stepName: 'delayedStep',
 		component: null,
 		delayApiRequestUntilComplete: true,
@@ -68,5 +68,18 @@ export default {
 			stepData.stepCallback();
 			defer( callback );
 		},
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    stepA,
+    stepB,
+    stepRequiringSiteSlug,
+    asyncStep,
+    siteCreation,
+    userCreation,
+    userCreationWithoutToken,
+    delayedStep
+} = exported;

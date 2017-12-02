@@ -41,3 +41,7 @@ LocaleSuggestionStore.dispatchToken = Dispatcher.register( function( payload ) {
 } );
 
 export default LocaleSuggestionStore;
+
+export const {
+    dispatchToken
+} = LocaleSuggestionStore;

@@ -10,6 +10,9 @@ function getDomainManagementUrl( { slug }, domain ) {
 	return domain ? paths.domainManagementEdit( slug, domain ) : paths.domainManagementList( slug );
 }
 
-export default {
-	getDomainManagementUrl,
+const exported = {
+    getDomainManagementUrl
 };
+
+export default exported;
+export { getDomainManagementUrl };

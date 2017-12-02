@@ -280,11 +280,14 @@ function fullCreditsPayment() {
 	return { paymentMethod: 'WPCOM_Billing_WPCOM' };
 }
 
-export default {
-	createCardToken,
-	fullCreditsPayment,
-	hasDomainDetails,
-	newCardPayment,
-	storedCardPayment,
-	submit,
+const exported = {
+    createCardToken,
+    fullCreditsPayment,
+    hasDomainDetails,
+    newCardPayment,
+    storedCardPayment,
+    submit
 };
+
+export default exported;
+export { createCardToken, fullCreditsPayment, hasDomainDetails, newCardPayment, storedCardPayment, submit };

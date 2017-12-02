@@ -46,3 +46,5 @@ DisconnectJetpackDialog.propTypes = {
 };
 
 export default DisconnectJetpackDialog;
+
+export const { propTypes } = DisconnectJetpackDialog;

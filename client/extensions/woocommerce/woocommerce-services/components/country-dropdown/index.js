@@ -37,3 +37,7 @@ CountryDropdown.propTypes = {
 };
 
 export default CountryDropdown;
+
+export const {
+    propTypes
+} = CountryDropdown;

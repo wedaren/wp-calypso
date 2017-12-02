@@ -189,3 +189,17 @@ const devdocs = {
 };
 
 export default devdocs;
+
+export const {
+	sidebar,
+	devdocs,
+	singleDoc,
+	design,
+	wizard,
+	blocks,
+	selectors,
+	typography,
+	formStateExamples,
+	pleaseLogIn,
+	welcome,
+} = devdocs;

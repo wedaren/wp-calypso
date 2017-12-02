@@ -44,3 +44,5 @@ TwitterPreview.propTypes = {
 };
 
 export default TwitterPreview;
+
+export const { propTypes } = TwitterPreview;

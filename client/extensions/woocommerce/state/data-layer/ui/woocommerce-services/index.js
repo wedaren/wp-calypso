@@ -79,7 +79,7 @@ const getSaveSettingsActionListSteps = state => {
 	];
 };
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_SERVICES_SHIPPING_ACTION_LIST_CREATE ]: [
 		/**
 		 * Creates and executes a WCS shipping settings action list
@@ -119,3 +119,7 @@ export default {
 		},
 	],
 };
+
+export default exported;
+
+export const { WOOCOMMERCE_SERVICES_SHIPPING_ACTION_LIST_CREATE } = exported;

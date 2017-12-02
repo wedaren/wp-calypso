@@ -18,3 +18,5 @@ ListItemField.propTypes = {
 };
 
 export default ListItemField;
+
+export const { propTypes } = ListItemField;

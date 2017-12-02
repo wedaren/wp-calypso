@@ -18,8 +18,8 @@ import { renderWithReduxStore } from 'lib/react-helpers';
 
 const ANALYTICS_PAGE_TITLE = 'Me';
 
-export default {
-	account( context ) {
+const exported = {
+    account( context ) {
 		const AccountComponent = require( 'me/account/main' );
 		const username = require( 'lib/username' );
 		const basePath = context.path;
@@ -48,5 +48,11 @@ export default {
 			document.getElementById( 'primary' ),
 			context.store
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    account
+} = exported;

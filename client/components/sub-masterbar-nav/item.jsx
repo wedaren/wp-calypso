@@ -48,3 +48,5 @@ Item.defaultProps = {
 };
 
 export default Item;
+
+export const { propTypes, defaultProps } = Item;

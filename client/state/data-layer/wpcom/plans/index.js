@@ -60,6 +60,12 @@ export const dispatchPlansRequest = dispatchRequestEx( {
 	onError: receiveError,
 } );
 
-export default {
-	[ PLANS_REQUEST ]: [ dispatchPlansRequest ],
+const exported = {
+    [ PLANS_REQUEST ]: [ dispatchPlansRequest ]
 };
+
+export default exported;
+
+export const {
+    PLANS_REQUEST
+} = exported;

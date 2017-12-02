@@ -62,8 +62,14 @@ export function receiveError( store, action, error ) {
 	}
 }
 
-export default {
-	[ READER_FOLLOW_TAG_REQUEST ]: [
+const exported = {
+    [ READER_FOLLOW_TAG_REQUEST ]: [
 		dispatchRequest( requestFollowTag, receiveFollowTag, receiveError ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    READER_FOLLOW_TAG_REQUEST
+} = exported;

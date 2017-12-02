@@ -1,7 +1,8 @@
 /** @format */
-export default {
-	found: 4,
-	viewers: [
+const exported = {
+    found: 4,
+
+    viewers: [
 		{
 			ID: 401,
 			avatar_URL:
@@ -24,5 +25,12 @@ export default {
 			profile_URL: 'http://en.gravatar.com/test402',
 			site_ID: 402,
 		},
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    found,
+    viewers
+} = exported;

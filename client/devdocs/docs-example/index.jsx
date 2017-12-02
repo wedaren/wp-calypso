@@ -70,3 +70,5 @@ DocsExample.propTypes = {
 export { DocsExampleToggle, DocsExampleStats };
 
 export default DocsExample;
+
+export const { propTypes } = DocsExample;

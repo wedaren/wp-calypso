@@ -9,7 +9,7 @@ import { put } from 'woocommerce/state/data-layer/request/actions';
 import { shippingZoneLocationsUpdated } from 'woocommerce/state/sites/shipping-zone-locations/actions';
 import { WOOCOMMERCE_SHIPPING_ZONE_LOCATIONS_UPDATE } from 'woocommerce/state/action-types';
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_SHIPPING_ZONE_LOCATIONS_UPDATE ]: [
 		( store, action ) => {
 			const { siteId, zoneId, locations, successAction, failureAction } = action;
@@ -40,3 +40,7 @@ export default {
 		},
 	],
 };
+
+export default exported;
+
+export const { WOOCOMMERCE_SHIPPING_ZONE_LOCATIONS_UPDATE } = exported;

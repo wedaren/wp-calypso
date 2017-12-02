@@ -312,3 +312,15 @@ MediaListStore.dispatchToken = Dispatcher.register( function( payload ) {
 } );
 
 export default MediaListStore;
+
+export const {
+    ensureActiveQueryForSiteId,
+    isItemMatchingQuery,
+    get,
+    getAllIds,
+    getAll,
+    getNextPageQuery,
+    hasNextPage,
+    isFetchingNextPage,
+    dispatchToken
+} = MediaListStore;

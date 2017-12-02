@@ -66,3 +66,7 @@ CampaignDefaults.propTypes = {
 };
 
 export default CampaignDefaults;
+
+export const {
+    propTypes
+} = CampaignDefaults;

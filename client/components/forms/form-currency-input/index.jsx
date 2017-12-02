@@ -91,3 +91,5 @@ FormCurrencyInput.propTypes = {
 };
 
 export default FormCurrencyInput;
+
+export const { propTypes } = FormCurrencyInput;

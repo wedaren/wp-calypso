@@ -16,8 +16,8 @@ import { setDocumentHeadTitle as setTitle } from 'state/document-head/actions';
 import { renderWithReduxStore } from 'lib/react-helpers';
 import { getSelectedSite } from 'state/ui/selectors';
 
-export default {
-	media: function( context ) {
+const exported = {
+    media: function( context ) {
 		var MediaComponent = require( 'my-sites/media/main' ),
 			filter = context.params.filter,
 			search = context.query.s,
@@ -46,5 +46,11 @@ export default {
 			document.getElementById( 'primary' ),
 			context.store
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    media
+} = exported;

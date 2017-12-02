@@ -41,3 +41,5 @@ LocationFlag.propTypes = {
 };
 
 export default LocationFlag;
+
+export const { propTypes } = LocationFlag;

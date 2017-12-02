@@ -58,3 +58,7 @@ Dropdown.propTypes = {
 };
 
 export default Dropdown;
+
+export const {
+    propTypes
+} = Dropdown;

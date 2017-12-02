@@ -30,6 +30,12 @@ export const fetchPrivacyPolicy = ( { dispatch }, action ) =>
 export const addPrivacyPolicy = ( { dispatch }, action, data ) =>
 	dispatch( privacyPolicyReceive( get( data, 'entities', {} ) ) );
 
-export default {
-	[ PRIVACY_POLICY_REQUEST ]: [ dispatchRequest( fetchPrivacyPolicy, addPrivacyPolicy ) ],
+const exported = {
+    [ PRIVACY_POLICY_REQUEST ]: [ dispatchRequest( fetchPrivacyPolicy, addPrivacyPolicy ) ]
 };
+
+export default exported;
+
+export const {
+    PRIVACY_POLICY_REQUEST
+} = exported;

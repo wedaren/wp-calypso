@@ -8,7 +8,7 @@ import site from './mock-site';
 import earnings from './mock-earnings';
 import settings from './mock-settings';
 
-export default {
+const exported = {
 	fetchedEarnings: {
 		type: 'RECEIVE_EARNINGS',
 		site: site,
@@ -30,3 +30,7 @@ export default {
 		data: { tos: 'signed' },
 	},
 };
+
+export default exported;
+
+export const { fetchedEarnings, fetchedSettings, fetchedTos } = exported;

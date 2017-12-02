@@ -270,3 +270,15 @@ const controller = {
 };
 
 export default controller;
+
+export const {
+    plugins,
+    plugin,
+    maybeBrowsePlugins,
+    browsePlugins,
+    upload,
+    jetpackCanUpdate,
+    setupPlugins,
+    eligibility,
+    resetHistory
+} = controller;

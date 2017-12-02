@@ -165,3 +165,7 @@ SyncTab.propTypes = {
 };
 
 export default SyncTab;
+
+export const {
+    propTypes
+} = SyncTab;

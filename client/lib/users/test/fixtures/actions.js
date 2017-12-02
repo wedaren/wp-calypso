@@ -12,8 +12,8 @@ import updatedUserData from './updated-single-user';
 import singleUserData from './single-user';
 import pollingUsersData from './polling-users';
 
-export default {
-	fetched: {
+const exported = {
+    fetched: {
 		type: 'RECEIVE_USERS',
 		fetchOptions: {
 			siteId: site.ID,
@@ -23,7 +23,7 @@ export default {
 		error: null,
 	},
 
-	fetchMoreUsers: {
+    fetchMoreUsers: {
 		type: 'RECEIVE_USERS',
 		fetchOptions: {
 			siteId: site.ID,
@@ -33,7 +33,7 @@ export default {
 		error: null,
 	},
 
-	fetchAgainUserDeleted: {
+    fetchAgainUserDeleted: {
 		type: 'RECEIVE_USERS',
 		fetchOptions: {
 			siteId: site.ID,
@@ -43,21 +43,21 @@ export default {
 		error: null,
 	},
 
-	updateSingleUser: {
+    updateSingleUser: {
 		type: 'UPDATE_SITE_USER',
 		siteId: site.ID,
 		user: updatedUserData,
 		data: updatedUserData,
 	},
 
-	deleteUser: {
+    deleteUser: {
 		type: 'DELETE_SITE_USER',
 		action: 'DELETE_SITE_USER',
 		siteId: site.ID,
 		user: usersData.users[ 0 ],
 	},
 
-	deleteUserError: {
+    deleteUserError: {
 		type: 'RECEIVE_DELETE_SITE_USER_FAILURE',
 		action: 'DELETE_SITE_USER',
 		siteId: site.ID,
@@ -65,7 +65,7 @@ export default {
 		error: true,
 	},
 
-	deleteUserSuccess: {
+    deleteUserSuccess: {
 		type: 'RECEIVE_DELETE_SITE_USER_SUCCESS',
 		action: 'DELETE_SITE_USER',
 		siteId: site.ID,
@@ -73,14 +73,14 @@ export default {
 		data: { success: true },
 	},
 
-	updateUserError: {
+    updateUserError: {
 		type: 'RECEIVE_UPDATE_SITE_USER_FAILURE',
 		siteId: site.ID,
 		user: usersData.users[ 0 ],
 		error: true,
 	},
 
-	receiveSingleUser: {
+    receiveSingleUser: {
 		type: 'RECEIVE_SINGLE_USER',
 		fetchOptions: {
 			siteId: site.ID,
@@ -89,7 +89,7 @@ export default {
 		error: null,
 	},
 
-	receiveUpdatedUsers: {
+    receiveUpdatedUsers: {
 		type: 'RECEIVE_UDPATED_USERS',
 		fetchOptions: {
 			siteId: site.ID,
@@ -98,5 +98,20 @@ export default {
 		},
 		data: pollingUsersData,
 		error: null,
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    fetched,
+    fetchMoreUsers,
+    fetchAgainUserDeleted,
+    updateSingleUser,
+    deleteUser,
+    deleteUserError,
+    deleteUserSuccess,
+    updateUserError,
+    receiveSingleUser,
+    receiveUpdatedUsers
+} = exported;

@@ -41,3 +41,5 @@ BasicWidget.defaultProps = {
 };
 
 export default BasicWidget;
+
+export const { propTypes, defaultProps } = BasicWidget;

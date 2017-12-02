@@ -139,3 +139,12 @@ PostMetadata = {
 };
 
 export default PostMetadata;
+
+export const {
+    publicizeMessage,
+    publicizeDone,
+    publicizeSkipped,
+    geoLabel,
+    metaDescription,
+    geoCoordinates
+} = PostMetadata;

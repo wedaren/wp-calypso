@@ -47,3 +47,7 @@ PercentField.PropTypes = {
 };
 
 export default PercentField;
+
+export const {
+    PropTypes
+} = PercentField;

@@ -38,8 +38,8 @@ function getSiteSlug( url ) {
 	return slug.replace( /\//g, '::' );
 }
 
-export default {
-	filterUserObject: function( obj ) {
+const exported = {
+    filterUserObject: function( obj ) {
 		var user = {},
 			allowedKeys = [
 				'ID',
@@ -74,7 +74,7 @@ export default {
 		return assign( user, this.getComputedAttributes( obj ) );
 	},
 
-	getComputedAttributes: function( attributes ) {
+    getComputedAttributes: function( attributes ) {
 		var language = getLanguage( attributes.language ),
 			primayBlogUrl = attributes.primary_blog_url || '';
 		return {
@@ -82,5 +82,12 @@ export default {
 			localeSlug: attributes.language,
 			isRTL: !! ( language && language.rtl ),
 		};
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    filterUserObject,
+    getComputedAttributes
+} = exported;

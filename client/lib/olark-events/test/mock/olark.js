@@ -15,3 +15,4 @@ olark.configure = noop;
 olark.identify = noop;
 
 export default olark;
+export { noop as configure, noop as identify };

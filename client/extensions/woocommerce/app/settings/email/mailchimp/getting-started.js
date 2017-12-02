@@ -82,3 +82,7 @@ GettingStarted.propTypes = {
 };
 
 export default GettingStarted;
+
+export const {
+    propTypes
+} = GettingStarted;

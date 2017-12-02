@@ -40,3 +40,5 @@ const ConnectedDismissibleCardExample = connect( null, {
 ConnectedDismissibleCardExample.displayName = 'DismissibleCard';
 
 export default ConnectedDismissibleCardExample;
+
+export const { displayName } = ConnectedDismissibleCardExample;

@@ -38,13 +38,13 @@ const enhanceContextWithLogin = context => {
 	);
 };
 
-export default {
-	// Defining this here so it can be used by both ./index.node.js and ./index.web.js
+const exported = {
+    // Defining this here so it can be used by both ./index.node.js and ./index.web.js
 	// We cannot export it from either of those (to import it from the other) because of
 	// the way that `server/bundler/loader` expects only a default export and nothing else.
 	lang: `:lang(${ map( config( 'languages' ), 'langSlug' ).join( '|' ) })?`,
 
-	login( context, next ) {
+    login( context, next ) {
 		const { query: { client_id, redirect_to } } = context;
 
 		if ( client_id ) {
@@ -82,13 +82,13 @@ export default {
 		}
 	},
 
-	magicLogin( context, next ) {
+    magicLogin( context, next ) {
 		context.primary = <MagicLogin />;
 
 		next();
 	},
 
-	magicLoginUse( context, next ) {
+    magicLoginUse( context, next ) {
 		/**
 		 * Pull the query arguments out of the URL & into the state.
 		 * It unclutters the address bar & will keep tokens out of tracking pixels.
@@ -109,7 +109,7 @@ export default {
 		next();
 	},
 
-	redirectDefaultLocale( context, next ) {
+    redirectDefaultLocale( context, next ) {
 		// only redirect `/log-in/en` to `/log-in`
 		if ( context.pathname !== '/log-in/en' ) {
 			return next();
@@ -131,5 +131,15 @@ export default {
 		}
 
 		context.redirect( '/log-in' );
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    lang,
+    login,
+    magicLogin,
+    magicLoginUse,
+    redirectDefaultLocale
+} = exported;

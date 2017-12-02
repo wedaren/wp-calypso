@@ -36,6 +36,12 @@ export const success = ( { dispatch }, action ) => {
 	} );
 };
 
-export default {
-	[ JETPACK_CREDENTIALS_DELETE ]: [ dispatchRequest( request, success, noop ) ],
+const exported = {
+    [ JETPACK_CREDENTIALS_DELETE ]: [ dispatchRequest( request, success, noop ) ]
 };
+
+export default exported;
+
+export const {
+    JETPACK_CREDENTIALS_DELETE
+} = exported;

@@ -1,6 +1,6 @@
 /** @format */
 
-export default {
+const exported = {
 	line_items: [
 		{
 			id: 26,
@@ -33,6 +33,7 @@ export default {
 			],
 		},
 	],
+
 	tax_lines: [
 		{
 			id: 29,
@@ -44,6 +45,7 @@ export default {
 			shipping_tax_total: '0.64',
 		},
 	],
+
 	shipping_lines: [
 		{
 			id: 28,
@@ -60,6 +62,7 @@ export default {
 			],
 		},
 	],
+
 	fee_lines: [
 		{
 			id: 40,
@@ -90,6 +93,7 @@ export default {
 			],
 		},
 	],
+
 	coupon_lines: [
 		{
 			id: 30,
@@ -104,6 +108,7 @@ export default {
 			discount_tax: '0.64',
 		},
 	],
+
 	refunds: [
 		{
 			id: 33,
@@ -112,3 +117,7 @@ export default {
 		},
 	],
 };
+
+export default exported;
+
+export const { line_items, tax_lines, shipping_lines, fee_lines, coupon_lines, refunds } = exported;

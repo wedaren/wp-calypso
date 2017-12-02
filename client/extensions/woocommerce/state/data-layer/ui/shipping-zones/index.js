@@ -506,7 +506,7 @@ const validateZone = ( state, dispatch, locationsFailAction, methodsFailAction )
 	return true;
 };
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_SHIPPING_ZONE_ACTION_LIST_CREATE_DELETE ]: [
 		( store, action ) => {
 			const { successAction, failureAction } = action;
@@ -571,3 +571,11 @@ export default {
 		},
 	],
 };
+
+export default exported;
+
+export const {
+	WOOCOMMERCE_SHIPPING_ZONE_ACTION_LIST_CREATE_DELETE,
+	WOOCOMMERCE_SHIPPING_ZONE_ACTION_LIST_CREATE_SAVE,
+	WOOCOMMERCE_SHIPPING_ZONE_DEFAULT_ACTION_LIST_CREATE,
+} = exported;

@@ -35,3 +35,7 @@ InfiniteListScrollStore.dispatchToken = Dispatcher.register( function( payload )
 } );
 
 export default InfiniteListScrollStore;
+
+export const {
+    dispatchToken
+} = InfiniteListScrollStore;

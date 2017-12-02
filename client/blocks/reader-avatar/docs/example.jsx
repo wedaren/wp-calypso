@@ -32,3 +32,5 @@ const ReaderAvatarExample = () => {
 ReaderAvatarExample.displayName = 'ReaderAvatar';
 
 export default ReaderAvatarExample;
+
+export const { displayName } = ReaderAvatarExample;

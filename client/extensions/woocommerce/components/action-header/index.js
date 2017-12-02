@@ -53,3 +53,5 @@ ActionHeader.propTypes = {
 };
 
 export default ActionHeader;
+
+export const { propTypes } = ActionHeader;

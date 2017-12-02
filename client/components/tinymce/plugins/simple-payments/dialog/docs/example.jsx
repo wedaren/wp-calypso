@@ -44,3 +44,5 @@ const ConnectedSimplePaymentsDialogExample = connect( state => ( {
 ConnectedSimplePaymentsDialogExample.displayName = 'SimplePaymentsDialogExample';
 
 export default ConnectedSimplePaymentsDialogExample;
+
+export const { displayName } = ConnectedSimplePaymentsDialogExample;

@@ -36,3 +36,5 @@ const TimeSinceExample = () => {
 TimeSinceExample.displayName = 'TimeSinceExample';
 
 export default TimeSinceExample;
+
+export const { displayName } = TimeSinceExample;

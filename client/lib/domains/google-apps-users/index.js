@@ -61,7 +61,10 @@ function validate( { users, fields } ) {
 	};
 }
 
-export default {
-	validate,
-	filter,
+const exported = {
+    validate,
+    filter
 };
+
+export default exported;
+export { validate, filter };

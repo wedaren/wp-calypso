@@ -86,3 +86,7 @@ DomainRegistrationDetails.propTypes = {
 };
 
 export default DomainRegistrationDetails;
+
+export const {
+    propTypes
+} = DomainRegistrationDetails;

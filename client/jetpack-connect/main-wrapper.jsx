@@ -27,3 +27,5 @@ JetpackConnectMainWrapper.defaultProps = {
 };
 
 export default JetpackConnectMainWrapper;
+
+export const { propTypes, defaultProps } = JetpackConnectMainWrapper;

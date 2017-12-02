@@ -8,8 +8,11 @@ function returnSelf() {
 	return this;
 }
 
-export default {
-	site: returnSelf,
-	post: returnSelf,
-	likesList: returnSelf,
+const exported = {
+    site: returnSelf,
+    post: returnSelf,
+    likesList: returnSelf
 };
+
+export default exported;
+export { returnSelf as site, returnSelf as post, returnSelf as likesList };

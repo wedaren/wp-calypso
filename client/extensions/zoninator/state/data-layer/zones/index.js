@@ -183,9 +183,18 @@ const dispatchDeleteZoneRequest = dispatchRequest(
 	announceDeleteFailure
 );
 
-export default {
+const exported = {
 	[ ZONINATOR_REQUEST_ZONES ]: [ dispatchFetchZonesRequest ],
 	[ ZONINATOR_ADD_ZONE ]: [ dispatchAddZoneRequest ],
 	[ ZONINATOR_SAVE_ZONE ]: [ dispatchSaveZoneRequest ],
 	[ ZONINATOR_DELETE_ZONE ]: [ dispatchDeleteZoneRequest ],
 };
+
+export default exported;
+
+export const {
+	ZONINATOR_REQUEST_ZONES,
+	ZONINATOR_ADD_ZONE,
+	ZONINATOR_SAVE_ZONE,
+	ZONINATOR_DELETE_ZONE,
+} = exported;

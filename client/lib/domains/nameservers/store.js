@@ -16,3 +16,7 @@ NameserversStore.getByDomainName = function( domainName ) {
 };
 
 export default NameserversStore;
+
+export const {
+ getByDomainName
+} = NameserversStore;

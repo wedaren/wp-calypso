@@ -333,3 +333,7 @@ function markPostSeen( post, site ) {
 }
 
 export default FeedPostStore;
+
+export const {
+    dispatchToken
+} = FeedPostStore;

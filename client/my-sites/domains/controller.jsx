@@ -204,14 +204,17 @@ const redirectToAddMappingIfVipSite = () => {
 	};
 };
 
-export default {
-	domainsAddHeader,
-	domainsAddRedirectHeader,
-	domainSearch,
-	siteRedirect,
-	mapDomain,
-	googleAppsWithRegistration,
-	redirectIfNoSite,
-	redirectToAddMappingIfVipSite,
-	transferDomain,
+const exported = {
+    domainsAddHeader,
+    domainsAddRedirectHeader,
+    domainSearch,
+    siteRedirect,
+    mapDomain,
+    googleAppsWithRegistration,
+    redirectIfNoSite,
+    redirectToAddMappingIfVipSite,
+    transferDomain
 };
+
+export default exported;
+export { domainsAddHeader, domainsAddRedirectHeader, domainSearch, siteRedirect, mapDomain, googleAppsWithRegistration, redirectIfNoSite, redirectToAddMappingIfVipSite, transferDomain };

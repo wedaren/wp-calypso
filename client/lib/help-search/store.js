@@ -40,3 +40,7 @@ HelpSearchStore.getHelpLinks = function() {
 };
 
 export default HelpSearchStore;
+
+export const {
+    getHelpLinks
+} = HelpSearchStore;

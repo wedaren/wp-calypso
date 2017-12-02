@@ -154,3 +154,9 @@ MediaLibrarySelectedStore.dispatchToken = Dispatcher.register( function( payload
 } );
 
 export default MediaLibrarySelectedStore;
+
+export const {
+    get,
+    getAll,
+    dispatchToken
+} = MediaLibrarySelectedStore;

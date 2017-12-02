@@ -1,5 +1,5 @@
 /** @format */
-export default {
+const exported = {
 	multiDomainRegistrationV1: {
 		datestamp: '20200721',
 		variations: {
@@ -9,6 +9,7 @@ export default {
 		},
 		defaultVariation: 'singlePurchaseFlow',
 	},
+
 	signupAtomicStoreVsPressable: {
 		datestamp: '20171101',
 		variations: {
@@ -19,6 +20,7 @@ export default {
 		allowExistingUsers: true,
 		localeTargets: 'any',
 	},
+
 	businessPlanDescriptionAT: {
 		datestamp: '20170605',
 		variations: {
@@ -27,6 +29,7 @@ export default {
 		},
 		defaultVariation: 'original',
 	},
+
 	presaleChatButton: {
 		datestamp: '20170328',
 		variations: {
@@ -36,6 +39,7 @@ export default {
 		defaultVariation: 'original',
 		localeTargets: 'any',
 	},
+
 	chatOfferOnCancel: {
 		datestamp: '20170421',
 		variations: {
@@ -45,6 +49,7 @@ export default {
 		defaultVariation: 'show',
 		allowExistingUsers: true,
 	},
+
 	ATPromptOnCancel: {
 		datestamp: '20170515',
 		variations: {
@@ -54,6 +59,7 @@ export default {
 		defaultVariation: 'hide',
 		allowExistingUsers: true,
 	},
+
 	ATUpgradeOnCancel: {
 		datestamp: '20170515',
 		variations: {
@@ -63,6 +69,7 @@ export default {
 		defaultVariation: 'hide',
 		allowExistingUsers: true,
 	},
+
 	jetpackHidePlanIconsForAllDevices: {
 		datestamp: '20171122',
 		variations: {
@@ -72,6 +79,7 @@ export default {
 		defaultVariation: 'show',
 		allowExistingUsers: true,
 	},
+
 	skipThemesSelectionModal: {
 		datestamp: '20170904',
 		variations: {
@@ -82,6 +90,7 @@ export default {
 		allowExistingUsers: true,
 		localeTargets: 'any',
 	},
+
 	unlimitedThemeNudge: {
 		datestamp: '20171016',
 		variations: {
@@ -91,6 +100,7 @@ export default {
 		defaultVariation: 'hide',
 		allowExistingUsers: true,
 	},
+
 	gsuiteUpsell: {
 		datestamp: '20171025',
 		variations: {
@@ -100,6 +110,7 @@ export default {
 		defaultVariation: 'hide',
 		allowExistingUsers: true,
 	},
+
 	domainsCheckoutLocalizedAddresses: {
 		datestamp: '20171025',
 		variations: {
@@ -110,6 +121,7 @@ export default {
 		allowExistingUsers: true,
 		localeTargets: 'any',
 	},
+
 	buttonsColorOnPostSignup: {
 		datestamp: '20171108',
 		variations: {
@@ -119,6 +131,7 @@ export default {
 		defaultVariation: 'keep',
 		allowExistingUsers: true,
 	},
+
 	condensedPostList: {
 		datestamp: '20171113',
 		variations: {
@@ -127,6 +140,7 @@ export default {
 		},
 		defaultVariation: 'largePosts',
 	},
+
 	showNewPaymentMethods: {
 		datestamp: '20171115',
 		variations: {
@@ -138,3 +152,23 @@ export default {
 		localeTargets: 'any',
 	},
 };
+
+export default exported;
+
+export const {
+	multiDomainRegistrationV1,
+	signupAtomicStoreVsPressable,
+	businessPlanDescriptionAT,
+	presaleChatButton,
+	chatOfferOnCancel,
+	ATPromptOnCancel,
+	ATUpgradeOnCancel,
+	jetpackHidePlanIconsForAllDevices,
+	skipThemesSelectionModal,
+	unlimitedThemeNudge,
+	gsuiteUpsell,
+	domainsCheckoutLocalizedAddresses,
+	buttonsColorOnPostSignup,
+	condensedPostList,
+	showNewPaymentMethods,
+} = exported;

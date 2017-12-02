@@ -37,3 +37,5 @@ FormRadioWithThumbnail.propTypes = {
 };
 
 export default FormRadioWithThumbnail;
+
+export const { propTypes } = FormRadioWithThumbnail;

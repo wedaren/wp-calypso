@@ -144,3 +144,16 @@ ReaderListStore.dispatchToken = Dispatcher.register( function( payload ) {
 } );
 
 export default ReaderListStore;
+
+export const {
+    get,
+    findByOwnerAndSlug,
+    isSubscribed,
+    receiveLists,
+    followList,
+    unfollowList,
+    receiveCreateReaderList,
+    isFetching,
+    setIsFetching,
+    dispatchToken
+} = ReaderListStore;

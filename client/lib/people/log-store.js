@@ -150,3 +150,13 @@ PeopleLogStore.dispatchToken = Dispatcher.register( function( payload ) {
 emitter( PeopleLogStore );
 
 export default PeopleLogStore;
+
+export const {
+    hasUnauthorizedError,
+    getErrors,
+    getInProgress,
+    getCompleted,
+    clear,
+    emitChange,
+    dispatchToken
+} = PeopleLogStore;

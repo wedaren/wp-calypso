@@ -26,3 +26,8 @@ ActionPanelFigure.defaultProps = {
 };
 
 export default ActionPanelFigure;
+
+export const {
+    propTypes,
+    defaultProps
+} = ActionPanelFigure;

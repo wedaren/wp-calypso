@@ -344,3 +344,18 @@ MediaActions.sourceChanged = function( siteId ) {
 };
 
 export default MediaActions;
+
+export const {
+    setQuery,
+    fetch,
+    fetchNextPage,
+    addExternal,
+    add,
+    edit,
+    update,
+    delete,
+    setLibrarySelectedItems,
+    clearValidationErrors,
+    clearValidationErrorsByType,
+    sourceChanged
+} = MediaActions;

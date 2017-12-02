@@ -1,13 +1,21 @@
 /** @format */
-export default {
-	me: () => ( {
+const exported = {
+    me: () => ( {
 		get: () => {},
 	} ),
-	site: () => ( {
+
+    site: () => ( {
 		post: () => ( {
 			add: ( query, attributes, callback ) => {
 				callback( null, attributes );
 			},
 		} ),
-	} ),
+	} )
 };
+
+export default exported;
+
+export const {
+    me,
+    site
+} = exported;

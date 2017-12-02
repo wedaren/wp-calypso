@@ -51,3 +51,5 @@ Table.propTypes = {
 };
 
 export default Table;
+
+export const { propTypes } = Table;

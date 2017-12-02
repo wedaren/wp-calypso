@@ -172,3 +172,19 @@ const controller = {
 };
 
 export default controller;
+
+export const {
+    redirectToGeneral,
+    redirectIfCantDeleteSite,
+    general,
+    importSite,
+    exportSite,
+    guidedTransfer,
+    deleteSite,
+    disconnectSite,
+    disconnectSiteConfirm,
+    startOver,
+    themeSetup,
+    manageConnection,
+    legacyRedirects
+} = controller;

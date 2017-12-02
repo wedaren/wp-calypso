@@ -33,3 +33,7 @@ ChargebackDetails.propTypes = {
 };
 
 export default ChargebackDetails;
+
+export const {
+    propTypes
+} = ChargebackDetails;

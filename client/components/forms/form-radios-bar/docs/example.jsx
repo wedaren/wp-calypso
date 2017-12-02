@@ -24,3 +24,5 @@ const FormRadiosBarExample = ( { isThumbnail, checked, onChange } ) => {
 FormRadiosBarExample.displayName = 'FormRadiosBar';
 
 export default FormRadiosBarExample;
+
+export const { displayName } = FormRadiosBarExample;

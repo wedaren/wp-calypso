@@ -10,8 +10,8 @@ import { assign, forEach, groupBy, includes, map, reduce, sortBy } from 'lodash'
 const sortByMenuOrder = list => sortBy( list, 'menu_order' );
 const getParentId = page => page.parent && page.parent.ID;
 
-export default {
-	editLinkForPage: function( page, site ) {
+const exported = {
+    editLinkForPage: function( page, site ) {
 		if ( ! ( page && page.ID ) || ! ( site && site.ID ) ) {
 			return null;
 		}
@@ -19,7 +19,7 @@ export default {
 		return '/page/' + site.slug + '/' + page.ID;
 	},
 
-	statsLinkForPage: function( page, site ) {
+    statsLinkForPage: function( page, site ) {
 		if ( ! ( page && page.ID ) || ! ( site && site.ID ) ) {
 			return null;
 		}
@@ -27,7 +27,7 @@ export default {
 		return '/stats/post/' + page.ID + '/' + site.slug;
 	},
 
-	// TODO: switch all usage of this function to `isFrontPage` in `state/pages/selectors`
+    // TODO: switch all usage of this function to `isFrontPage` in `state/pages/selectors`
 	isFrontPage: function( page, site ) {
 		if ( ! page || ! page.ID || ! site || ! site.options ) {
 			return false;
@@ -35,7 +35,7 @@ export default {
 		return site.options.page_on_front === page.ID;
 	},
 
-	sortPagesHierarchically: function( pages ) {
+    sortPagesHierarchically: function( pages ) {
 		const pageIds = map( pages, 'ID' );
 
 		const pagesByParent = reduce(
@@ -74,5 +74,14 @@ export default {
 		} );
 
 		return sortedPages;
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    editLinkForPage,
+    statsLinkForPage,
+    isFrontPage,
+    sortPagesHierarchically
+} = exported;

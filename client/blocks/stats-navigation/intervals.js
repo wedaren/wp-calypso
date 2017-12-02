@@ -44,3 +44,5 @@ Intervals.defaultProps = {
 };
 
 export default Intervals;
+
+export const { propTypes, defaultProps } = Intervals;

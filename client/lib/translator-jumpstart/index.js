@@ -315,3 +315,15 @@ userSettings.on( 'change', trackTranslatorStatus );
 userSettings.on( 'change', communityTranslatorJumpstart.init.bind( communityTranslatorJumpstart ) );
 
 export default communityTranslatorJumpstart;
+
+export const {
+    isEnabled,
+    isActivated,
+    wrapTranslation,
+    init,
+    updateTranslationData,
+    setInjectionURL,
+    toggle,
+    updateTranslation,
+    isValidBrowser
+} = communityTranslatorJumpstart;

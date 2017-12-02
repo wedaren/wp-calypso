@@ -248,3 +248,12 @@ Shortcode.next = function( tag, text, index ) {
 };
 
 export default Shortcode;
+
+export const {
+    parseAttributes,
+    normalizeAttributes,
+    stringify,
+    parse,
+    regexp,
+    next
+} = Shortcode;

@@ -46,3 +46,7 @@ CancelPurchaseLoadingPlaceholder.propTypes = {
 };
 
 export default CancelPurchaseLoadingPlaceholder;
+
+export const {
+    propTypes
+} = CancelPurchaseLoadingPlaceholder;

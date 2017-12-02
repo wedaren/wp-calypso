@@ -70,3 +70,5 @@ const DropZoneExample = localize(
 DropZoneExample.displayName = 'DropZone';
 
 export default DropZoneExample;
+
+export const { displayName } = DropZoneExample;

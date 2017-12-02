@@ -141,3 +141,7 @@ CartStore.dispatchToken = Dispatcher.register( payload => {
 } );
 
 export default CartStore;
+
+export const {
+    dispatchToken
+} = CartStore;

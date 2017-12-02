@@ -129,3 +129,5 @@ class PopoverExample extends PureComponent {
 PopoverExample.displayName = 'Popover';
 
 export default PopoverExample;
+
+export const { displayName } = PopoverExample;

@@ -72,12 +72,18 @@ export const handleAddSuccess = ( { dispatch }, action, data ) => {
 export const handleAddError = ( { dispatch }, { profileLinks }, error ) =>
 	dispatch( addUserProfileLinksError( profileLinks, error ) );
 
-export default {
-	[ USER_PROFILE_LINKS_ADD ]: [
+const exported = {
+    [ USER_PROFILE_LINKS_ADD ]: [
 		dispatchRequestEx( {
 			fetch: addUserProfileLinks,
 			onSuccess: handleAddSuccess,
 			onError: handleAddError,
 		} ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    USER_PROFILE_LINKS_ADD
+} = exported;

@@ -249,9 +249,16 @@ export const announceDeleteFailure = ( { dispatch }, action ) => {
 	}
 };
 
-export default {
-	[ COMMENTS_REQUEST ]: [ dispatchRequest( fetchPostComments, addComments, announceFailure ) ],
-	[ COMMENTS_DELETE ]: [
+const exported = {
+    [ COMMENTS_REQUEST ]: [ dispatchRequest( fetchPostComments, addComments, announceFailure ) ],
+
+    [ COMMENTS_DELETE ]: [
 		dispatchRequest( deleteComment, announceDeleteSuccess, announceDeleteFailure ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    COMMENTS_REQUEST
+} = exported;

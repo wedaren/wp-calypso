@@ -226,3 +226,5 @@ if ( config.isEnabled( 'devdocs/components-usage-stats' ) ) {
 }
 
 export default DesignAssets;
+
+export const { propTypes } = DesignAssets;

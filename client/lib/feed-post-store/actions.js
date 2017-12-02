@@ -103,3 +103,9 @@ FeedPostActions = {
 };
 
 export default FeedPostActions;
+
+export const {
+    fetchPost,
+    receivePost,
+    markSeen
+} = FeedPostActions;

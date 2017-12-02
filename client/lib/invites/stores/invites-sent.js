@@ -12,3 +12,8 @@ InvitesSentStore.getSuccess = formId => InvitesSentStore.get().successes[ formId
 InvitesSentStore.getErrors = formId => InvitesSentStore.get().errors[ formId ];
 
 export default InvitesSentStore;
+
+export const {
+ getSuccess,
+ getErrors
+} = InvitesSentStore;

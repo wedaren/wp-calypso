@@ -42,3 +42,7 @@ StatsCommentTab.propTypes = {
 };
 
 export default StatsCommentTab;
+
+export const {
+    propTypes
+} = StatsCommentTab;

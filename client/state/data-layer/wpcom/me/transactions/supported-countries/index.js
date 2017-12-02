@@ -54,12 +54,18 @@ export const updateCountriesTransactions = ( { dispatch }, action, countries ) =
 export const showCountriesTransactionsLoadingError = ( { dispatch } ) =>
 	dispatch( errorNotice( translate( "We couldn't load the countries list." ) ) );
 
-export default {
-	[ COUNTRIES_PAYMENTS_FETCH ]: [
+const exported = {
+    [ COUNTRIES_PAYMENTS_FETCH ]: [
 		dispatchRequest(
 			fetchCountriesTransactions,
 			updateCountriesTransactions,
 			showCountriesTransactionsLoadingError
 		),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    COUNTRIES_PAYMENTS_FETCH
+} = exported;

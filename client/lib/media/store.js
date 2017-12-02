@@ -160,3 +160,9 @@ MediaStore.dispatchToken = Dispatcher.register( function( payload ) {
 } );
 
 export default MediaStore;
+
+export const {
+    get,
+    getAll,
+    dispatchToken
+} = MediaStore;

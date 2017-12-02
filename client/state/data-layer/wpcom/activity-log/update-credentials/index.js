@@ -75,6 +75,12 @@ export const failure = ( { dispatch }, action, error ) => {
 	);
 };
 
-export default {
-	[ JETPACK_CREDENTIALS_UPDATE ]: [ dispatchRequest( request, success, failure ) ],
+const exported = {
+    [ JETPACK_CREDENTIALS_UPDATE ]: [ dispatchRequest( request, success, failure ) ]
 };
+
+export default exported;
+
+export const {
+    JETPACK_CREDENTIALS_UPDATE
+} = exported;

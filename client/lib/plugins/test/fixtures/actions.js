@@ -10,8 +10,8 @@ import site from './site';
 import multiSite from './multi-site';
 import updatePluginData from './updated-plugin';
 
-export default {
-	// Fetch Data
+const exported = {
+    // Fetch Data
 	fetched: {
 		type: 'RECEIVE_PLUGINS',
 		site: site,
@@ -19,21 +19,21 @@ export default {
 		error: null,
 	},
 
-	fetchedMultiSite: {
+    fetchedMultiSite: {
 		type: 'RECEIVE_PLUGINS',
 		site: multiSite,
 		data: { plugins: plugins },
 		error: null,
 	},
 
-	fetchedAgain: {
+    fetchedAgain: {
 		type: 'RECEIVE_PLUGINS',
 		site: site,
 		data: { plugins: updatePluginsList },
 		error: null,
 	},
 
-	fetchedError: {
+    fetchedError: {
 		type: 'RECEIVE_PLUGINS',
 		site: { ID: 123 },
 		data: undefined,
@@ -44,14 +44,14 @@ export default {
 		},
 	},
 
-	fetchedNotAllowed: {
+    fetchedNotAllowed: {
 		type: 'NOT_ALLOWED_TO_RECEIVE_PLUGINS',
 		site: { ID: 123 },
 		data: undefined,
 		error: undefined,
 	},
 
-	// Update
+    // Update
 	updatePlugin: {
 		type: 'UPDATE_PLUGIN',
 		action: 'UPDATE_PLUGIN',
@@ -59,7 +59,7 @@ export default {
 		plugin: plugins[ 2 ], // hello dolly
 	},
 
-	updatedPlugin: {
+    updatedPlugin: {
 		type: 'RECEIVE_UPDATED_PLUGIN',
 		action: 'UPDATE_PLUGIN',
 		site: site,
@@ -68,14 +68,14 @@ export default {
 		error: null,
 	},
 
-	clearPluginUpdate: {
+    clearPluginUpdate: {
 		type: 'REMOVE_PLUGINS_UPDATE_INFO',
 		action: 'REMOVE_PLUGINS_UPDATE_INFO',
 		site: site,
 		plugin: plugins[ 2 ],
 	},
 
-	updatedPluginError: {
+    updatedPluginError: {
 		type: 'RECEIVE_UPDATED_PLUGIN',
 		action: 'UPDATE_PLUGIN',
 		site: site,
@@ -88,7 +88,7 @@ export default {
 		},
 	},
 
-	// Remove Plugin
+    // Remove Plugin
 	removePlugin: {
 		type: 'REMOVE_PLUGIN',
 		action: 'REMOVE_PLUGIN',
@@ -96,7 +96,7 @@ export default {
 		plugin: plugins[ 2 ],
 	},
 
-	removedPluginError: {
+    removedPluginError: {
 		type: 'RECEIVE_REMOVE_PLUGIN',
 		action: 'REMOVE_PLUGIN',
 		site: site,
@@ -105,7 +105,7 @@ export default {
 		error: { error: 'not allowed' },
 	},
 
-	// Remove Plugin
+    // Remove Plugin
 	removedPlugin: {
 		type: 'RECEIVE_REMOVE_PLUGIN',
 		action: 'REMOVE_PLUGIN',
@@ -113,7 +113,7 @@ export default {
 		plugin: plugins[ 2 ],
 	},
 
-	// Activate
+    // Activate
 	activatePlugin: {
 		type: 'ACTIVATE_PLUGIN',
 		action: 'ACTIVATE_PLUGIN',
@@ -121,7 +121,7 @@ export default {
 		plugin: plugins[ 1 ], // developer
 	},
 
-	activatedPlugin: {
+    activatedPlugin: {
 		type: 'RECEIVE_ACTIVATED_PLUGIN',
 		action: 'ACTIVATE_PLUGIN',
 		site: site,
@@ -142,7 +142,7 @@ export default {
 		error: null,
 	},
 
-	activatedPluginError: {
+    activatedPluginError: {
 		type: 'RECEIVE_ACTIVATED_PLUGIN',
 		action: 'ACTIVATE_PLUGIN',
 		site: site,
@@ -155,7 +155,7 @@ export default {
 		},
 	},
 
-	activatedBrokenPluginError: {
+    activatedBrokenPluginError: {
 		type: 'RECEIVE_ACTIVATED_PLUGIN',
 		action: 'ACTIVATE_PLUGIN',
 		site: site,
@@ -164,7 +164,7 @@ export default {
 		error: null,
 	},
 
-	activatedPluginErrorAlreadyActive: {
+    activatedPluginErrorAlreadyActive: {
 		type: 'RECEIVE_ACTIVATED_PLUGIN',
 		action: 'ACTIVATE_PLUGIN',
 		site: site,
@@ -175,7 +175,8 @@ export default {
 			message: 'The Plugin is already active.',
 		},
 	},
-	// Deactivate
+
+    // Deactivate
 	deactivatePlugin: {
 		type: 'DEACTIVATE_PLUGIN',
 		action: 'DEACTIVATE_PLUGIN',
@@ -183,7 +184,7 @@ export default {
 		plugin: plugins[ 1 ], // developer
 	},
 
-	deactivatedPlugin: {
+    deactivatedPlugin: {
 		type: 'RECEIVE_DEACTIVATED_PLUGIN',
 		action: 'DEACTIVATE_PLUGIN',
 		site: site,
@@ -204,7 +205,7 @@ export default {
 		error: null,
 	},
 
-	deactivatedPluginError: {
+    deactivatedPluginError: {
 		type: 'RECEIVE_DEACTIVATED_PLUGIN',
 		action: 'DEACTIVATE_PLUGIN',
 		site: site,
@@ -217,7 +218,7 @@ export default {
 		},
 	},
 
-	deactivatedPluginErrorAlreadyNotActive: {
+    deactivatedPluginErrorAlreadyNotActive: {
 		type: 'RECEIVE_DEACTIVATED_PLUGIN',
 		site: site,
 		plugin: plugins[ 1 ], // developer
@@ -227,7 +228,8 @@ export default {
 			message: 'The Plugin is already not active.',
 		},
 	},
-	// Enable Autoupdate
+
+    // Enable Autoupdate
 	enableAutoupdatePlugin: {
 		type: 'ENABLE_AUTOUPDATE_PLUGIN',
 		action: 'ENABLE_AUTOUPDATE_PLUGIN',
@@ -235,7 +237,7 @@ export default {
 		plugin: plugins[ 1 ], // developer
 	},
 
-	enabledAutoupdatePlugin: {
+    enabledAutoupdatePlugin: {
 		type: 'RECEIVE_ENABLED_AUTOUPDATE_PLUGIN',
 		action: 'ENABLE_AUTOUPDATE_PLUGIN',
 		site: site,
@@ -256,7 +258,7 @@ export default {
 		error: null,
 	},
 
-	enabledAutoupdatePluginError: {
+    enabledAutoupdatePluginError: {
 		type: 'RECEIVE_ENABLED_AUTOUPDATE_PLUGIN',
 		action: 'ENABLE_AUTOUPDATE_PLUGIN',
 		site: site,
@@ -268,7 +270,8 @@ export default {
 			name: 'UnauthorizedFullAccessError',
 		},
 	},
-	// Disable Autoupdate
+
+    // Disable Autoupdate
 	disableAutoupdatePlugin: {
 		type: 'DISABLE_AUTOUPDATE_PLUGIN',
 		action: 'DISABLE_AUTOUPDATE_PLUGIN',
@@ -276,7 +279,7 @@ export default {
 		plugin: plugins[ 1 ], // developer
 	},
 
-	disabledAutoupdatePlugin: {
+    disabledAutoupdatePlugin: {
 		type: 'RECEIVE_DISABLED_AUTOUPDATE_PLUGIN',
 		action: 'DISABLE_AUTOUPDATE_PLUGIN',
 		site: site,
@@ -297,7 +300,7 @@ export default {
 		error: null,
 	},
 
-	disabledAutoupdatePluginError: {
+    disabledAutoupdatePluginError: {
 		type: 'RECEIVE_DISABLED_AUTOUPDATE_PLUGIN',
 		action: 'DISABLE_AUTOUPDATE_PLUGIN',
 		site: site,
@@ -310,8 +313,41 @@ export default {
 		},
 	},
 
-	removeErrorNotice: {
+    removeErrorNotice: {
 		type: 'REMOVE_PLUGINS_NOTICES',
 		logs: [ { status: 'error', action: 'UPDATE_PLUGIN', site: site, plugin: plugins[ 2 ] } ],
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    fetched,
+    fetchedMultiSite,
+    fetchedAgain,
+    fetchedError,
+    fetchedNotAllowed,
+    updatePlugin,
+    updatedPlugin,
+    clearPluginUpdate,
+    updatedPluginError,
+    removePlugin,
+    removedPluginError,
+    removedPlugin,
+    activatePlugin,
+    activatedPlugin,
+    activatedPluginError,
+    activatedBrokenPluginError,
+    activatedPluginErrorAlreadyActive,
+    deactivatePlugin,
+    deactivatedPlugin,
+    deactivatedPluginError,
+    deactivatedPluginErrorAlreadyNotActive,
+    enableAutoupdatePlugin,
+    enabledAutoupdatePlugin,
+    enabledAutoupdatePluginError,
+    disableAutoupdatePlugin,
+    disabledAutoupdatePlugin,
+    disabledAutoupdatePluginError,
+    removeErrorNotice
+} = exported;

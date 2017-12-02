@@ -65,8 +65,14 @@ export const requestingStatusFailure = ( { dispatch }, { siteId } ) => {
 	dispatch( automatedTransferStatusFetchingFailure( siteId ) );
 };
 
-export default {
-	[ AUTOMATED_TRANSFER_STATUS_REQUEST ]: [
+const exported = {
+    [ AUTOMATED_TRANSFER_STATUS_REQUEST ]: [
 		dispatchRequest( requestStatus, receiveStatus, requestingStatusFailure ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    AUTOMATED_TRANSFER_STATUS_REQUEST
+} = exported;

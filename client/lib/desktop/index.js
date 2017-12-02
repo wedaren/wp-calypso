@@ -180,3 +180,23 @@ var Desktop = {
 };
 
 export default Desktop;
+
+export const {
+    init,
+    selectedSite,
+    setSelectedSite,
+    receiveMessage,
+    sendUserLoginStatus,
+    sendNotificationCount,
+    getNotificationLinkElement,
+    clearNotificationBar,
+    onToggleNotifications,
+    onSignout,
+    onShowMySites,
+    onShowReader,
+    onShowProfile,
+    onNewPost,
+    onCookieAuthComplete,
+    onShowHelp,
+    print
+} = Desktop;

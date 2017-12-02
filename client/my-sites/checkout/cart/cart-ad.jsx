@@ -11,3 +11,7 @@ const CartAd = ( { children } ) => <div className="cart__cart-ad">{ children }</
 CartAd.displayName = 'CartAd';
 
 export default CartAd;
+
+export const {
+ displayName
+} = CartAd;

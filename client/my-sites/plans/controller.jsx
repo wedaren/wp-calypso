@@ -14,8 +14,8 @@ import { renderWithReduxStore } from 'lib/react-helpers';
 import { get } from 'lodash';
 import { isValidFeatureKey } from 'lib/plans';
 
-export default {
-	plans( context ) {
+const exported = {
+    plans( context ) {
 		const Plans = require( 'my-sites/plans/main' ),
 			CheckoutData = require( 'components/data/checkout' );
 
@@ -33,7 +33,7 @@ export default {
 		);
 	},
 
-	features( context ) {
+    features( context ) {
 		const domain = context.params.domain;
 		const feature = get( context, 'params.feature' );
 		let comparePath = domain ? `/plans/${ domain }` : '/plans/';
@@ -46,12 +46,12 @@ export default {
 		page.redirect( comparePath );
 	},
 
-	redirectToCheckout( context ) {
+    redirectToCheckout( context ) {
 		// this route is deprecated, use `/checkout/:site/:plan` to link to plan checkout
 		page.redirect( `/checkout/${ context.params.domain }/${ context.params.plan }` );
 	},
 
-	redirectToPlans( context ) {
+    redirectToPlans( context ) {
 		const siteDomain = context.params.domain;
 
 		if ( siteDomain ) {
@@ -59,5 +59,14 @@ export default {
 		}
 
 		return page.redirect( '/plans' );
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    plans,
+    features,
+    redirectToCheckout,
+    redirectToPlans
+} = exported;

@@ -82,3 +82,12 @@ EarningsStore.dispatchToken = Dispatcher.register( function( payload ) {
 emitter( EarningsStore );
 
 export default EarningsStore;
+
+export const {
+	get,
+	getById,
+	isLoading,
+	getLoadingError,
+	emitChange,
+	dispatchToken,
+} = EarningsStore;

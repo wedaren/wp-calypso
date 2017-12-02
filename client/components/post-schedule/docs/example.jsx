@@ -270,3 +270,5 @@ const PostScheduleExample = localize(
 PostScheduleExample.displayName = 'PostSchedule';
 
 export default PostScheduleExample;
+
+export const { displayName } = PostScheduleExample;

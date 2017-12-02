@@ -95,3 +95,7 @@ BusinessPlanDetails.propTypes = {
 };
 
 export default BusinessPlanDetails;
+
+export const {
+    propTypes
+} = BusinessPlanDetails;

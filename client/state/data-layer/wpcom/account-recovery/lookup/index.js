@@ -69,8 +69,14 @@ export const requestResetOptionsSuccess = ( store, action, data ) => {
 	}
 };
 
-export default {
-	[ ACCOUNT_RECOVERY_RESET_OPTIONS_REQUEST ]: [
+const exported = {
+    [ ACCOUNT_RECOVERY_RESET_OPTIONS_REQUEST ]: [
 		dispatchRequest( requestResetOptions, requestResetOptionsSuccess, requestResetOptionsError ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    ACCOUNT_RECOVERY_RESET_OPTIONS_REQUEST
+} = exported;

@@ -39,8 +39,14 @@ export const activateFailed = ( { dispatch }, { siteId }, { message } ) => {
 	dispatch( rewindActivateFailure( siteId ) );
 };
 
-export default {
-	[ REWIND_ACTIVATE_REQUEST ]: [
+const exported = {
+    [ REWIND_ACTIVATE_REQUEST ]: [
 		dispatchRequest( activateRewind, activateSucceeded, activateFailed ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    REWIND_ACTIVATE_REQUEST
+} = exported;

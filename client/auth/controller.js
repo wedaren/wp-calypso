@@ -23,7 +23,7 @@ import userFactory from 'lib/user';
 import Main from 'components/main';
 import PulsingDot from 'components/pulsing-dot';
 
-export default {
+const exported = {
 	oauthLogin: function() {
 		if ( config.isEnabled( 'oauth' ) ) {
 			if ( OAuthToken.getToken() ) {
@@ -119,3 +119,7 @@ export default {
 		} );
 	},
 };
+
+export default exported;
+
+export const { oauthLogin, checkToken, authorize, getToken } = exported;

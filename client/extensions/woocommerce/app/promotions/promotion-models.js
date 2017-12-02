@@ -396,6 +396,8 @@ const allModels = {
 };
 export default allModels;
 
+export { productSaleModel as product_sale, fixedProductModel as fixed_product, fixedCartModel as fixed_cart, percentCartModel as percent, freeShippingModel as free_shipping };
+
 /**
  * Validate all fields for the given promotion model.
  *

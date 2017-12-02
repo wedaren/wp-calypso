@@ -60,8 +60,14 @@ export const handleError = ( { dispatch } ) =>
 		errorNotice( translate( "We couldn't load your notification settings, please try again." ) )
 	);
 
-export default {
-	[ NOTIFICATION_SETTINGS_REQUEST ]: [
+const exported = {
+    [ NOTIFICATION_SETTINGS_REQUEST ]: [
 		dispatchRequest( requestNotificationSettings, updateSettings, handleError ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    NOTIFICATION_SETTINGS_REQUEST
+} = exported;

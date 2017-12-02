@@ -109,6 +109,12 @@ const dispatchPostRevisionsRequest = dispatchRequest(
 	receiveError
 );
 
-export default {
-	[ POST_REVISIONS_REQUEST ]: [ dispatchPostRevisionsRequest ],
+const exported = {
+    [ POST_REVISIONS_REQUEST ]: [ dispatchPostRevisionsRequest ]
 };
+
+export default exported;
+
+export const {
+    POST_REVISIONS_REQUEST
+} = exported;

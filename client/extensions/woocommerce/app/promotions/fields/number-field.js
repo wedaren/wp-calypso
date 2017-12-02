@@ -54,3 +54,7 @@ NumberField.PropTypes = {
 };
 
 export default NumberField;
+
+export const {
+    PropTypes
+} = NumberField;

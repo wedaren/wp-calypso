@@ -25,3 +25,5 @@ const ReaderCombinedCard = () => (
 ReaderCombinedCard.displayName = 'ReaderCombinedCard';
 
 export default ReaderCombinedCard;
+
+export const { displayName } = ReaderCombinedCard;

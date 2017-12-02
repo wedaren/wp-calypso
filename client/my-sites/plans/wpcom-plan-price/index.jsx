@@ -26,3 +26,7 @@ WpcomPlanPrice.propTypes = {
 };
 
 export default WpcomPlanPrice;
+
+export const {
+    propTypes
+} = WpcomPlanPrice;

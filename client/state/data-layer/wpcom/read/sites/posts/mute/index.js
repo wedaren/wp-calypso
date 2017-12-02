@@ -77,12 +77,18 @@ export function receiveConversationMuteError(
 	);
 }
 
-export default {
-	[ READER_CONVERSATION_MUTE ]: [
+const exported = {
+    [ READER_CONVERSATION_MUTE ]: [
 		dispatchRequest(
 			requestConversationMute,
 			receiveConversationMute,
 			receiveConversationMuteError
 		),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    READER_CONVERSATION_MUTE
+} = exported;

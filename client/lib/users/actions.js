@@ -175,3 +175,11 @@ const UsersActions = {
 };
 
 export default UsersActions;
+
+export const {
+    fetchUsers,
+    fetchUpdated,
+    deleteUser,
+    updateUser,
+    fetchUser
+} = UsersActions;

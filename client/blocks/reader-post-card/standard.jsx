@@ -48,3 +48,5 @@ StandardPost.propTypes = {
 };
 
 export default StandardPost;
+
+export const { propTypes } = StandardPost;

@@ -44,3 +44,7 @@ CheckboxField.PropTypes = {
 };
 
 export default CheckboxField;
+
+export const {
+    PropTypes
+} = CheckboxField;

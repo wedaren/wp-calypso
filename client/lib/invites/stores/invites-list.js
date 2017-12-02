@@ -12,3 +12,7 @@ const InvitesStore = createReducerStore( reducer, initialState );
 InvitesStore.getInvites = siteId => InvitesStore.get().getIn( [ 'list', siteId ] );
 
 export default InvitesStore;
+
+export const {
+ getInvites
+} = InvitesStore;

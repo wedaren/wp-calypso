@@ -1,7 +1,8 @@
 /** @format */
-export default {
-	found: 7,
-	users: [
+const exported = {
+    found: 7,
+
+    users: [
 		{
 			ID: 1,
 			avatar_URL: 'https://1.gravatar.com/avatar',
@@ -61,5 +62,12 @@ export default {
 			roles: [ 'editor' ],
 			site_ID: 1234,
 		},
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    found,
+    users
+} = exported;

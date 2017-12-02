@@ -23,3 +23,5 @@ FieldError.propTypes = {
 };
 
 export default FieldError;
+
+export const { propTypes } = FieldError;

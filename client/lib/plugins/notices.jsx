@@ -47,8 +47,8 @@ function getTranslateArg( logs, sampleLog, typeFilter ) {
 	};
 }
 
-export default {
-	shouldComponentUpdateNotices( currentNotices, nextNotices ) {
+const exported = {
+    shouldComponentUpdateNotices( currentNotices, nextNotices ) {
 		if ( currentNotices.errors && currentNotices.errors.length !== nextNotices.errors.length ) {
 			return true;
 		}
@@ -67,19 +67,19 @@ export default {
 		return false;
 	},
 
-	getInitialState() {
+    getInitialState() {
 		return { notices: this.refreshPluginNotices() };
 	},
 
-	componentDidMount() {
+    componentDidMount() {
 		PluginsLog.on( 'change', this.showNotification );
 	},
 
-	componentWillUnmount() {
+    componentWillUnmount() {
 		PluginsLog.removeListener( 'change', this.showNotification );
 	},
 
-	refreshPluginNotices() {
+    refreshPluginNotices() {
 		const site = this.props.selectedSite;
 		return {
 			errors: PluginsUtil.filterNotices( PluginsLog.getErrors(), site, this.props.pluginSlug ),
@@ -96,7 +96,7 @@ export default {
 		};
 	},
 
-	showNotification() {
+    showNotification() {
 		const logNotices = this.refreshPluginNotices();
 		this.setState( { notices: logNotices } );
 		if ( logNotices.inProgress.length > 0 ) {
@@ -138,14 +138,14 @@ export default {
 		}
 	},
 
-	getMessage( logs, messageFunction, typeFilter ) {
+    getMessage( logs, messageFunction, typeFilter ) {
 		const sampleLog = logs[ 0 ].status === 'inProgress' ? logs[ 0 ] : logs[ logs.length - 1 ],
 			translateArg = getTranslateArg( logs, sampleLog, typeFilter ),
 			combination = getCombination( translateArg );
 		return messageFunction( sampleLog.action, combination, translateArg, sampleLog );
 	},
 
-	successMessage( action, combination, translateArg ) {
+    successMessage( action, combination, translateArg ) {
 		switch ( action ) {
 			case 'INSTALL_PLUGIN':
 				if ( translateArg.isMultiSite ) {
@@ -384,7 +384,7 @@ export default {
 		}
 	},
 
-	inProgressMessage( action, combination, translateArg ) {
+    inProgressMessage( action, combination, translateArg ) {
 		switch ( action ) {
 			case 'INSTALL_PLUGIN':
 				switch ( combination ) {
@@ -584,7 +584,7 @@ export default {
 		}
 	},
 
-	erroredAndCompletedMessage( logNotices ) {
+    erroredAndCompletedMessage( logNotices ) {
 		const completedMessage = this.getMessage(
 				logNotices.completed,
 				this.successMessage,
@@ -594,7 +594,7 @@ export default {
 		return ' ' + completedMessage + ' ' + errorMessage;
 	},
 
-	errorMessage( action, combination, translateArg, sampleLog ) {
+    errorMessage( action, combination, translateArg, sampleLog ) {
 		if ( combination === '1 site 1 plugin' ) {
 			return this.singleErrorMessage( action, translateArg, sampleLog );
 		}
@@ -777,7 +777,7 @@ export default {
 		}
 	},
 
-	additionalExplanation( error_code ) {
+    additionalExplanation( error_code ) {
 		switch ( error_code ) {
 			case 'no_package':
 				return i18n.translate( "Plugin doesn't exist in the plugin repo." );
@@ -849,7 +849,7 @@ export default {
 		return null;
 	},
 
-	singleErrorMessage( action, translateArg, sampleLog ) {
+    singleErrorMessage( action, translateArg, sampleLog ) {
 		const additionalExplanation = this.additionalExplanation( sampleLog.error.error );
 		switch ( action ) {
 			case 'INSTALL_PLUGIN':
@@ -984,7 +984,7 @@ export default {
 		}
 	},
 
-	getErrorButton( log ) {
+    getErrorButton( log ) {
 		if ( log.length > 1 ) {
 			return null;
 		}
@@ -995,7 +995,7 @@ export default {
 		return null;
 	},
 
-	getErrorHref( log ) {
+    getErrorHref( log ) {
 		if ( log.length > 1 ) {
 			return null;
 		}
@@ -1011,7 +1011,7 @@ export default {
 		return remoteManagementUrl;
 	},
 
-	getSuccessButton( log ) {
+    getSuccessButton( log ) {
 		if ( log.length > 1 ) {
 			return null;
 		}
@@ -1024,7 +1024,7 @@ export default {
 		return i18n.translate( 'Setup' );
 	},
 
-	getSuccessHref( log ) {
+    getSuccessHref( log ) {
 		if ( log.length > 1 ) {
 			return null;
 		}
@@ -1034,5 +1034,27 @@ export default {
 			return null;
 		}
 		return log.plugin.wp_admin_settings_page_url;
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    shouldComponentUpdateNotices,
+    getInitialState,
+    componentDidMount,
+    componentWillUnmount,
+    refreshPluginNotices,
+    showNotification,
+    getMessage,
+    successMessage,
+    inProgressMessage,
+    erroredAndCompletedMessage,
+    errorMessage,
+    additionalExplanation,
+    singleErrorMessage,
+    getErrorButton,
+    getErrorHref,
+    getSuccessButton,
+    getSuccessHref
+} = exported;

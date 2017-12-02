@@ -77,3 +77,5 @@ export const CommentDetailExample = () => (
 CommentDetailExample.displayName = 'CommentDetail';
 
 export default CommentDetailExample;
+
+export const { displayName } = CommentDetailExample;

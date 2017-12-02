@@ -38,7 +38,10 @@ function validateField( { name, value } ) {
 	}
 }
 
-export default {
-	emailForwardingPlanLimit,
-	validateAllFields,
+const exported = {
+    emailForwardingPlanLimit,
+    validateAllFields
 };
+
+export default exported;
+export { emailForwardingPlanLimit, validateAllFields };

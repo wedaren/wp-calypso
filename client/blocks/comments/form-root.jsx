@@ -53,3 +53,5 @@ PostCommentFormRoot.propTypes = {
 };
 
 export default PostCommentFormRoot;
+
+export const { propTypes } = PostCommentFormRoot;

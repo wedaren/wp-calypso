@@ -49,6 +49,10 @@ export function handleRequest( { dispatch, getState }, action ) {
 		} );
 }
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_API_REQUEST ]: [ handleRequest ],
 };
+
+export default exported;
+
+export const { WOOCOMMERCE_API_REQUEST } = exported;

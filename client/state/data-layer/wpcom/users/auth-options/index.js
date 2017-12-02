@@ -75,6 +75,12 @@ const getAuthAccountTypeRequest = dispatchRequest(
 	receiveError,
 );
 
-export default {
-	[ LOGIN_AUTH_ACCOUNT_TYPE_REQUESTING ]: [ getAuthAccountTypeRequest ],
+const exported = {
+    [ LOGIN_AUTH_ACCOUNT_TYPE_REQUESTING ]: [ getAuthAccountTypeRequest ]
 };
+
+export default exported;
+
+export const {
+    LOGIN_AUTH_ACCOUNT_TYPE_REQUESTING
+} = exported;

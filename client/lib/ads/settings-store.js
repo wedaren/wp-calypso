@@ -111,3 +111,16 @@ WordadsSettingsStore.dispatchToken = Dispatcher.register( function( payload ) {
 emitter( WordadsSettingsStore );
 
 export default WordadsSettingsStore;
+
+export const {
+	get,
+	getById,
+	isLoading,
+	isSubmitting,
+	getLoadingError,
+	getNotice,
+	clearNotices,
+	settingsLoaded,
+	emitChange,
+	dispatchToken,
+} = WordadsSettingsStore;

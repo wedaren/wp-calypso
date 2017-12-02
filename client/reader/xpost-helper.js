@@ -50,6 +50,8 @@ const exported = {
 
 export default exported;
 
+export const {} = exported;
+
 export const { getXPostMetadata } = exported;
 
 export function isXPost( post ) {

@@ -535,6 +535,22 @@ export function makeGoogleAnalyticsTrackingFunction( func ) {
 emitter( analytics );
 
 export default analytics;
+
+export const {
+	initialize,
+	setUser,
+	setSuperProps,
+	setSelectedSite,
+	setSiteCount,
+	setDispatch,
+	timing,
+	statsd,
+	hotjar,
+	identifyUser,
+	setProperties,
+	clearedIdentity,
+} = analytics;
+
 export const ga = analytics.ga;
 export const mc = analytics.mc;
 export const pageView = analytics.pageView;

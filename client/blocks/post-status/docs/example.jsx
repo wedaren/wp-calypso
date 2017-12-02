@@ -64,3 +64,5 @@ const ConnectedPostStatusExample = connect( state => {
 ConnectedPostStatusExample.displayName = 'PostStatus';
 
 export default ConnectedPostStatusExample;
+
+export const { displayName } = ConnectedPostStatusExample;

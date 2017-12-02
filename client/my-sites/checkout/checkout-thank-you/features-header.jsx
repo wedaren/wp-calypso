@@ -55,3 +55,7 @@ FeaturesHeader.propTypes = {
 };
 
 export default FeaturesHeader;
+
+export const {
+    propTypes
+} = FeaturesHeader;

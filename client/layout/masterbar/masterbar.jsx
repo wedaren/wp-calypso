@@ -20,3 +20,5 @@ Masterbar.propTypes = {
 };
 
 export default Masterbar;
+
+export const { displayName, propTypes } = Masterbar;

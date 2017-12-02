@@ -282,3 +282,21 @@ const olark = {
 emitter( olark );
 
 export default olark;
+
+export const {
+    apiId,
+    eligibilityKey,
+    operatorsAvailableKey,
+    conversationStarted,
+    operatorAvailable,
+    userType,
+    initialize,
+    handleError,
+    getOlarkConfiguration,
+    configureOlark,
+    updateOlarkGroupAndEligibility,
+    syncStoreWithExpandedState,
+    hookExpansionEventToStoreSync,
+    setOlarkOptions,
+    updateOlarkFormatting
+} = olark;

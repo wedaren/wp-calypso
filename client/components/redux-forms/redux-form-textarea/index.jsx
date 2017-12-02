@@ -23,3 +23,5 @@ ReduxFormTextarea.propTypes = {
 };
 
 export default ReduxFormTextarea;
+
+export const { propTypes } = ReduxFormTextarea;

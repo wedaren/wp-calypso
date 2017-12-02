@@ -58,8 +58,14 @@ export const receiveRestoreError = ( { dispatch }, { siteId, timestamp }, error 
 	);
 };
 
-export default {
-	[ REWIND_RESTORE ]: [
+const exported = {
+    [ REWIND_RESTORE ]: [
 		dispatchRequest( requestRestore, receiveRestoreSuccess, receiveRestoreError ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    REWIND_RESTORE
+} = exported;

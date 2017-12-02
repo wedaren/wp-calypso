@@ -22,3 +22,5 @@ const ReaderShareExample = () => (
 ReaderShareExample.displayName = 'ReaderShare';
 
 export default ReaderShareExample;
+
+export const { displayName } = ReaderShareExample;

@@ -16,8 +16,8 @@ import titlecase from 'to-title-case';
 import { getSelectedSite, getSelectedSiteId } from 'state/ui/selectors';
 import { canCurrentUser } from 'state/selectors';
 
-export default {
-	siteSettings( context, next ) {
+const exported = {
+    siteSettings( context, next ) {
 		let analyticsPageTitle = 'Site Settings';
 		const basePath = route.sectionify( context.path );
 		const section = sectionify( context.path ).split( '/' )[ 2 ];
@@ -41,8 +41,15 @@ export default {
 		next();
 	},
 
-	setScroll( context, next ) {
+    setScroll( context, next ) {
 		window.scroll( 0, 0 );
 		next();
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    siteSettings,
+    setScroll
+} = exported;

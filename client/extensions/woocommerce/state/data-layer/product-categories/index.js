@@ -92,8 +92,9 @@ function isValidProductCategory( category ) {
 	);
 }
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_PRODUCT_CATEGORY_CREATE ]: [ handleProductCategoryCreate ],
+
 	[ WOOCOMMERCE_PRODUCT_CATEGORIES_REQUEST ]: [
 		dispatchRequest(
 			handleProductCategoriesRequest,
@@ -102,3 +103,10 @@ export default {
 		),
 	],
 };
+
+export default exported;
+
+export const {
+	WOOCOMMERCE_PRODUCT_CATEGORY_CREATE,
+	WOOCOMMERCE_PRODUCT_CATEGORIES_REQUEST,
+} = exported;

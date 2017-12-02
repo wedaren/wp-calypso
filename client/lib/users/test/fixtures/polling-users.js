@@ -17,7 +17,14 @@ const updatedUsers = clonedMoreUsers.map( user => {
 	return Object.assign( {}, user, { roles: [ 'contributor' ] } );
 } );
 
-export default {
-	found: 7,
-	users: Array.concat( usersData.users, updatedUsers ),
+const exported = {
+ found: 7,
+ users: Array.concat( usersData.users, updatedUsers )
 };
+
+export default exported;
+
+export const {
+ found,
+ users
+} = exported;

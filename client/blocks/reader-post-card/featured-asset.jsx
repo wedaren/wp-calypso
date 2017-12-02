@@ -50,3 +50,5 @@ FeaturedAsset.defaultProps = {
 };
 
 export default FeaturedAsset;
+
+export const { propTypes, defaultProps } = FeaturedAsset;

@@ -413,3 +413,19 @@ emitter( PostEditStore );
 PostEditStore.dispatchToken = Dispatcher.register( dispatcherCallback );
 
 export default PostEditStore;
+
+export const {
+    get,
+    getSavedPost,
+    getRawContent,
+    getChangedAttributes,
+    getLoadingError,
+    isDirty,
+    isNew,
+    isLoading,
+    isAutosaving,
+    isSaveBlocked,
+    getPreviewUrl,
+    hasContent,
+    dispatchToken
+} = PostEditStore;

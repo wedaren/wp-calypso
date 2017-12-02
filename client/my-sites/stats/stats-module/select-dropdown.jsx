@@ -30,3 +30,7 @@ StatsModuleSelectDropdown.propTypes = {
 };
 
 export default StatsModuleSelectDropdown;
+
+export const {
+    propTypes
+} = StatsModuleSelectDropdown;

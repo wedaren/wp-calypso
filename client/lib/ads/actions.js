@@ -131,3 +131,5 @@ const WordadsActions = {
 };
 
 export default WordadsActions;
+
+export const { fetchEarnings, fetchSettings, updateSettings, fetchTos, signTos } = WordadsActions;

@@ -26,3 +26,5 @@ const CalendarButtonExample = () => {
 CalendarButtonExample.displayName = 'CalendarButton';
 
 export default CalendarButtonExample;
+
+export const { displayName } = CalendarButtonExample;

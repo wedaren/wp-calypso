@@ -25,3 +25,7 @@ const ConnectedDomainTipExample = connect( state => ( {
 ConnectedDomainTipExample.displayName = 'DomainTip';
 
 export default ConnectedDomainTipExample;
+
+export const {
+ displayName
+} = ConnectedDomainTipExample;

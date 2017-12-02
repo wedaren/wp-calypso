@@ -21,22 +21,25 @@ import TransferToOtherSite from './transfer/transfer-to-other-site';
 import TransferToOtherUser from './transfer/transfer-to-other-user';
 import Transfer from './transfer';
 
-export default {
-	AddGoogleApps,
-	ContactsPrivacy,
-	Dns,
-	Edit,
-	EditContactInfo,
-	Email,
-	EmailForwarding,
-	List,
-	NameServers,
-	PrimaryDomain,
-	PrivacyProtection,
-	SiteRedirect,
-	TransferIn,
-	TransferOut,
-	TransferToOtherSite,
-	TransferToOtherUser,
-	Transfer,
+const exported = {
+ AddGoogleApps,
+ ContactsPrivacy,
+ Dns,
+ Edit,
+ EditContactInfo,
+ Email,
+ EmailForwarding,
+ List,
+ NameServers,
+ PrimaryDomain,
+ PrivacyProtection,
+ SiteRedirect,
+ TransferIn,
+ TransferOut,
+ TransferToOtherSite,
+ TransferToOtherUser,
+ Transfer
 };
+
+export default exported;
+export { AddGoogleApps, ContactsPrivacy, Dns, Edit, EditContactInfo, Email, EmailForwarding, List, NameServers, PrimaryDomain, PrivacyProtection, SiteRedirect, TransferIn, TransferOut, TransferToOtherSite, TransferToOtherUser, Transfer };

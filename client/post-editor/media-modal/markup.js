@@ -242,3 +242,10 @@ Markup = {
 };
 
 export default Markup;
+
+export const {
+    get,
+    link,
+    caption,
+    mimeTypes
+} = Markup;

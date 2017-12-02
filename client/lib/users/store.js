@@ -247,3 +247,7 @@ UsersStore.dispatchToken = Dispatcher.register( function( payload ) {
 emitter( UsersStore );
 
 export default UsersStore;
+
+export const {
+    dispatchToken
+} = UsersStore;

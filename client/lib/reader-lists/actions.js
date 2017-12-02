@@ -173,3 +173,13 @@ const ReaderListActions = {
 };
 
 export default ReaderListActions;
+
+export const {
+    fetchSubscriptions,
+    follow,
+    unfollow,
+    fetchList,
+    create,
+    update,
+    dismissNotice
+} = ReaderListActions;

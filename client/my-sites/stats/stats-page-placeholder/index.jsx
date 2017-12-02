@@ -33,3 +33,7 @@ StatsPagePlaceholder.propTypes = {
 };
 
 export default StatsPagePlaceholder;
+
+export const {
+    propTypes
+} = StatsPagePlaceholder;

@@ -18,11 +18,19 @@ import {
 	WOOCOMMERCE_ACTION_LIST_STEP_FAILURE,
 } from 'woocommerce/state/action-types';
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_ACTION_LIST_STEP_NEXT ]: [ handleStepNext ],
 	[ WOOCOMMERCE_ACTION_LIST_STEP_SUCCESS ]: [ handleStepSuccess ],
 	[ WOOCOMMERCE_ACTION_LIST_STEP_FAILURE ]: [ handleStepFailure ],
 };
+
+export default exported;
+
+export const {
+	WOOCOMMERCE_ACTION_LIST_STEP_NEXT,
+	WOOCOMMERCE_ACTION_LIST_STEP_SUCCESS,
+	WOOCOMMERCE_ACTION_LIST_STEP_FAILURE,
+} = exported;
 
 export function handleStepNext( { dispatch }, action, now = Date.now() ) {
 	const { actionList } = action;

@@ -48,8 +48,14 @@ const trackAffiliatePageLoadSuccess = ( { dispatch }, action, rData ) => {
 	aDebug( 'affiliate referrer request successful', rData );
 };
 
-export default {
-	[ AFFILIATE_REFERRAL ]: [
+const exported = {
+    [ AFFILIATE_REFERRAL ]: [
 		dispatchRequest( trackAffiliatePageLoad, trackAffiliatePageLoadSuccess, noop ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    AFFILIATE_REFERRAL
+} = exported;

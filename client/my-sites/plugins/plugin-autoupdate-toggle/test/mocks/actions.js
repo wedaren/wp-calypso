@@ -6,7 +6,14 @@
 
 import sinon from 'sinon';
 
-export default {
-	togglePluginAutoUpdate: sinon.spy(),
-	removePluginsNotices: function() {},
+const exported = {
+ togglePluginAutoUpdate: sinon.spy(),
+ removePluginsNotices: function() {}
 };
+
+export default exported;
+
+export const {
+ togglePluginAutoUpdate,
+ removePluginsNotices
+} = exported;

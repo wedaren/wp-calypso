@@ -21,8 +21,8 @@ import {
 	FOLLOWER_REMOVE_SUCCESS,
 } from 'state/action-types';
 
-export default {
-	fetchFollowers( query, silentUpdate = false ) {
+const exported = {
+    fetchFollowers( query, silentUpdate = false ) {
 		return dispatch => {
 			// TODO: Componentes should not fetch if already fetching
 			debug( 'fetching followers', query );
@@ -39,7 +39,8 @@ export default {
 				.catch( error => dispatch( { type: FOLLOWERS_REQUEST_ERROR, query, error } ) );
 		};
 	},
-	removeFollower( siteId, follower ) {
+
+    removeFollower( siteId, follower ) {
 		return dispatch => {
 			debug( 'removing follower', follower, siteId );
 			dispatch( {
@@ -54,5 +55,12 @@ export default {
 				.then( data => dispatch( { type: FOLLOWER_REMOVE_SUCCESS, siteId, follower, data } ) )
 				.catch( error => dispatch( { type: FOLLOWER_REMOVE_ERROR, siteId, follower, error } ) );
 		};
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    fetchFollowers,
+    removeFollower
+} = exported;

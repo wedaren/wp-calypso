@@ -14,3 +14,5 @@ EditorMention.propTypes = {
 };
 
 export default EditorMention;
+
+export const { propTypes } = EditorMention;

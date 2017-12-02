@@ -8,8 +8,8 @@ import site from './mock-site';
 import followerData from './mock-email-followers';
 import moreFollowerData from './mock-more-email-followers';
 
-export default {
-	fetchedFollowers: {
+const exported = {
+    fetchedFollowers: {
 		type: 'RECEIVE_EMAIL_FOLLOWERS',
 		fetchOptions: {
 			siteId: site.ID,
@@ -20,7 +20,7 @@ export default {
 		error: null,
 	},
 
-	fetchedMoreFollowers: {
+    fetchedMoreFollowers: {
 		type: 'RECEIVE_EMAIL_FOLLOWERS',
 		fetchOptions: {
 			siteId: site.ID,
@@ -31,21 +31,31 @@ export default {
 		error: null,
 	},
 
-	removeFollower: {
+    removeFollower: {
 		type: 'REMOVE_EMAIL_FOLLOWER',
 		siteId: site.ID,
 		follower: followerData.subscribers[ 0 ],
 	},
 
-	removeFollowerSuccess: {
+    removeFollowerSuccess: {
 		type: 'RECEIVE_REMOVE_EMAIL_FOLLOWER_SUCCESS',
 		siteId: site.ID,
 		follower: followerData.subscribers[ 0 ],
 	},
 
-	removeFollowerError: {
+    removeFollowerError: {
 		type: 'RECEIVE_REMOVE_EMAIL_FOLLOWER_ERROR',
 		siteId: site.ID,
 		follower: followerData.subscribers[ 0 ],
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    fetchedFollowers,
+    fetchedMoreFollowers,
+    removeFollower,
+    removeFollowerSuccess,
+    removeFollowerError
+} = exported;

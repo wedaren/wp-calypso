@@ -33,6 +33,12 @@ const storeFilters = ( { dispatch }, action, data ) =>
 const reportError = ( { dispatch } ) =>
 	dispatch( errorNotice( i18n.translate( 'Problem fetching theme filters.' ) ) );
 
-export default {
-	[ THEME_FILTERS_REQUEST ]: [ dispatchRequest( fetchFilters, storeFilters, reportError ) ],
+const exported = {
+    [ THEME_FILTERS_REQUEST ]: [ dispatchRequest( fetchFilters, storeFilters, reportError ) ]
 };
+
+export default exported;
+
+export const {
+    THEME_FILTERS_REQUEST
+} = exported;

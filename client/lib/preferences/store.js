@@ -82,3 +82,10 @@ PreferencesStore.dispatchToken = Dispatcher.register( function( payload ) {
 } );
 
 export default PreferencesStore;
+
+export const {
+    _preferences,
+    getAll,
+    get,
+    dispatchToken
+} = PreferencesStore;

@@ -15,3 +15,8 @@ InvitesAcceptValidationStore.getInviteError = ( siteId, inviteKey ) =>
 	InvitesAcceptValidationStore.get().getIn( [ 'errors', siteId, inviteKey ] );
 
 export default InvitesAcceptValidationStore;
+
+export const {
+    getInvite,
+    getInviteError
+} = InvitesAcceptValidationStore;

@@ -21,7 +21,7 @@ import {
 	WOOCOMMERCE_SHIPPING_ZONE_METHOD_UPDATE,
 } from 'woocommerce/state/action-types';
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_SHIPPING_ZONE_METHOD_CREATE ]: [
 		( store, action ) => {
 			const { siteId, zoneId, methodId, methodType, order, successAction, failureAction } = action;
@@ -89,3 +89,11 @@ export default {
 		},
 	],
 };
+
+export default exported;
+
+export const {
+	WOOCOMMERCE_SHIPPING_ZONE_METHOD_CREATE,
+	WOOCOMMERCE_SHIPPING_ZONE_METHOD_UPDATE,
+	WOOCOMMERCE_SHIPPING_ZONE_METHOD_DELETE,
+} = exported;

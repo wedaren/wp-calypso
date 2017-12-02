@@ -129,3 +129,12 @@ ListStore.dispatchToken = dispatcher.register( function( payload ) {
 } );
 
 export default ListStore;
+
+export const {
+    get,
+    getLastError,
+    isUpdated,
+    isFetching,
+    setIsFetching,
+    dispatchToken
+} = ListStore;

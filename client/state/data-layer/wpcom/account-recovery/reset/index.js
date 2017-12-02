@@ -52,8 +52,14 @@ export const handleSuccess = ( { dispatch } ) => {
 	} );
 };
 
-export default {
-	[ ACCOUNT_RECOVERY_RESET_PASSWORD_REQUEST ]: [
+const exported = {
+    [ ACCOUNT_RECOVERY_RESET_PASSWORD_REQUEST ]: [
 		dispatchRequest( resetPassword, handleSuccess, handleError ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    ACCOUNT_RECOVERY_RESET_PASSWORD_REQUEST
+} = exported;

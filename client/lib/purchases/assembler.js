@@ -94,7 +94,10 @@ function createPurchasesArray( dataTransferObject ) {
 	return sortProducts( dataTransferObject.map( createPurchaseObject ) );
 }
 
-export default {
-	createPurchaseObject,
-	createPurchasesArray,
+const exported = {
+    createPurchaseObject,
+    createPurchasesArray
 };
+
+export default exported;
+export { createPurchaseObject, createPurchasesArray };

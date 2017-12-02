@@ -40,6 +40,9 @@ function createWhois( dataTransferObject, type ) {
 	};
 }
 
-export default {
-	createDomainWhois,
+const exported = {
+    createDomainWhois
 };
+
+export default exported;
+export { createDomainWhois };

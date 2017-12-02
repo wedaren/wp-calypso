@@ -88,6 +88,12 @@ export const queueRequest = ( processOutbound, processInbound ) => ( { dispatch 
 	}
 };
 
-export default {
-	[ WPCOM_HTTP_REQUEST ]: [ queueRequest( outboundProcessor, inboundProcessor ) ],
+const exported = {
+    [ WPCOM_HTTP_REQUEST ]: [ queueRequest( outboundProcessor, inboundProcessor ) ]
 };
+
+export default exported;
+
+export const {
+    WPCOM_HTTP_REQUEST
+} = exported;

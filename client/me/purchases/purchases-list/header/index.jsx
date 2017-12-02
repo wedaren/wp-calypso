@@ -43,3 +43,7 @@ PurchasesHeader.propTypes = {
 };
 
 export default PurchasesHeader;
+
+export const {
+    propTypes
+} = PurchasesHeader;

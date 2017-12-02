@@ -38,3 +38,7 @@ EditorDiffChanges.propTypes = {
 };
 
 export default EditorDiffChanges;
+
+export const {
+    propTypes
+} = EditorDiffChanges;

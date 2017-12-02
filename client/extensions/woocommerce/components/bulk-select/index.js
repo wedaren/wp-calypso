@@ -58,3 +58,5 @@ BulkSelect.propTypes = {
 };
 
 export default BulkSelect;
+
+export const { propTypes } = BulkSelect;

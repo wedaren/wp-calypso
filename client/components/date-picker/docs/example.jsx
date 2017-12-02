@@ -172,3 +172,5 @@ const localizedDatePickerExample = localize( DatePickerExample );
 localizedDatePickerExample.displayName = 'DatePicker';
 
 export default localizedDatePickerExample;
+
+export const { displayName } = localizedDatePickerExample;

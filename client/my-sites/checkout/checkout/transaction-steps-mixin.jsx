@@ -149,3 +149,13 @@ const TransactionStepsMixin = {
 };
 
 export default TransactionStepsMixin;
+
+export const {
+    submitTransaction,
+    componentWillReceiveProps,
+    _handleTransactionStep,
+    _displayNotices,
+    _recordAnalytics,
+    _recordDomainRegistrationAnalytics,
+    _finishIfLastStep
+} = TransactionStepsMixin;

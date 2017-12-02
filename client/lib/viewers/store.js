@@ -136,3 +136,7 @@ ViewersStore.dispatchToken = Dispatcher.register( function( payload ) {
 emitter( ViewersStore );
 
 export default ViewersStore;
+
+export const {
+    dispatchToken
+} = ViewersStore;

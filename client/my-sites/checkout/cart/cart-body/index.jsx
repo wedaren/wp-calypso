@@ -42,3 +42,8 @@ CartBody.defaultProps = {
 };
 
 export default CartBody;
+
+export const {
+    propTypes,
+    defaultProps
+} = CartBody;

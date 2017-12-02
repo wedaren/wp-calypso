@@ -21,3 +21,8 @@ NoticeErrorMessage.defaultProps = {
 };
 
 export default NoticeErrorMessage;
+
+export const {
+ propTypes,
+ defaultProps
+} = NoticeErrorMessage;

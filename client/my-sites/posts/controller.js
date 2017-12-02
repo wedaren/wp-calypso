@@ -24,8 +24,8 @@ import { getSelectedSiteId } from 'state/ui/selectors';
 import { isJetpackSite, isSingleUserSite } from 'state/sites/selectors';
 import { getCurrentUserId } from 'state/current-user/selectors';
 
-export default {
-	posts: function( context ) {
+const exported = {
+    posts: function( context ) {
 		const state = context.store.getState();
 		const siteId = getSelectedSiteId( state );
 
@@ -101,5 +101,11 @@ export default {
 			'primary',
 			context.store
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    posts
+} = exported;

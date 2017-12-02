@@ -73,7 +73,10 @@ function ensurePrimaryDomainIsFirst( domains ) {
 	return [ primaryDomain ].concat( without( domains, primaryDomain ) );
 }
 
-export default {
-	assembleGoogleAppsSubscription,
-	createDomainObjects,
+const exported = {
+    assembleGoogleAppsSubscription,
+    createDomainObjects
 };
+
+export default exported;
+export { assembleGoogleAppsSubscription, createDomainObjects };

@@ -41,7 +41,7 @@ const components = mapValues( views, view => {
 
 const emitters = values( views ).filter( view => view instanceof EventEmitter );
 
-export default {
+const exported = {
 	/**
 	 * Scans a given string for each view's pattern,
 	 * replacing any matches with markers,
@@ -119,6 +119,10 @@ export default {
 	},
 
 	components: components,
-
 	emitters: emitters,
 };
+
+export default exported;
+export { components, emitters };
+
+export const { setMarkers, isEditable, edit } = exported;

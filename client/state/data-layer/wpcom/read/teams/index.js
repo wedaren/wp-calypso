@@ -34,8 +34,14 @@ export const teamRequestFailure = ( { dispatch }, error ) => {
 	} );
 };
 
-export default {
-	[ READER_TEAMS_REQUEST ]: [
+const exported = {
+    [ READER_TEAMS_REQUEST ]: [
 		dispatchRequest( handleTeamsRequest, teamRequestReceived, teamRequestFailure ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    READER_TEAMS_REQUEST
+} = exported;

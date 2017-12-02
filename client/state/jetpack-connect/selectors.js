@@ -119,18 +119,21 @@ const getSiteIdFromQueryObject = function( state ) {
 	return null;
 };
 
-export default {
-	getConnectingSite,
-	getAuthorizationData,
-	getAuthorizationRemoteQueryData,
-	getAuthorizationRemoteSite,
-	getSSO,
-	isRedirectingToWpAdmin,
-	isRemoteSiteOnSitesList,
-	getJetpackSiteByUrl,
-	hasXmlrpcError,
-	hasExpiredSecretError,
-	getAuthAttempts,
-	getSiteIdFromQueryObject,
-	getUserAlreadyConnected,
+const exported = {
+    getConnectingSite,
+    getAuthorizationData,
+    getAuthorizationRemoteQueryData,
+    getAuthorizationRemoteSite,
+    getSSO,
+    isRedirectingToWpAdmin,
+    isRemoteSiteOnSitesList,
+    getJetpackSiteByUrl,
+    hasXmlrpcError,
+    hasExpiredSecretError,
+    getAuthAttempts,
+    getSiteIdFromQueryObject,
+    getUserAlreadyConnected
 };
+
+export default exported;
+export { getConnectingSite, getAuthorizationData, getAuthorizationRemoteQueryData, getAuthorizationRemoteSite, getSSO, isRedirectingToWpAdmin, isRemoteSiteOnSitesList, getJetpackSiteByUrl, hasXmlrpcError, hasExpiredSecretError, getAuthAttempts, getSiteIdFromQueryObject, getUserAlreadyConnected };

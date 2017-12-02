@@ -4,7 +4,7 @@
  * @format
  */
 
-export default {
+const exported = {
 	15: [
 		{
 			id: 733,
@@ -164,3 +164,5 @@ export default {
 		},
 	],
 };
+
+export default exported;

@@ -48,3 +48,7 @@ KeyInputStep.propTypes = {
 };
 
 export default KeyInputStep;
+
+export const {
+    propTypes
+} = KeyInputStep;

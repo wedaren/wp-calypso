@@ -32,3 +32,9 @@ const wp = {
 };
 
 export default wp;
+export { stubs };
+
+export const {
+    site,
+    undocumented
+} = wp;

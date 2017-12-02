@@ -48,3 +48,5 @@ PromotionsListPagination.propTypes = {
 };
 
 export default PromotionsListPagination;
+
+export const { propTypes } = PromotionsListPagination;

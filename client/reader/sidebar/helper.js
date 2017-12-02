@@ -51,4 +51,6 @@ const exported = {
 
 export default exported;
 
+export const {} = exported;
+
 export const { itemLinkClass, itemLinkClassStartsWithOneOf, pathStartsWithOneOf } = exported;

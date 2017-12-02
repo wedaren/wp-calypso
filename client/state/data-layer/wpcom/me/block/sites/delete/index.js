@@ -49,13 +49,19 @@ export const receiveSiteUnblockError = ( { payload: { siteId } } ) => dispatch =
 	dispatch( bypassDataLayer( blockSite( siteId ) ) );
 };
 
-export default {
-	[ READER_SITE_UNBLOCK ]: [
+const exported = {
+    [ READER_SITE_UNBLOCK ]: [
 		dispatchRequestEx( {
 			fetch: requestSiteUnblock,
 			onSuccess: receiveSiteUnblock,
 			onError: receiveSiteUnblockError,
 			fromApi,
 		} ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    READER_SITE_UNBLOCK
+} = exported;

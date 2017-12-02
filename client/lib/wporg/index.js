@@ -40,8 +40,8 @@ function getWporgLocaleCode() {
 	return wpOrgLocaleCode;
 }
 
-export default {
-	/**
+const exported = {
+    /**
 	 * If successful, will call the provided callback with an object with plugin details.
 	 * @param {string} pluginSlug The plugin identifier.
 	 * @param {function} callback Callback that gets executed after the XHR returns the results.
@@ -72,7 +72,8 @@ export default {
 			callback( null, data );
 		} );
 	},
-	fetchPluginsList: function( options, callback ) {
+
+    fetchPluginsList: function( options, callback ) {
 		var payload;
 		// default variables;
 		options.page = options.page || _DEFAULT_FIRST_PAGE;
@@ -102,7 +103,8 @@ export default {
 				callback( err, data.body );
 			} );
 	},
-	/**
+
+    /**
 	 * Get information about a given theme from the WordPress.org API.
 	 * If provided with a callback, will call that on succes with an object with theme details.
 	 * Otherwise, will return a promise.
@@ -124,7 +126,8 @@ export default {
 			.query( query )
 			.then( ( { body } ) => body );
 	},
-	/**
+
+    /**
 	 * Get information about a given theme from the WordPress.org API.
 	 *
 	 * @param  {Object}        options         Theme query
@@ -150,5 +153,14 @@ export default {
 			.set( 'Accept', 'application/json' )
 			.query( query )
 			.then( ( { body } ) => body );
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    fetchPluginInformation,
+    fetchPluginsList,
+    fetchThemeInformation,
+    fetchThemesList
+} = exported;

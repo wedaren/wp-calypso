@@ -58,3 +58,5 @@ TableItem.propTypes = {
 };
 
 export default TableItem;
+
+export const { propTypes } = TableItem;

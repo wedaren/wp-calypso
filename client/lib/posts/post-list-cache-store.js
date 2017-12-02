@@ -183,3 +183,7 @@ export function deleteCanonicalList( listKey, requestKey ) {
 }
 
 export default PostsListCache;
+
+export const {
+    dispatchToken
+} = PostsListCache;

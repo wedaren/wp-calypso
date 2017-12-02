@@ -417,3 +417,7 @@ PluginsStore.dispatchToken = Dispatcher.register( function( { action } ) {
 
 emitter( PluginsStore );
 export default PluginsStore;
+
+export const {
+    dispatchToken
+} = PluginsStore;

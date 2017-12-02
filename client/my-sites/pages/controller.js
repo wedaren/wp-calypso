@@ -64,3 +64,7 @@ const controller = {
 };
 
 export default controller;
+
+export const {
+    pages
+} = controller;

@@ -23,3 +23,5 @@ FAQItem.propTypes = {
 };
 
 export default FAQItem;
+
+export const { propTypes } = FAQItem;

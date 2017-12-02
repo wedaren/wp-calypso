@@ -138,12 +138,18 @@ export const throwRequestError = ( store, action, error ) => {
 	throw new Error( error );
 };
 
-export default {
-	[ AUTOMATED_TRANSFER_ELIGIBILITY_REQUEST ]: [
+const exported = {
+    [ AUTOMATED_TRANSFER_ELIGIBILITY_REQUEST ]: [
 		dispatchRequest(
 			requestAutomatedTransferEligibility,
 			updateAutomatedTransferEligibility,
 			throwRequestError
 		),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    AUTOMATED_TRANSFER_ELIGIBILITY_REQUEST
+} = exported;

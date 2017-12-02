@@ -190,19 +190,22 @@ function isBelgiumBancontactEnabled( cart ) {
 	);
 }
 
-export default {
-	applyCoupon,
-	canRemoveFromCart,
-	cartItems,
-	emptyCart,
-	fillInAllCartItemAttributes,
-	fillInSingleCartItemAttributes,
-	getNewMessages,
-	getRefundPolicy,
-	isFree,
-	isPaidForFullyInCredits,
-	isPaymentMethodEnabled,
-	isPayPalExpressEnabled,
-	isNetherlandsIdealEnabled,
-	isCreditCardPaymentsEnabled,
+const exported = {
+    applyCoupon,
+    canRemoveFromCart,
+    cartItems,
+    emptyCart,
+    fillInAllCartItemAttributes,
+    fillInSingleCartItemAttributes,
+    getNewMessages,
+    getRefundPolicy,
+    isFree,
+    isPaidForFullyInCredits,
+    isPaymentMethodEnabled,
+    isPayPalExpressEnabled,
+    isNetherlandsIdealEnabled,
+    isCreditCardPaymentsEnabled
 };
+
+export default exported;
+export { applyCoupon, canRemoveFromCart, cartItems, emptyCart, fillInAllCartItemAttributes, fillInSingleCartItemAttributes, getNewMessages, getRefundPolicy, isFree, isPaidForFullyInCredits, isPaymentMethodEnabled, isPayPalExpressEnabled, isNetherlandsIdealEnabled, isCreditCardPaymentsEnabled };

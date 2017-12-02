@@ -66,7 +66,7 @@ const jetpackNewSiteSelector = context => {
 	);
 };
 
-export default {
+const exported = {
 	redirectWithoutLocaleifLoggedIn( context, next ) {
 		if ( userModule.get() && i18nUtils.getLocaleFromPath( context.path ) ) {
 			const urlWithoutLocale = i18nUtils.removeLocaleFromPath( context.path );
@@ -221,3 +221,16 @@ export default {
 		);
 	},
 };
+
+export default exported;
+
+export const {
+	redirectWithoutLocaleifLoggedIn,
+	saveQueryObject,
+	newSite,
+	connect,
+	authorizeForm,
+	sso,
+	plansLanding,
+	plansSelection,
+} = exported;

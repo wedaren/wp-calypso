@@ -185,7 +185,10 @@ function getValidator( rule ) {
 	return validators[ rule ];
 }
 
-export default {
-	getCreditCardType: getCreditCardType,
-	validateCardDetails: validateCardDetails,
+const exported = {
+    getCreditCardType: getCreditCardType,
+    validateCardDetails: validateCardDetails
 };
+
+export default exported;
+export { getCreditCardType, validateCardDetails };

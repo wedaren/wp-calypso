@@ -29,3 +29,5 @@ const ConnectedPlanThankYouCard = connect( state => {
 ConnectedPlanThankYouCard.displayName = 'PlanThankYouCard';
 
 export default ConnectedPlanThankYouCard;
+
+export const { displayName } = ConnectedPlanThankYouCard;

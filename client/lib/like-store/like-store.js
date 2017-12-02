@@ -222,3 +222,15 @@ LikeStore.dispatchToken = Dispatcher.register( function( payload ) {
 } );
 
 export default LikeStore;
+
+export const {
+    getLikersForPost,
+    getLikeCountForPost,
+    isPostLikedByCurrentUser,
+    receivePostLikes,
+    receiveUserLikeChange,
+    receivePost,
+    receiveLike,
+    receiveUnlike,
+    dispatchToken
+} = LikeStore;

@@ -21,3 +21,5 @@ ReduxFormSelect.propTypes = {
 };
 
 export default ReduxFormSelect;
+
+export const { propTypes } = ReduxFormSelect;

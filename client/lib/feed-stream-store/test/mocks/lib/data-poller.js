@@ -1,5 +1,12 @@
 /** @format */
-export default {
-	add: function() {},
-	remove: function() {},
+const exported = {
+    add: function() {},
+    remove: function() {}
 };
+
+export default exported;
+
+export const {
+    add,
+    remove
+} = exported;

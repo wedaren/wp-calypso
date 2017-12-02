@@ -27,7 +27,7 @@ import {
 	WOOCOMMERCE_REVIEW_REPLY_UPDATED,
 } from 'woocommerce/state/action-types';
 
-export default {
+const exported = {
 	[ WOOCOMMERCE_REVIEW_REPLIES_REQUEST ]: [
 		dispatchRequest(
 			handleReviewRepliesRequest,
@@ -35,6 +35,7 @@ export default {
 			handleReviewRepliesRequestError
 		),
 	],
+
 	[ WOOCOMMERCE_REVIEW_REPLY_CREATE_REQUEST ]: [
 		dispatchRequest(
 			handleReviewReplyCreate,
@@ -42,9 +43,11 @@ export default {
 			announceCreateFailure
 		),
 	],
+
 	[ WOOCOMMERCE_REVIEW_REPLY_DELETE_REQUEST ]: [
 		dispatchRequest( handleDeleteReviewReply, announceDeleteSuccess, announceDeleteFailure ),
 	],
+
 	[ WOOCOMMERCE_REVIEW_REPLY_UPDATE_REQUEST ]: [
 		dispatchRequest(
 			handleReviewReplyUpdate,
@@ -53,6 +56,15 @@ export default {
 		),
 	],
 };
+
+export default exported;
+
+export const {
+	WOOCOMMERCE_REVIEW_REPLIES_REQUEST,
+	WOOCOMMERCE_REVIEW_REPLY_CREATE_REQUEST,
+	WOOCOMMERCE_REVIEW_REPLY_DELETE_REQUEST,
+	WOOCOMMERCE_REVIEW_REPLY_UPDATE_REQUEST,
+} = exported;
 
 export function handleReviewRepliesRequest( { dispatch }, action ) {
 	const { siteId, reviewId } = action;

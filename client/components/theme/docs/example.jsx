@@ -49,3 +49,5 @@ const ThemeExample = () => {
 ThemeExample.displayName = 'Theme';
 
 export default ThemeExample;
+
+export const { displayName } = ThemeExample;

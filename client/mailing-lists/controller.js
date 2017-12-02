@@ -14,8 +14,8 @@ import { setSection } from 'state/ui/actions';
 import MainComponent from './main';
 import { renderWithReduxStore } from 'lib/react-helpers';
 
-export default {
-	unsubscribe( context ) {
+const exported = {
+    unsubscribe( context ) {
 		// We don't need the sidebar here.
 		context.store.dispatch(
 			setSection(
@@ -36,5 +36,11 @@ export default {
 			document.getElementById( 'primary' ),
 			context.store
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    unsubscribe
+} = exported;

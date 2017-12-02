@@ -18,8 +18,8 @@ import { renderWithReduxStore } from 'lib/react-helpers';
 
 const ANALYTICS_PAGE_TITLE = 'Me';
 
-export default {
-	password( context ) {
+const exported = {
+    password( context ) {
 		const PasswordComponent = require( 'me/security/main' );
 		const basePath = context.path;
 		const accountPasswordData = require( 'lib/account-password-data' );
@@ -45,7 +45,7 @@ export default {
 		);
 	},
 
-	twoStep( context ) {
+    twoStep( context ) {
 		const TwoStepComponent = require( 'me/two-step' ),
 			basePath = context.path,
 			appPasswordsData = require( 'lib/application-passwords-data' );
@@ -63,7 +63,7 @@ export default {
 		);
 	},
 
-	connectedApplications( context ) {
+    connectedApplications( context ) {
 		const ConnectedAppsComponent = require( 'me/connected-applications' ),
 			basePath = context.path,
 			connectedAppsData = require( 'lib/connected-applications-data' );
@@ -81,7 +81,7 @@ export default {
 		);
 	},
 
-	accountRecovery( context ) {
+    accountRecovery( context ) {
 		const AccountRecoveryComponent = require( 'me/security-account-recovery' ),
 			basePath = context.path;
 
@@ -97,7 +97,7 @@ export default {
 		);
 	},
 
-	socialLogin( context ) {
+    socialLogin( context ) {
 		const SocialLoginComponent = require( 'me/social-login' );
 		const basePath = context.path;
 
@@ -111,5 +111,15 @@ export default {
 			document.getElementById( 'primary' ),
 			context.store
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    password,
+    twoStep,
+    connectedApplications,
+    accountRecovery,
+    socialLogin
+} = exported;

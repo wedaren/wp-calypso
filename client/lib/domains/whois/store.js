@@ -16,3 +16,7 @@ WhoisStore.getByDomainName = function( domainName ) {
 };
 
 export default WhoisStore;
+
+export const {
+ getByDomainName
+} = WhoisStore;

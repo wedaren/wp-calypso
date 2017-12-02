@@ -54,3 +54,5 @@ class VideoEditorExample extends Component {
 VideoEditorExample.displayName = 'VideoEditor';
 
 export default VideoEditorExample;
+
+export const { displayName } = VideoEditorExample;

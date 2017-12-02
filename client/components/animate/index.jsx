@@ -16,3 +16,5 @@ Animate.propTypes = {
 };
 
 export default Animate;
+
+export const { propTypes } = Animate;

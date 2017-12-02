@@ -6,8 +6,8 @@
 
 import site from './site';
 
-export default {
-	unauthorizedFetchingUsers: {
+const exported = {
+    unauthorizedFetchingUsers: {
 		type: 'RECEIVE_USERS',
 		fetchOptions: {
 			number: 100,
@@ -25,7 +25,7 @@ export default {
 		},
 	},
 
-	errorWhenFetchingUsers: {
+    errorWhenFetchingUsers: {
 		type: 'RECEIVE_USERS',
 		fetchOptions: {
 			number: 100,
@@ -42,5 +42,12 @@ export default {
 				'The Jetpack site is inaccessible or returned an error: transport error - HTTP status code was not 200 (500) [-32300]',
 			name: 'JetpackErrorError',
 		},
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    unauthorizedFetchingUsers,
+    errorWhenFetchingUsers
+} = exported;

@@ -51,12 +51,18 @@ export const handleDeleteSuccess = ( { dispatch }, { linkSlug } ) =>
 export const handleDeleteError = ( { dispatch }, { linkSlug }, error ) =>
 	dispatch( deleteUserProfileLinkError( linkSlug, error ) );
 
-export default {
-	[ USER_PROFILE_LINKS_DELETE ]: [
+const exported = {
+    [ USER_PROFILE_LINKS_DELETE ]: [
 		dispatchRequestEx( {
 			fetch: deleteUserProfileLink,
 			onSuccess: handleDeleteSuccess,
 			onError: handleDeleteError,
 		} ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    USER_PROFILE_LINKS_DELETE
+} = exported;

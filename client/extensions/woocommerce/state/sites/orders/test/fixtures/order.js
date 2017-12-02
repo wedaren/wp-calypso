@@ -4,7 +4,7 @@
  * @format
  */
 
-export default {
+const exported = {
 	id: 40,
 	status: 'completed',
 	currency: 'USD',
@@ -16,6 +16,7 @@ export default {
 	payment_method: 'stripe',
 	payment_method_title: 'Credit Card (Stripe)',
 	meta_data: [],
+
 	line_items: [
 		{
 			id: 12,
@@ -23,7 +24,9 @@ export default {
 			price: 15.29,
 		},
 	],
+
 	tax_lines: [],
+
 	shipping_lines: [
 		{
 			id: 13,
@@ -35,3 +38,22 @@ export default {
 		},
 	],
 };
+
+export default exported;
+
+export const {
+	id,
+	status,
+	currency,
+	total,
+	total_tax,
+	prices_include_tax,
+	billing,
+	shipping,
+	payment_method,
+	payment_method_title,
+	meta_data,
+	line_items,
+	tax_lines,
+	shipping_lines,
+} = exported;

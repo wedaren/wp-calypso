@@ -248,3 +248,26 @@ var utils = {
 };
 
 export default utils;
+export { getFeaturedImageId };
+
+export const {
+    deviceSupportsRevisions,
+    getEditURL,
+    getPreviewURL,
+    userCan,
+    isPublished,
+    isPrivate,
+    isPending,
+    getEditedTime,
+    isBackDatedPublished,
+    isFutureDated,
+    isBackDated,
+    isPage,
+    normalizeSync,
+    getVisibility,
+    normalizeAsync,
+    getPermalinkBasePath,
+    getPagePath,
+    removeSlug,
+    getOffsetDate
+} = utils;

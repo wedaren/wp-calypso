@@ -55,3 +55,5 @@ OauthClientMasterbar.propTypes = {
 };
 
 export default OauthClientMasterbar;
+
+export const { displayName, propTypes } = OauthClientMasterbar;

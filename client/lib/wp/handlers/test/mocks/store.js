@@ -1,20 +1,29 @@
 /** @format */
 let storeData = {};
 
-export default {
-	get( key ) {
+const exported = {
+    get( key ) {
 		return storeData[ key ];
 	},
 
-	set( key, value ) {
+    set( key, value ) {
 		storeData[ key ] = value;
 	},
 
-	remove( key ) {
+    remove( key ) {
 		delete storeData[ key ];
 	},
 
-	clear() {
+    clear() {
 		storeData = {};
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    get,
+    set,
+    remove,
+    clear
+} = exported;

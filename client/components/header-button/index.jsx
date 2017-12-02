@@ -24,3 +24,5 @@ HeaderButton.propTypes = {
 };
 
 export default HeaderButton;
+
+export const { propTypes } = HeaderButton;

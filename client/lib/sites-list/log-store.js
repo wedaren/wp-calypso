@@ -117,3 +117,7 @@ LogStore.dispatchToken = Dispatcher.register( function( payload ) {
 Emitter( LogStore );
 
 export default LogStore;
+
+export const {
+    dispatchToken
+} = LogStore;

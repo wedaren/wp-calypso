@@ -44,3 +44,5 @@ FormRadiosBar.propTypes = {
 };
 
 export default FormRadiosBar;
+
+export const { propTypes } = FormRadiosBar;

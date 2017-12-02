@@ -110,3 +110,7 @@ StoreInfo.propTypes = {
 };
 
 export default StoreInfo;
+
+export const {
+    propTypes
+} = StoreInfo;

@@ -66,3 +66,7 @@ const ConnectedPostSelectorExample = connect( state => ( {
 ConnectedPostSelectorExample.displayName = 'PostSelector';
 
 export default ConnectedPostSelectorExample;
+
+export const {
+    displayName
+} = ConnectedPostSelectorExample;

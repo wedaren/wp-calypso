@@ -47,8 +47,14 @@ export const handleSuccess = ( { dispatch }, action ) => {
 	} );
 };
 
-export default {
-	[ ACCOUNT_RECOVERY_RESET_REQUEST ]: [
+const exported = {
+    [ ACCOUNT_RECOVERY_RESET_REQUEST ]: [
 		dispatchRequest( requestReset, handleSuccess, handleError ),
-	],
+	]
 };
+
+export default exported;
+
+export const {
+    ACCOUNT_RECOVERY_RESET_REQUEST
+} = exported;

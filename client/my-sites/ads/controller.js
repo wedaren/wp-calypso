@@ -43,13 +43,13 @@ function _getLayoutTitle( context ) {
 	}
 }
 
-export default {
-	redirect: function( context ) {
+const exported = {
+    redirect: function( context ) {
 		page.redirect( '/ads/earnings/' + context.params.site_id );
 		return;
 	},
 
-	layout: function( context ) {
+    layout: function( context ) {
 		const site = getSelectedSite( context.store.getState() );
 		const pathSuffix = site ? '/' + site.slug : '';
 		const layoutTitle = _getLayoutTitle( context );
@@ -81,5 +81,12 @@ export default {
 			document.getElementById( 'primary' ),
 			context.store
 		);
-	},
+	}
 };
+
+export default exported;
+
+export const {
+    redirect,
+    layout
+} = exported;
